@@ -11,7 +11,7 @@ use DB;
 use File;
 use Validator;
 use Auth;
-use App\Certification;
+use App\Models\Certification;
 use Illuminate\Support\Str;
 
 

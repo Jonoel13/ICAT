@@ -31,6 +31,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/test', [App\Http\Controllers\HomeController::class, 'test'])->name('test');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -88,7 +90,8 @@ Route::any('citas/edit/{id}', [App\Http\Controllers\Admin\Certification\Schedule
 
 Route::any('banco/perfiles', [App\Http\Controllers\Admin\User\BankController::class, 'index']);
 Route::any('nuevo', [App\Http\Controllers\Admin\Certification\ScheduleController::class, 'form']);
-Route::any('citas/crear', [App\Http\Controllers\Admin\Certification\ScheduleController::class, 'store']);
+Route::any('nuevo/citas/crear', [App\Http\Controllers\Admin\Certification\ScheduleController::class, 'store']);
+
 Route::any('citas', [App\Http\Controllers\Certification\QuoteController::class, 'form']);
 Route::any('citas/buscar', [App\Http\Controllers\Certification\QuoteController::class, 'search']);
 Route::any('citas/guardar', [App\Http\Controllers\Certification\QuoteController::class, 'store']);
@@ -140,5 +143,7 @@ Route::any('pago/actualizar/{id}', [App\Http\Controllers\Payments\PayController:
 Route::any('documentos', [App\Http\Controllers\User\ProfileController::class, 'docs']);
 Route::any('documentos/editar/{id}', [App\Http\Controllers\User\ProfileController::class, 'showDocs']);
 Route::any('documentos/actualizar/{id}', [App\Http\Controllers\User\ProfileController::class, 'updateDocs']);
+
+Route::any('documentos/constancia/{curp}/{id}', [App\Http\Controllers\User\EnrollController::class, 'constancia']);
 
 Route::any('documentos/constancia/{curp}/{id}', [App\Http\Controllers\User\EnrollController::class, 'constancia']);

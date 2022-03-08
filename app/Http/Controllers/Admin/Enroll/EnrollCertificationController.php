@@ -10,8 +10,8 @@ use Illuminate\Http\RedirectResponse;
 use DB;
 use File;
 use Validator;
-use App\Enroll;
-use App\Certification;
+use App\Models\Enroll;
+use App\Models\Certification;
 use Illuminate\Support\Str;
 
 

@@ -11,10 +11,10 @@ use Illuminate\Support\Facades\Mail;
 use DB;
 use File;
 use Validator;
-use App\Standard;
-use App\Group;
-use App\Instructor;
-use App\InstructorStandard;
+use App\Models\Standard;
+use App\Models\Group;
+use App\Models\Instructor;
+use App\Models\InstructorStandard;
 use Illuminate\Support\Str;
 
 

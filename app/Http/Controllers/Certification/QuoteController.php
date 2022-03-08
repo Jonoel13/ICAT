@@ -10,13 +10,14 @@ use Illuminate\Support\Facades\Mail;
 
 use DB;
 use File;
-use App\Date;
-use App\Quote;
-use App\Profile;
-use App\Certification;
+use App\Models\Date;
+use App\Models\Quote;
+use App\Models\Profile;
+use App\Models\Certification;
 use Validator;
 use Auth;
 use Illuminate\Support\Str;
+use Illuminate\Support\Arr;
 
 
 class QuoteController extends Controller
@@ -85,12 +86,16 @@ class QuoteController extends Controller
 
         } else {
 
-                $access = str_random(20);
+            print_r($request->all());
+            die();
+
+                $access = Str::random(20);
 
                 $quote = new Quote;
                 $quote->quote_date_id = $request->quote_date_id;
-                $quote->quote_qr_id = str_random(25);
+                $quote->quote_qr_id = Str::random(25);
                 $quote->quote_user_name = $request->quote_user_name;
+                $quote->quote_user_pago = 'Realizado';
                 $quote->quote_user_ap_p = $request->quote_user_ap_p;
                 $quote->quote_user_ap_m = $request->quote_user_ap_m;
                 $quote->quote_user_curp = $request->quote_user_curp;
@@ -235,16 +240,17 @@ class QuoteController extends Controller
 
         } else {
 
-                $access = str_random(20);
+                $access = Str::random(20);
 
                 $quote = new Quote;
                 $quote->quote_date_id = $request->quote_date_id;
-                $quote->quote_qr_id = str_random(25);
+                $quote->quote_qr_id = Str::random(25);
                 $quote->quote_user_name = $request->quote_user_name;
                 $quote->quote_user_ap_p = $request->quote_user_ap_p;
                 $quote->quote_user_ap_m = $request->quote_user_ap_m;
                 $quote->quote_user_curp = $request->quote_user_curp;
                 $quote->quote_user_email = $request->quote_user_email;
+                $quote->quote_user_pago = 'Realizado';
                 $quote->quote_status = 'No disponible';
                 $quote->quote_access = $access;
 

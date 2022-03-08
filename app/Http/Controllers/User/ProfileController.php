@@ -6,17 +6,16 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Mail;
 
 use DB;
 use File;
 use Validator;
-use App\User;
-use App\Enroll;
-use App\Profile;
-use App\Quote;
-use App\Certification;
+use App\Models\User;
+use App\Models\Enroll;
+use App\Models\Profile;
+use App\Models\Quote;
+use App\Models\Certification;
 use Illuminate\Support\Str;
 
 
@@ -232,13 +231,13 @@ class ProfileController extends Controller
     {
 
         $profile = Profile::find($id);
-        if (Input::has('user_check_curp')) {
+        if ($request->has('user_check_curp')) {
             $profile->user_check_curp = $request->user_check_curp;
         }
-        if (Input::has('user_check_id')) {
+        if ($request->has('user_check_id')) {
             $profile->user_check_id = $request->user_check_id;
         }
-        if (Input::has('user_check_foto')) {
+        if ($request->has('user_check_foto')) {
             $profile->user_check_foto = $request->user_check_foto;
         }
 

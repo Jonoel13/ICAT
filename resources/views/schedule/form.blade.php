@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="row col-md-11 offset-md-1">
-  <form method="POST" action="{{url('citas/crear')}}" autocomplete="off" enctype="multipart/form-data">
+  <form method="POST" action="{{url('nuevo/citas/crear')}}" autocomplete="off" enctype="multipart/form-data">
     {{csrf_field() }}
      <div class="form-row">
 

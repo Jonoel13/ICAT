@@ -11,9 +11,9 @@ use Illuminate\Support\Facades\Mail;
 use DB;
 use File;
 use Validator;
-use App\Standard;
-use App\Instructor;
-use App\Group;
+use App\Models\Standard;
+use App\Models\Instructor;
+use App\Models\Group;
 use Illuminate\Support\Str;
 
 

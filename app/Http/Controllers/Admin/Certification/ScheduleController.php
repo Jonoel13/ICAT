@@ -11,8 +11,8 @@ use Illuminate\Support\Facades\Mail;
 use DB;
 use File;
 use Validator;
-use App\Quote;
-use App\Date;
+use App\Models\Quote;
+use App\Models\Date;
 use Illuminate\Support\Str;
 
 
@@ -26,7 +26,7 @@ class ScheduleController extends Controller
     public function __construct(
     )
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -143,6 +143,7 @@ class ScheduleController extends Controller
 
     public function store(Request $request)
     {
+
         $rules = array(
             'date_date' => 'required',
             'date_hour' => 'required',

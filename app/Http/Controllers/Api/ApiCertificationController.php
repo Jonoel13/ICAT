@@ -10,7 +10,7 @@ use Illuminate\Http\RedirectResponse;
 use DB;
 use File;
 use Validator;
-use App\Certification;
+use App\Models\Certification;
 use Illuminate\Http\Response;
 use Illuminate\Support\Str;
 

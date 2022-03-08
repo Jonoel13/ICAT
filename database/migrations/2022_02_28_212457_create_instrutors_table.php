@@ -13,7 +13,7 @@ class CreateInstrutorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('instrutors', function (Blueprint $table) {
+        Schema::create('instructors', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('instructor_name');
             $table->string('instructor_app');
@@ -44,6 +44,6 @@ class CreateInstrutorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('instrutors');
+        Schema::dropIfExists('instructors');
     }
 }

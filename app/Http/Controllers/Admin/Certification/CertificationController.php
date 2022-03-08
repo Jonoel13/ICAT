@@ -11,9 +11,9 @@ use Illuminate\Support\Facades\Mail;
 use DB;
 use File;
 use Validator;
-use App\Enroll;
-use App\Certification;
-use App\Profile;
+use App\Models\Enroll;
+use App\Models\Certification;
+use App\Models\Profile;
 use Illuminate\Support\Str;
 
 

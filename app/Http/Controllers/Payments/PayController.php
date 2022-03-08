@@ -11,9 +11,9 @@ use Illuminate\Support\Facades\Mail;
 use DB;
 use File;
 use Validator;
-use App\Pay;
-use App\Certification;
-use App\Profile;
+use App\Models\Pay;
+use App\Models\Certification;
+use App\Models\Profile;
 use Illuminate\Support\Str;
 
 
@@ -90,6 +90,8 @@ class PayController extends Controller
 
         } else {
 
+
+
             $pay = new Pay;
             $pay->id_service = $request->id_service;
             $pay->pay_type_service = $request->pay_type_service;
@@ -115,7 +117,8 @@ class PayController extends Controller
 
             $certification = Certification::find($request->id_service);
             $certification->pago = "En revisión";
-            $certification->diagnostico_status = $request->diagnostico_status;
+            //$certification->diagnostico_status = $request->diagnostico_status;
+
 
             $certification->save();
             $pay->save();

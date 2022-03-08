@@ -11,11 +11,12 @@ use Illuminate\Support\Facades\Mail;
 use DB;
 use File;
 use Validator;
-use App\User;
-use App\Profile;
-use App\Enroll;
-use App\Certification;
+use App\Models\User;
+use App\Models\Profile;
+use App\Models\Enroll;
+use App\Models\Certification;
 use Illuminate\Support\Str;
+use Illuminate\Support\Arr;
 
 
 class EnrollController extends Controller
@@ -206,7 +207,7 @@ class EnrollController extends Controller
             $certification->diagnostico = 'https://docs.google.com/forms/d/e/1FAIpQLSegHzFH_DmYFbrG8t4bebt0nrrK-24vhO7DwQRBX9AthIj0lw/viewform?usp=sf_link';
 
 
-            $password = str_random(12);
+            $password = Str::random(12);
 
             $user = new User;
             $user->id_rol = 10;
@@ -224,15 +225,13 @@ class EnrollController extends Controller
 
             $data = array( 'name' => $request->enrol_user_nombre, 'user' => $request->enrol_user_email, 'password' => $password);
             
-/*
             Mail::send('emails.password', $data, function($message) use ($to_name, $to_email) {
                 $message->to($to_email, $to_name)
                 ->subject('Datos de acceso');
                 $message->from('icat@cdmx.gob.mx','Icat CDMX');
             });
           
-*/
-            return redirect('auth/login')->with('message', 'El usuario y contraseña para ingresar se te envió por correo electrónico');
+            return redirect('login')->with('message', 'El usuario y contraseña para ingresar se te envió por correo electrónico');
         }
 
     }

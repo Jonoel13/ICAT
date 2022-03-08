@@ -11,10 +11,10 @@ use Illuminate\Support\Facades\Mail;
 use DB;
 use File;
 use Validator;
-use App\User;
-use App\Enroll;
-use App\Profile;
-use App\Certification;
+use App\Models\User;
+use App\Models\Enroll;
+use App\Models\Profile;
+use App\Models\Certification;
 use Illuminate\Support\Str;
 
 
