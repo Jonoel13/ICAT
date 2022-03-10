@@ -1,4 +1,4 @@
-@extends('base')
+@extends('layouts.adminapp')
 @section('content')
 <style type="text/css">
 	.Disponible{
@@ -8,6 +8,12 @@
 		margin-bottom: 15px;
 	}
 </style>
+<h1>Agenda</h1>
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Agenda</a></li>
+    </ol>
+</nav>
 <div class="row nv">
   	<div class="col-6 col-md-6">
   		  <a class="btn btn-success" href="nuevo">Agregar</a>
@@ -26,7 +32,7 @@
         
   	</div>
 </div>
-<div class="container">
+<div class="row">
   <table class="table table-striped table-bordered">
   <thead>
     <tr>

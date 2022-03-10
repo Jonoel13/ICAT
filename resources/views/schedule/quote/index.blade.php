@@ -1,4 +1,4 @@
-@extends('base')
+@extends('layouts.adminapp')
 @section('content')
 <div class="row">
   <div class="col-sm-8">
@@ -36,9 +36,15 @@
   </tbody>
 </table>
 
-<script type="text/javascript">
+<!--script type="text/javascript">
   $(document).ready( function () {
       $('#citas').DataTable();
   } );
+</script-->
+<script type="text/javascript">
+  const dataTable = new simpleDatatables.DataTable("#citas", {
+  searchable: true,
+  fixedHeight: true,
+  })
 </script>
 @endsection

@@ -1,4 +1,4 @@
-@extends('base')
+@extends('layouts.adminapp')
 @section('content')
 <style type="text/css">
   .Disponible{
@@ -7,8 +7,17 @@
   .nv{
     margin-bottom: 15px;
   }
+
 </style>
 <div class="row nv">
+<div class="container">
+  <h1>Lista estándares</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active"><a href="#">Lista estándares</a></li>
+    </ol>
+  </nav>
+</div>
     <div class="col-6 col-md-6">
         <a class="btn btn-success" href="{{url('admin/estandar/from')}}">Agregar</a>
     </div>

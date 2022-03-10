@@ -1,8 +1,14 @@
-@extends('base')
+@extends('layouts.adminapp')
 @section('content')
 
 <div class="row mb-5">
-  <h2>Nuevo grupo</h2>
+  <h1>Nuevo grupo</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{{ url('admin/groups/lista') }}">Lista Grupos</a></li>
+      <li class="breadcrumb-item active">Nuevo grupo</li>
+    </ol>
+  </nav>
   <form method="POST" action="{{url('admin/groups/guardar')}}" autocomplete="off" enctype="multipart/form-data">
     {{csrf_field() }}
      <div class="form-row">

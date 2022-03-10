@@ -1,12 +1,18 @@
-@extends('base')
+@extends('layouts.adminapp')
 @section('content')
-
-<div class="row col-md-11 offset-md-1">
+<h1>Agenda</h1>
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ url('agenda') }}">Agenda</a></li>
+        <li class="breadcrumb-item active">Agregar fecha</li>
+    </ol>
+</nav>
+<div class="container row">
   <form method="POST" action="{{url('nuevo/citas/crear')}}" autocomplete="off" enctype="multipart/form-data">
     {{csrf_field() }}
      <div class="form-row">
 
-      <div class="form-group col-md-12">
+      <div class="form-group col-md-4">
         <label for="date_standar"><strong>Estándar:</strong></label>
         <input type="text" class="form-control" id="date_standar" name="date_standar" placeholder="" required="required" value="EC1331" readonly>
         <span class="alert-danger">{{$errors->first('date_standar')}}</span>
@@ -26,6 +32,7 @@
         <input type="time" class="form-control" id="date_hour" name="date_hour" placeholder="" required="required" value="{{ old('date_hour') }}">
         <span class="alert-danger">{{$errors->first('date_hour')}}</span>
       </div>
+      <br>
 
     </div>
     

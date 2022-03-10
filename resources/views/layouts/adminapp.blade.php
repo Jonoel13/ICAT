@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Icat CDMX') }}</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -16,6 +18,10 @@
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
 
   <!-- Vendor CSS Files -->
   <link rel="stylesheet" href="{{ URL::asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" />
@@ -30,6 +36,10 @@
   <!-- Template Main CSS File -->
   <link rel="stylesheet" href="{{ URL::asset('assets/css/style.css') }}" />
   <style type="text/css">
+    .btn-outline-success{
+      color: #ffffff !important;
+      margin-right: 5px;
+    }
     .sidebar-nav .nav-link{
       background: #ffffff;
       color: #495057;
@@ -40,7 +50,193 @@
     .footer {
       border-top: none;
     }
+            .bg-success{
+            background: #691C32 !important;
+        }
+        .btn-success {
+            background: #fff !important;
+            color: #691C32 !important;
+            border-color: #691C32 !important;
+        }
+
+        .btn-success:hover{
+            background: #691C32 !important;
+            color: #ffffff !important;
+        }
+
+        .btn-scs {
+            color: #fff;
+            border-color: #BC955C;
+            background: #BC955C;
+        }
+
+        .btn-scs:hover{
+            background: #DDc9A3;
+            color: #ffffff;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        .full-height {
+            height: 100vh;
+        }
+
+        .flex-center {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+        .links > a {
+            color: #636b6f;
+            padding: 0 25px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .m-b-md {
+            margin-bottom: 30px;
+        }
+
+        .position-ref {
+            position: relative;
+        }
+        .section1{
+            padding: 30px;
+            color: #ffffff;
+        }
+
+        .subtitle {
+            font-size: 40px;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .top-right {
+            position: absolute;
+            right: 10px;
+            top: 18px;
+        }
+        .text-green{
+            color: #235B4E;
+        }
+
+        .text-success{
+            color: #691C32 !important;
+        }
+        .text-b{
+            font-weight: 600;
+        }
+
+        .text-w{
+            line-height: 1.2;
+        }
+
+        .title {
+            font-size: 84px;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .top-right{
+            padding-top: 15px;
+        }
+
+        .image{
+            height: 100px !important;
+        }
+
+
+
+
+        .En{
+            color: #4472C4;
+        }
+        .Aceptado{
+            color: #00B050;
+        }
+        .Rechazado{
+            color: #FF0000;
+        }
+        .competente{
+            color: #178266;
+        }
+        .nocompetente{
+            color: #9F2241;
+        }
+
+        .Competente{
+            color: #178266;
+        }
+        .No{
+            color: #9F2241;
+        }
+
+        .profile{
+    background: #fcfcfc;
+    border-right: 1px rgba(0,0,0,.1) solid;
+  }
+
+  .form-info{
+    background: #e3eefb;
+    color: #0070C0;
+    padding: 0px 10px 0px 15px;
+  }
+  .link-info{
+    color: #0f4c42 !important;
+  }
+  .step-title{
+    font-size: 20px;
+  }
+
+  .number-list{
+    background: #691C32;
+    border-radius: 50%;
+    padding: 1px 7px 1px 7px;
+    color: #fff;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  .list-unstyled li{
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+  .title-steps{
+    color: #691C32;
+    font-size: 22px;
+  }
+  .steps{
+    background: #eaeaea;
+    padding: 25px;
+  }
+  .link-step{
+    margin-right: 10px;
+    padding-right: 10px;
+    color: #999 !important;
+  }
+  .link-active{
+    font-weight: 600;
+    color: #606060;
+  }
+  .nav-pro{
+    font-size: 25px;
+  }
+  .text-tg{
+    font-size: 18px;
+  }
+  .step-active{
+    color: #BC955C;
+    font-weight: 600;
+  }
+  .text-notify{
+    color: #235B4E;
+  }
+
+
   </style>
+
 
 
   <!-- =======================================================
@@ -57,9 +253,9 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="{{ url('home') }}" class="logo d-flex align-items-center">
         <img src="https://drive.google.com/uc?export=view&id=1-53ECQVm3N6OLvXwiqGpFNdTbFsnFcmx" alt="">
-        <span class="d-none d-lg-block">Icat CDMX</span>
+        <span class="d-none d-lg-block"></span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -95,10 +291,10 @@
 
               <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
                 <i class="bi bi-bell"></i>
-                <span class="badge bg-primary badge-number">4</span>
+                <!--span class="badge bg-primary badge-number">4</span-->
               </a><!-- End Notification Icon -->
 
-              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+              <!--ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
                 <li class="dropdown-header">
                   You have 4 new notifications
                   <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
@@ -162,7 +358,7 @@
                   <a href="#">Show all notifications</a>
                 </li>
 
-              </ul><!-- End Notification Dropdown Items -->
+              </ul--><!-- End Notification Dropdown Items -->
 
             </li><!-- End Notification Nav -->
 
@@ -170,10 +366,10 @@
 
               <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
                 <i class="bi bi-chat-left-text"></i>
-                <span class="badge bg-success badge-number">3</span>
+                <!--span class="badge bg-success badge-number">3</span-->
               </a><!-- End Messages Icon -->
 
-              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+              <!--ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
                 <li class="dropdown-header">
                   You have 3 new messages
                   <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
@@ -228,7 +424,7 @@
                   <a href="#">Show all messages</a>
                 </li>
 
-              </ul><!-- End Messages Dropdown Items -->
+              </ul--><!-- End Messages Dropdown Items -->
 
             </li><!-- End Messages Nav -->
 
@@ -307,7 +503,7 @@
 
       @if(Auth::user()->id_rol == 1)
           <li class="nav-item">
-            <a class="nav-link"  href="{{ url('admin/estandar/lista') }}">
+            <a class="nav-link"  href="{{ url('home') }}">
               <i class="bi bi-grid"></i><span>Dashboard</span>
             </a>
           </li>
@@ -444,7 +640,7 @@
   </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
-
+      @yield('content')
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -476,6 +672,7 @@
 
   <!-- Template Main JS File -->
   <script src="{{ URL::asset('assets/js/main.js') }}"></script>
+
 
 </body>
 

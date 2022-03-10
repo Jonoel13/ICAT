@@ -1,7 +1,12 @@
-@extends('base')
+@extends('layouts.adminapp')
 @section('content')
 <div >
-    <h4>Documentos</h4>
+    <h1>Documentos recibidos</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Documentos recibidos</a></li>
+        </ol>
+    </nav>
     <div class="row">
         <table id="documets" class="table table-striped span12">
             <thead>
@@ -28,10 +33,12 @@
     </div>
 </div>
 
+
 <script type="text/javascript">
-  $(document).ready( function () {
-      $('#documets').DataTable();
-  } );
+  const dataTable = new simpleDatatables.DataTable("#documets", {
+  searchable: true,
+  fixedHeight: true,
+  })
 </script>
 <style type="text/css">
     #documets_wrapper{

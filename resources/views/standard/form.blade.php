@@ -1,8 +1,14 @@
-@extends('base')
+@extends('layouts.adminapp')
 @section('content')
 
-<div class="row col-md-11 offset-md-1 mb-5">
-  <h2>Estándar de competencias</h2>
+<div class="container">
+  <h1>Nuevo estándar de competencias</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{{ url('admin/estandar/lista') }}">Lista estándares</a></li>
+      <li class="breadcrumb-item active">Nuevo estándar</li>
+    </ol>
+  </nav>
   <form method="POST" action="{{url('admin/estandar/guardar')}}" autocomplete="off" enctype="multipart/form-data">
     {{csrf_field() }}
      <div class="form-row">

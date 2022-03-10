@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Icat CDMX</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -280,12 +280,12 @@
                     @guest
                             @if (Route::has('login'))
                                 
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesion') }}</a>
                                 
                             @endif
 
-                            @if (Route::has('register'))
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registarme') }}</a>
+                            @if (Route::has('registro'))
+                                    <a class="nav-link" href="{{ route('registro') }}">{{ __('Registarme') }}</a>
                             @endif
                         @else
                                 <a  class="" href="#" role="button" >
