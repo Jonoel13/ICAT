@@ -13,7 +13,7 @@ class CreateIstructorStandardTable extends Migration
      */
     public function up()
     {
-        Schema::create('istructor_standard', function (Blueprint $table) {
+        Schema::create('instructors_standard', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('id_standard');
             $table->string('id_instructor');
@@ -28,6 +28,6 @@ class CreateIstructorStandardTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('istructor_standard');
+        Schema::dropIfExists('instructors_standard');
     }
 }
