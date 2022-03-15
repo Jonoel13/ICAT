@@ -10,6 +10,7 @@
     <title>{{ config('app.name', 'Icat CDMX') }}</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  <base href="/">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
