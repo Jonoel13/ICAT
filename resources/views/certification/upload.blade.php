@@ -47,7 +47,7 @@
 
     <div class="col-md-12">
         @if($certification->documento != 'Pendiente')
-        <embed src="{{url('public/file/certify')}}/{{$certification->documento}}" type="application/pdf" width="100%" height="600px" />
+        <embed src="{{asset('file/certify')}}/{{$certification->documento}}" type="application/pdf" width="100%" height="600px" />
         @endif
     </div>
     

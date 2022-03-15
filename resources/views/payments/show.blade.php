@@ -29,7 +29,7 @@
   </table>
 </div>
 <div class="container-fluid text-center">
-  <embed src="{{url('public/file/pay')}}/{{$pay->pay_documento}}" type="application/pdf" width="100%" height="600px" />
+  <embed src="{{asset('file/pay')}}/{{$pay->pay_documento}}" type="application/pdf" width="100%" height="600px" />
 </div>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">

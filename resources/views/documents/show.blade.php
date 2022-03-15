@@ -7,17 +7,17 @@
             <hr class="my-4">
             <div class="col-md-12">
                 <h4>Fotografía</h4>
-                <embed src="{{url('public/file/photo')}}/{{$profile->user_doc_foto}}" type="application/pdf" width="100%" height="600px" />
+                <embed src="{{asset('file/photo')}}/{{$profile->user_doc_foto}}" type="application/pdf" width="100%" height="600px" />
             </div>
             <hr class="my-4">
             <div class="col-md-12">
                 <h4>CURP</h4>
-                <embed src="{{url('public/file/curp')}}/{{$profile->user_doc_curp}}" type="application/pdf" width="100%" height="600px" />
+                <embed src="{{asset('file/curp')}}/{{$profile->user_doc_curp}}" type="application/pdf" width="100%" height="600px" />
             </div>
             <hr class="my-4">
             <div class="col-md-12">
                 <h4>Idenficación oficial</h4>
-                <embed src="{{url('public/file/id')}}/{{$profile->user_doc_id}}" type="application/pdf" width="100%" height="600px" />
+                <embed src="{{asset('file/id')}}/{{$profile->user_doc_id}}" type="application/pdf" width="100%" height="600px" />
             </div>
         </div>
 
