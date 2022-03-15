@@ -5763,9 +5763,9 @@ h1, h2, h3, h4, h5, h6 {
           <ul class="d-flex align-items-center">
 
             <li class="nav-item d-block d-lg-none">
-              <a class="nav-link nav-icon search-bar-toggle " href="#">
+              <!-- a class="nav-link nav-icon search-bar-toggle " href="#">
                 <i class="bi bi-search"></i>
-              </a>
+              </a-->
             </li><!-- End Search Icon-->
 
             <li class="nav-item dropdown">
