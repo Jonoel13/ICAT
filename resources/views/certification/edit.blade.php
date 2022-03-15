@@ -1,4 +1,4 @@
-@extends('layouts.adminapp')
+@extends('base')
 @section('content')
 <div class="row col-md-11 offset-md-1">
     <form method="POST" action="{{url('certificaciones/edit')}}/{{$certification->id}}" autocomplete="off" enctype="multipart/form-data">
