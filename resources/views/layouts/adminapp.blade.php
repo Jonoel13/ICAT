@@ -7,49 +7,55 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Icat CDMX') }}</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <title>Icat CDMX</title>
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-  <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css">
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Scripts -->
+    <!--script src="{{ asset('js/app.js') }}" defer></script-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
-  <!-- Vendor CSS Files -->
-  <link rel="stylesheet" href="{{ URL::asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" />
-  <link rel="stylesheet" href="{{ URL::asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" />
-  <link rel="stylesheet" href="{{ URL::asset('assets/vendor/boxicons/css/boxicons.min.css') }}" />
-  <link rel="stylesheet" href="{{ URL::asset('assets/vendor/quill/quill.snow.css') }}" />
-  <link rel="stylesheet" href="{{ URL::asset('assets/vendor/quill/quill.bubble.css') }}" />
-  <link rel="stylesheet" href="{{ URL::asset('assets/vendor/remixicon/remixicon.css') }}" />
-  <link rel="stylesheet" href="{{ URL::asset('assets/vendor/simple-datatables/style.css') }}" />
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-  <!-- Template Main CSS File -->
-  <link rel="stylesheet" href="{{ URL::asset('assets/css/style.css') }}" />
-  <style type="text/css">
-    .btn-outline-success{
-      color: #ffffff !important;
-      margin-right: 5px;
-    }
-    .sidebar-nav .nav-link{
-      background: #ffffff;
-      color: #495057;
-    }
-    .sidebar-nav .nav-link i{
-      color: #899bbd;
-    }
-    .footer {
-      border-top: none;
-    }
-            .bg-success{
+    <!-- Styles -->
+    <!--link href="{{ asset('css/app.css') }}" rel="stylesheet"-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+    
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <!--link href="{{ asset('css/app.css') }}" rel="stylesheet"-->
+
+    <!-- Styles -->
+    <style>
+        html, body {
+            background-color: #fff;
+            color: #636b6f;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 200;
+            height: 100vh;
+            margin: 0;
+        }
+        .bg-success{
             background: #691C32 !important;
         }
         .btn-success {
@@ -101,6 +107,10 @@
             margin-bottom: 30px;
         }
 
+        .main{
+            margin-top: 20px;
+        }
+        
         .position-ref {
             position: relative;
         }
@@ -146,13 +156,13 @@
         .image{
             height: 100px !important;
         }
-
-
-
-
+        
+        
+        
+        
         .En{
             color: #4472C4;
-        }
+        } 
         .Aceptado{
             color: #00B050;
         }
@@ -189,14 +199,14 @@
   .step-title{
     font-size: 20px;
   }
-
+  
   .number-list{
     background: #691C32;
-    border-radius: 50%;
+    border-radius: 50%; 
     padding: 1px 7px 1px 7px;
-    color: #fff;
+    color: #fff;    
     font-size: 14px;
-    margin-right: 10px;
+    margin-right: 10px; 
   }
   .list-unstyled li{
     margin-bottom: 15px;
@@ -232,311 +242,91 @@
   .text-notify{
     color: #235B4E;
   }
+        
+    </style>
 
 
-  </style>
-
-
-
-  <!-- =======================================================
-  * Template Name: NiceAdmin - v2.2.2
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
-
 <body>
+    <div id="app">
+        
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+            <a class="navbar-brand" href="{{ url('/home') }}">
+                    <img class="img-responsive col-md-12 image" src="https://drive.google.com/uc?export=view&id=1-53ECQVm3N6OLvXwiqGpFNdTbFsnFcmx">
+                </a>
+            <div class="container">
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top d-flex align-items-center">
+                <div class="col-md-6">
+                    
+                    <!--button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
+                        <span class="navbar-toggler-icon"></span>
+                    </button-->
 
-    <div class="d-flex align-items-center justify-content-between">
-      <a href="{{ url('home') }}" class="logo d-flex align-items-center">
-        <img src="https://drive.google.com/uc?export=view&id=1-53ECQVm3N6OLvXwiqGpFNdTbFsnFcmx" alt="">
-        <span class="d-none d-lg-block"></span>
-      </a>
-      <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <!-- Left Side Of Navbar -->
+                        <ul class="navbar-nav mr-auto">
 
-    <div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-      </form>
-    </div><!-- End Search Bar -->
+                        </ul>
 
-    <nav class="header-nav ms-auto">
-      @guest
-          @if (Route::has('login'))
+                        <!-- Right Side Of Navbar -->
+                        <ul class="navbar-nav ml-auto">
+                            <!-- Authentication Links -->
 
-                  <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-
-          @endif
-
-          @if (Route::has('registro'))
-                  <a class="nav-link" href="">{{ __('Registrarme') }}</a>
-          @endif
-      @else
-          <ul class="d-flex align-items-center">
-
-            <li class="nav-item d-block d-lg-none">
-              <a class="nav-link nav-icon search-bar-toggle " href="#">
-                <i class="bi bi-search"></i>
-              </a>
-            </li><!-- End Search Icon-->
-
-            <li class="nav-item dropdown">
-
-              <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-                <i class="bi bi-bell"></i>
-                <!--span class="badge bg-primary badge-number">4</span-->
-              </a><!-- End Notification Icon -->
-
-              <!--ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-                <li class="dropdown-header">
-                  You have 4 new notifications
-                  <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-
-                <li class="notification-item">
-                  <i class="bi bi-exclamation-circle text-warning"></i>
-                  <div>
-                    <h4>Lorem Ipsum</h4>
-                    <p>Quae dolorem earum veritatis oditseno</p>
-                    <p>30 min. ago</p>
-                  </div>
-                </li>
-
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-
-                <li class="notification-item">
-                  <i class="bi bi-x-circle text-danger"></i>
-                  <div>
-                    <h4>Atque rerum nesciunt</h4>
-                    <p>Quae dolorem earum veritatis oditseno</p>
-                    <p>1 hr. ago</p>
-                  </div>
-                </li>
-
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-
-                <li class="notification-item">
-                  <i class="bi bi-check-circle text-success"></i>
-                  <div>
-                    <h4>Sit rerum fuga</h4>
-                    <p>Quae dolorem earum veritatis oditseno</p>
-                    <p>2 hrs. ago</p>
-                  </div>
-                </li>
-
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-
-                <li class="notification-item">
-                  <i class="bi bi-info-circle text-primary"></i>
-                  <div>
-                    <h4>Dicta reprehenderit</h4>
-                    <p>Quae dolorem earum veritatis oditseno</p>
-                    <p>4 hrs. ago</p>
-                  </div>
-                </li>
-
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li class="dropdown-footer">
-                  <a href="#">Show all notifications</a>
-                </li>
-
-              </ul--><!-- End Notification Dropdown Items -->
-
-            </li><!-- End Notification Nav -->
-
-            <li class="nav-item dropdown">
-
-              <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-                <i class="bi bi-chat-left-text"></i>
-                <!--span class="badge bg-success badge-number">3</span-->
-              </a><!-- End Messages Icon -->
-
-              <!--ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
-                <li class="dropdown-header">
-                  You have 3 new messages
-                  <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-
-                <li class="message-item">
-                  <a href="#">
-                    <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
-                    <div>
-                      <h4>Maria Hudson</h4>
-                      <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                      <p>4 hrs. ago</p>
+                        </ul>
                     </div>
-                  </a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
+                </div>
+                <div class=" links">
+                    @yield('title')
+                    @guest
+                            @if (Route::has('login'))
+                                
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesion') }}</a>
+                                
+                            @endif
 
-                <li class="message-item">
-                  <a href="#">
-                    <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
-                    <div>
-                      <h4>Anna Nelson</h4>
-                      <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                      <p>6 hrs. ago</p>
+                            @if (Route::has('registro'))
+                                    <a class="nav-link" href="{{ route('registro') }}">{{ __('Registarme') }}</a>
+                            @endif
+                        @else
+                                <a  class="" href="#" role="button" >
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                    <a class="" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Cerrar sesión') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                
+                        @endguest
+                </div>
+
+            </div>
+        </nav>
+
+        <main class="py-4 main">
+            <div class="container-fluid">
+
+                <div class="row">
+                    @yield('menu')
+                    <div class="col-md-10">
+                        <div>
+                            <h5 class="text-notify">{{ Session::get('message') }}</h5>
+                            <h5 class="text-danger">{{ Session::get('messageNo') }}</h5>
+                        </div>
+                        <div class="">
+                            @yield('content')
+                        </div>
+                        
                     </div>
-                  </a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-
-                <li class="message-item">
-                  <a href="#">
-                    <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
-                    <div>
-                      <h4>David Muldon</h4>
-                      <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                      <p>8 hrs. ago</p>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-
-                <li class="dropdown-footer">
-                  <a href="#">Show all messages</a>
-                </li>
-
-              </ul--><!-- End Messages Dropdown Items -->
-
-            </li><!-- End Messages Nav -->
-
-            <li class="nav-item dropdown pe-3">
-
-              <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                <img src="{{asset('file/photo')}}" alt="Profile" class="rounded-circle">
-                <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->name }}</span>
-              </a><!-- End Profile Iamge Icon -->
-
-              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-                <li class="dropdown-header">
-                  <h6>{{ Auth::user()->name }}</h6>
-                  <span></span>
-                </li>
-                <!--li>
-                  <hr class="dropdown-divider">
-                </li>
-
-                <li>
-                  <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                    <i class="bi bi-person"></i>
-                    <span>My Profile</span>
-                  </a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-
-                <li>
-                  <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                    <i class="bi bi-gear"></i>
-                    <span>Account Settings</span>
-                  </a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-
-                <li>
-                  <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                    <i class="bi bi-question-circle"></i>
-                    <span>Need Help?</span>
-                  </a>
-                </li-->
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-
-                <li>
-                  <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}"
-                     onclick="event.preventDefault();
-                                   document.getElementById('logout-form').submit();">
-                      <i class="bi bi-box-arrow-right"></i>
-                      {{ __('Cerrar sesión') }}
-                  </a>
-
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                      @csrf
-                  </form>
-                </li>
-
-              </ul><!-- End Profile Dropdown Items -->
-            </li><!-- End Profile Nav -->
-          </ul>
-      @endguest
-
-    </nav><!-- End Icons Navigation -->
-
-  </header><!-- End Header -->
-
-  <!-- ======= Sidebar ======= -->
-  <aside id="sidebar" class="sidebar">
-
-  
-
-  </aside><!-- End Sidebar-->
-
-  <main id="main" class="main">
-      @yield('content')
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-    <div class="copyright">
-
+                </div>
+             
+            </div>
+        </main>
     </div>
-    <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-
-    </div>
-  </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="{{ URL::asset('assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
-  <script src="{{ URL::asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ URL::asset('assets/vendor/chart.js/chart.min.js') }}"></script>
-  <script src="{{ URL::asset('assets/vendor/echarts/echarts.min.js') }}"></script>
-  <script src="{{ URL::asset('assets/vendor/quill/quill.min.js') }}"></script>
-  <script src="{{ URL::asset('assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
-  <script src="{{ URL::asset('assets/vendor/tinymce/tinymce.min.js') }}"></script>
-  <script src="{{ URL::asset('assets/vendor/php-email-form/validate.js') }}"></script>
-
-
-  <!-- Template Main JS File -->
-  <script src="{{ URL::asset('assets/js/main.js') }}"></script>
-
-
 </body>
-
 </html>

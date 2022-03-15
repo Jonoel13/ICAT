@@ -1,4 +1,4 @@
-@extends('layouts.adminapp')
+@extends('layouts.appnologin')
 @section('content')
 <div class=" position-ref full-height">        
     <div class="container">
