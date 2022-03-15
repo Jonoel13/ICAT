@@ -1,4 +1,4 @@
-@extends('layouts.adminapp')
+@extends('base')
 @section('content')
 <style type="text/css">
 	.Disponible{

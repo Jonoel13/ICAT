@@ -1,4 +1,4 @@
-@extends('layouts.adminapp')
+@extends('base')
 @section('content')
 <h1>Agenda</h1>
 <nav>

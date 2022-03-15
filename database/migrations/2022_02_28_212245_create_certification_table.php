@@ -17,6 +17,7 @@ class CreateCertificationTable extends Migration
             $table->bigIncrements('id');
             $table->string('curp');
             $table->string('estandar');
+            $table->string('sector');
             $table->string('estatus');
             $table->string('calificacion');
             $table->string('fecha');
