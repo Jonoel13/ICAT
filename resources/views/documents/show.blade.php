@@ -7,7 +7,7 @@
             <hr class="my-4">
             <div class="col-md-12">
                 <h4>Fotografía</h4>
-                <embed src="{{asset('file/photo')}}/{{$profile->user_doc_foto}}" type="application/pdf" width="100%" height="600px" />
+                <embed src="{{asset('storage')}}/{{$profile->user_doc_foto}}" type="application/pdf" width="100%" height="600px" />
             </div>
             <hr class="my-4">
             <div class="col-md-12">

@@ -152,19 +152,19 @@ class EnrollController extends Controller
                 $file=$request->file("enrol_user_doc_curp");
                 $nombre = "curp_".$request->enrol_user_curp.time().".".$file->guessExtension();
                 $ruta = public_path("file/curp/".$nombre);
-                copy($file, $ruta);
+                move_uploaded_file($file, $ruta);
                 $profile->user_doc_curp = $nombre;
             }
             else{
                 $profile->user_doc_curp = 'N/A';
             }
-
+       
             if($request->hasFile("enrol_user_doc_id")){
 
                 $file=$request->file("enrol_user_doc_id");
                 $nombre = "id_".$request->enrol_user_curp.time().".".$file->guessExtension();
                 $ruta = public_path("file/id/".$nombre);
-                copy($file, $ruta);
+                move_uploaded_file($file, $ruta);
                 $profile->user_doc_id = $nombre;
             }
             else{
@@ -176,7 +176,7 @@ class EnrollController extends Controller
                 $file=$request->file("enrol_user_doc_foto");
                 $nombre = "photo_".$request->enrol_user_curp.time().".".$file->guessExtension();
                 $ruta = public_path("file/photo/".$nombre);
-                copy($file, $ruta);
+                move_uploaded_file($file, $ruta);
                 $profile->user_doc_foto = $nombre;
             }
             else{
@@ -194,6 +194,7 @@ class EnrollController extends Controller
             $certification = new Certification;
             $certification->curp = strtoupper($request->enrol_user_curp);
             $certification->estandar = $request->enrol_course_id;
+            $certification->sector = 'Transporte';
             $certification->estatus = "Candidato";
             $certification->calificacion = "0";
             $certification->fecha = date("d-m-Y");

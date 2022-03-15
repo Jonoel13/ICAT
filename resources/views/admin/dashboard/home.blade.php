@@ -1,6 +1,19 @@
 @extends('layouts.adminapp')
 @section('content')
 
+<form method="POST" action="{{url('pruebas')}}" autocomplete="off" enctype="multipart/form-data">
+  {{csrf_field() }}
+  <input type="file" name="image">
+
+  <button type="submit" class="btn btn-primary" onclick="this.disabled=true; this.value='Enviando, espere ...'; this.form.submit();">Aceptar</button>
+
+</form>
+
+
+@foreach($files as $file)
+  <img src="{{ asset ('storage/'. $file->path)}}" alt="" class="img-responsive"><br>
+@endforeach
+
 <div class="col-lg-6">
   <div class="card">
     <div class="card-body">

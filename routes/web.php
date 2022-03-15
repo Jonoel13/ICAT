@@ -35,7 +35,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Auth::routes();
 
-Route::get('/test', [App\Http\Controllers\HomeController::class, 'test'])->name('test');
+Route::any('pruebas', [App\Http\Controllers\HomeController::class, 'test']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
