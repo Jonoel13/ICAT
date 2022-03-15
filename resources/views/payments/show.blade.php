@@ -17,7 +17,7 @@
         <td>{{$pay->pay_type_service}}</td>
         <td><span class="{{$pay->pay_status}}">{{$pay->pay_status}}</span></td>
         <td>
-          <a href="{{url('public/file/pay')}}/{{$pay->pay_documento}}" target="_blank">Descargar documento</a>
+          <a href="{{asset('file/pay')}}/{{$pay->pay_documento}}" target="_blank">Descargar documento</a>
         </td>
         <td>
           <!-- Button trigger modal -->
