@@ -274,8 +274,8 @@
 
           @endif
 
-          @if (Route::has('register'))
-                  <a class="nav-link" href="{{ route('registro') }}">{{ __('Registrarme') }}</a>
+          @if (Route::has('registro'))
+                  <a class="nav-link" href="">{{ __('Registrarme') }}</a>
           @endif
       @else
           <ul class="d-flex align-items-center">
