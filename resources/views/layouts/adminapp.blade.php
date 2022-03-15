@@ -23,211 +23,12 @@
   <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css">
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
 
 
   <!-- Template Main CSS File -->
-  <style type="text/css">
-    .btn-outline-success{
-      color: #ffffff !important;
-      margin-right: 5px;
-    }
-    .sidebar-nav .nav-link{
-      background: #ffffff;
-      color: #495057;
-    }
-    .sidebar-nav .nav-link i{
-      color: #899bbd;
-    }
-    .footer {
-      border-top: none;
-    }
-            .bg-success{
-            background: #691C32 !important;
-        }
-        .btn-success {
-            background: #fff !important;
-            color: #691C32 !important;
-            border-color: #691C32 !important;
-        }
 
-        .btn-success:hover{
-            background: #691C32 !important;
-            color: #ffffff !important;
-        }
-
-        .btn-scs {
-            color: #fff;
-            border-color: #BC955C;
-            background: #BC955C;
-        }
-
-        .btn-scs:hover{
-            background: #DDc9A3;
-            color: #ffffff;
-        }
-
-        .content {
-            text-align: center;
-        }
-
-        .full-height {
-            height: 100vh;
-        }
-
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-        .links > a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .m-b-md {
-            margin-bottom: 30px;
-        }
-
-        .position-ref {
-            position: relative;
-        }
-        .section1{
-            padding: 30px;
-            color: #ffffff;
-        }
-
-        .subtitle {
-            font-size: 40px;
-            font-family: 'Source Sans Pro', sans-serif;
-        }
-
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-        .text-green{
-            color: #235B4E;
-        }
-
-        .text-success{
-            color: #691C32 !important;
-        }
-        .text-b{
-            font-weight: 600;
-        }
-
-        .text-w{
-            line-height: 1.2;
-        }
-
-        .title {
-            font-size: 84px;
-            font-family: 'Source Sans Pro', sans-serif;
-        }
-
-        .top-right{
-            padding-top: 15px;
-        }
-
-        .image{
-            height: 100px !important;
-        }
-
-
-
-
-        .En{
-            color: #4472C4;
-        }
-        .Aceptado{
-            color: #00B050;
-        }
-        .Rechazado{
-            color: #FF0000;
-        }
-        .competente{
-            color: #178266;
-        }
-        .nocompetente{
-            color: #9F2241;
-        }
-
-        .Competente{
-            color: #178266;
-        }
-        .No{
-            color: #9F2241;
-        }
-
-        .profile{
-    background: #fcfcfc;
-    border-right: 1px rgba(0,0,0,.1) solid;
-  }
-
-  .form-info{
-    background: #e3eefb;
-    color: #0070C0;
-    padding: 0px 10px 0px 15px;
-  }
-  .link-info{
-    color: #0f4c42 !important;
-  }
-  .step-title{
-    font-size: 20px;
-  }
-
-  .number-list{
-    background: #691C32;
-    border-radius: 50%;
-    padding: 1px 7px 1px 7px;
-    color: #fff;
-    font-size: 14px;
-    margin-right: 10px;
-  }
-  .list-unstyled li{
-    margin-bottom: 15px;
-    font-size: 18px;
-  }
-  .title-steps{
-    color: #691C32;
-    font-size: 22px;
-  }
-  .steps{
-    background: #eaeaea;
-    padding: 25px;
-  }
-  .link-step{
-    margin-right: 10px;
-    padding-right: 10px;
-    color: #999 !important;
-  }
-  .link-active{
-    font-weight: 600;
-    color: #606060;
-  }
-  .nav-pro{
-    font-size: 25px;
-  }
-  .text-tg{
-    font-size: 18px;
-  }
-  .step-active{
-    color: #BC955C;
-    font-weight: 600;
-  }
-  .text-notify{
-    color: #235B4E;
-  }
-
-
-  </style>
   <style type="text/css">
     
     @charset "UTF-8";/*!
@@ -5709,6 +5510,210 @@ h1, h2, h3, h4, h5, h6 {
 }
 
   </style>
+  <style type="text/css">
+    .bi{
+        color: #899bbd !important;
+    }
+    .btn-outline-success{
+      color: #ffffff !important;
+      margin-right: 5px;
+    }
+    .sidebar-nav .nav-link{
+      background: #ffffff;
+      color: #495057;
+    }
+    .sidebar-nav .nav-link i{
+      color: #899bbd;
+    }
+    .footer {
+      border-top: none;
+    }
+            .bg-success{
+            background: #691C32 !important;
+        }
+        .btn-success {
+            background: #fff !important;
+            color: #691C32 !important;
+            border-color: #691C32 !important;
+        }
+
+        .btn-success:hover{
+            background: #691C32 !important;
+            color: #ffffff !important;
+        }
+
+        .btn-scs {
+            color: #fff;
+            border-color: #BC955C;
+            background: #BC955C;
+        }
+
+        .btn-scs:hover{
+            background: #DDc9A3;
+            color: #ffffff;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        .full-height {
+            height: 100vh;
+        }
+
+        .flex-center {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+        .links > a {
+            color: #636b6f;
+            padding: 0 25px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .m-b-md {
+            margin-bottom: 30px;
+        }
+
+        .position-ref {
+            position: relative;
+        }
+        .section1{
+            padding: 30px;
+            color: #ffffff;
+        }
+
+        .subtitle {
+            font-size: 40px;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .top-right {
+            position: absolute;
+            right: 10px;
+            top: 18px;
+        }
+        .text-green{
+            color: #235B4E;
+        }
+
+        .text-success{
+            color: #691C32 !important;
+        }
+        .text-b{
+            font-weight: 600;
+        }
+
+        .text-w{
+            line-height: 1.2;
+        }
+
+        .title {
+            font-size: 84px;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .top-right{
+            padding-top: 15px;
+        }
+
+        .image{
+            height: 100px !important;
+        }
+
+
+
+
+        .En{
+            color: #4472C4;
+        }
+        .Aceptado{
+            color: #00B050;
+        }
+        .Rechazado{
+            color: #FF0000;
+        }
+        .competente{
+            color: #178266;
+        }
+        .nocompetente{
+            color: #9F2241;
+        }
+
+        .Competente{
+            color: #178266;
+        }
+        .No{
+            color: #9F2241;
+        }
+
+        .profile{
+    background: #fcfcfc;
+    border-right: 1px rgba(0,0,0,.1) solid;
+  }
+
+  .form-info{
+    background: #e3eefb;
+    color: #0070C0;
+    padding: 0px 10px 0px 15px;
+  }
+  .link-info{
+    color: #0f4c42 !important;
+  }
+  .step-title{
+    font-size: 20px;
+  }
+
+  .number-list{
+    background: #691C32;
+    border-radius: 50%;
+    padding: 1px 7px 1px 7px;
+    color: #fff;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  .list-unstyled li{
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+  .title-steps{
+    color: #691C32;
+    font-size: 22px;
+  }
+  .steps{
+    background: #eaeaea;
+    padding: 25px;
+  }
+  .link-step{
+    margin-right: 10px;
+    padding-right: 10px;
+    color: #999 !important;
+  }
+  .link-active{
+    font-weight: 600;
+    color: #606060;
+  }
+  .nav-pro{
+    font-size: 25px;
+  }
+  .text-tg{
+    font-size: 18px;
+  }
+  .step-active{
+    color: #BC955C;
+    font-weight: 600;
+  }
+  .text-notify{
+    color: #235B4E;
+  }
+
+
+  </style>
 
 
 
@@ -5977,7 +5982,7 @@ h1, h2, h3, h4, h5, h6 {
       @if(Auth::user()->id_rol == 1)
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('home') }}">
-              <i class="bi bi-grid"></i><span>Dashboard</span>
+              <i class="bi bi-columns-gap"></i><span>Dashboard</span>
             </a>
           </li>
           <li class="nav-item">
@@ -5987,57 +5992,57 @@ h1, h2, h3, h4, h5, h6 {
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('admin/groups/lista') }}">
-              <i class="bx bx-group"></i><span>Grupos</span>
+              <i class="bi bi-people-fill"></i><span>Grupos</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('admin/instructor/lista') }}">
-              <i class="bx bx-user-voice"></i><span>Instructores</span>
+              <i class="bi bi-pen"></i><span>Instructores</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('usuarios') }}">
-              <i class="bx bx-group"></i><span>Usuarios</span>
+              <i class="bi bi-people-fill"></i><span>Usuarios</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('candidatos') }}">
-              <i class="bx bx-speaker"></i><span>Candidatos</span>
+              <i class="bi bi-people"></i><span>Candidatos</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('certificaciones') }}">
-              <i class="bx bx-select-multiple"></i><span>Certificaciones</span>
+              <i class="bi bi-journal-bookmark"></i><span>Certificaciones</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('certificados') }}">
-              <i class="bx bx-spreadsheet"></i><span>Certificados pendientes</span>
+              <i class="bi bi-journal-text"></i><span>Certificados pendientes</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('agenda') }}">
-              <i class="bx bx-task"></i><span>Agenda</span>
+              <i class="bi bi-journal"></i><span>Agenda</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('documentos') }}">
-              <i class="bx bxs-file-blank"></i><span>Documentos recibidos</span>
+              <i class="bi bi-folder-check"></i><span>Documentos recibidos</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('pagos') }}">
-              <i class="bx bxs-credit-card"></i><span>Pagos recibidos</span>
+              <i class="bi bi-credit-card-2-back"></i><span>Pagos recibidos</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('citas/lista') }}">
-              <i class="bx bx-time"></i><span>Citas</span>
+              <i class="bi bi-stopwatch"></i><span>Citas</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('usuario/perfil') }}/{{Auth::user()->name}}">
-              <i class="bx bx-user"></i><span>Perfil</span>
+              <i class="bi bi-person"></i><span>Perfil</span>
             </a>
           </li>
           <li class="nav-item">
@@ -6049,17 +6054,17 @@ h1, h2, h3, h4, h5, h6 {
       @if(Auth::user()->id_rol == 2)
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('documentos') }}">
-              <i class="bx bxs-file-blank"></i><span>Documentos recibidos</span>
+              <i class="bi bi-folder-check"></i><span>Documentos recibidos</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('agenda') }}">
-              <i class="bx bx-task"></i><span>Agenda</span>
+              <i class="bi bi-journal"></i><span>Agenda</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('citas/lista') }}">
-              <i class="bx bx-time"></i><span>Citas</span>
+              <i class="bi bi-stopwatch"></i><span>Citas</span>
             </a>
           </li>
           <li class="nav-item">
@@ -6069,7 +6074,7 @@ h1, h2, h3, h4, h5, h6 {
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('certificados') }}">
-              <i class="bx bx-spreadsheet"></i><span>Certificados pendientes</span>
+              <i class="bi bi-journal-text"></i><span>Certificados pendientes</span>
             </a>
           </li>
           <li class="nav-item">
@@ -6081,14 +6086,14 @@ h1, h2, h3, h4, h5, h6 {
       @if(Auth::user()->id_rol == 3)
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('pagos') }}">
-              <i class="bx bxs-credit-card"></i><span>Pagos recibidos</span>
+              <i class="bi bi-credit-card-2-back"></i><span>Pagos recibidos</span>
             </a>
           </li>
       @endif
       @if(Auth::user()->id_rol == 10)
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('usuario/perfil') }}/{{Auth::user()->name}}">
-              <i class="bx bx-user"></i><span>Perfil</span>
+              <i class="bi bi-person"></i><span>Perfil</span>
             </a>
           </li>
           <!--li class="nav-item">
