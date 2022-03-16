@@ -14,6 +14,7 @@
   <img src="{{ asset ('storage/'. $file->path)}}" alt="" class="img-responsive"><br>
 @endforeach
 
+
 <div class="col-lg-6">
   <div class="card">
     <div class="card-body">

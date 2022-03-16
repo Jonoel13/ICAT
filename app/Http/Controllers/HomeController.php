@@ -42,9 +42,15 @@ class HomeController extends Controller
     {
 
         if($request->hasFile('image')){
-            $path = $request->image->store('public');
-            Image::create(['path' => $path]);
+            $name ='image1';
+            $path = $request->image->storeAs('/public/photo', $name);
+            $path2 ="/photo".'/'.$name;
+            Image::create(['path' => $path2]);
+            print($path2);
+            die();
         }
+
+
         return redirect()->back();
     }
 
