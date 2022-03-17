@@ -110,7 +110,7 @@
           </p>
         </div>
 
-        <input id="text" type="hidden" value="https://icatcdmx.mx/sii/citas/consulta/{{$quote->quote_access}}"/>
+        <input id="text" type="hidden" value="https://sii.icatadistancia.cdmx.gob.mx/citas/consulta/{{$quote->quote_access}}"/>
 
     </div>
   </div>

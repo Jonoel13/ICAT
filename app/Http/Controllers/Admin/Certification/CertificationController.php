@@ -66,7 +66,7 @@ class CertificationController extends Controller
 
         $to_name = $profile->user_nombre;
         $to_email = $profile->user_email;
-        $url = 'https://icatcdmx.mx/sii/documentos/constancia/'.$certification->curp.'/'.$certification->id;
+        $url = url('documentos/constancia').'/'.$certification->curp.'/'.$certification->id;
 
         $data = array( 'name' => $profile->user_nombre, 'status' => $certification->estatus, 'url' => $url);
 
@@ -128,7 +128,7 @@ class CertificationController extends Controller
     {
         $enroll = Enroll::findOrFail($id);
 
-        $enroll->enrol_course_id = "PRUEBA-EC1331";
+        $enroll->enrol_course_id = "EC1331";
         $enroll->enrol_course_type = "Certificación";
         $enroll->enrol_user_nombre = $request->enrol_user_nombre;
         $enroll->enrol_user_app = $request->enrol_user_app;
@@ -189,13 +189,15 @@ class CertificationController extends Controller
                 $certification->documento = $nombre;
             }
 
+
         $certification->save();
 
         $profile = Profile::where('user_curp', $certification->curp)->first();
 
         $to_name = $profile->user_nombre;
         $to_email = $profile->user_email;
-        $url = url('public/file/certify').'/'.$certification->documento;
+        //$url = url('public/file/certify').'/'.$certification->documento;
+        $url = asset('storage/certify/'. $certification->documento);
 
         $data = array( 'name' => $profile->user_nombre, 'url' => $url);
 
