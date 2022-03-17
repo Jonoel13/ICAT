@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 use App\Models\Certification;
 use App\Models\Image;
@@ -54,12 +55,19 @@ class HomeController extends Controller
         return redirect()->back();
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $name)
     {
         if($request->hasFile('image')){
             $path = $request->image->store('public');
             Image::create(['path' => $path]);
         }
+    }
+
+    public function delete(Request $request, $name)
+    {
+        Storage::disk('public')->delete($name);
+
+        return redirect()->back();
     }
 
 

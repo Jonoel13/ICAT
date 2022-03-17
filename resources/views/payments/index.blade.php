@@ -34,7 +34,7 @@
         <td>{{$pay->pay_standar}}</td>
         <td>{{$pay->pay_type_service}}</td>
         <td><span class="{{$pay->pay_status}}">{{$pay->pay_status}}</span></td>
-        <td><a href="{{asset('file/pay')}}/{{$pay->pay_documento}}" target="_blank">Descargar documento</a></td>
+        <td><a href="{{ asset ('storage/pay/'. $pay->pay_documento)}}" target="_blank">Descargar documento</a></td>
         <td><a href="{{ url('pago') }}/{{$pay->id}}">Verificar</a></td>
     </tr>
     @endforeach

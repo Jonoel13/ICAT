@@ -11,7 +11,9 @@
 
 
 @foreach($files as $file)
-  <img src="{{ asset ('storage/'. $file->path)}}" alt="" class="img-responsive"><br>
+  <img src="{{ asset ('storage/'. $file->path)}}" alt="" class="img-responsive">
+  <a href="{{url('pruebas/delete')}}/1Dtnm60h8uCb3pa3PBCURUKNyYEEzWyENb0VVgf1.png">delete</a>
+  <br>
 @endforeach
 
 

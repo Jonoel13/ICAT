@@ -36,6 +36,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::any('pruebas', [App\Http\Controllers\HomeController::class, 'test']);
+Route::any('pruebas/delete/{name}', [App\Http\Controllers\HomeController::class, 'delete']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

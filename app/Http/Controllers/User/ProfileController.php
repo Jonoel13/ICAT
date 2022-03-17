@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 use DB;
 use File;
@@ -170,42 +171,42 @@ class ProfileController extends Controller
                 Subir documento de CURP
             ---------------------------------------------------------------
             */
+            
 
+            if($request->hasFile('user_doc_curp')){
+                Storage::disk('public')->delete('curp/'.$profile->user_doc_curp);
 
-            if($request->hasFile("user_doc_curp")){
-                File::delete(public_path("file/curp/".$profile->user_doc_curp));
-                $file=$request->file("user_doc_curp");
-                $nombre = "curp_".$request->user_curp.time().".".$file->guessExtension();
-                $ruta = public_path("file/curp/".$nombre);
-                copy($file, $ruta);
-                $profile->user_doc_curp = $nombre;
+                $name = "curp_".$request->user_curp.time().".".$request->file('user_doc_curp')->extension();
+                $path = $request->user_doc_curp->storeAs('/public/curp', $name);
+
+                $profile->user_doc_curp = $name;
                 $profile->user_check_curp = 'En revisión';
             }
 
+            if($request->hasFile('user_doc_id')){
+                Storage::disk('public')->delete('id/'.$profile->user_doc_id);
 
-            if($request->hasFile("user_doc_id")){
+                $name = "id_".$request->user_curp.time().".".$request->file('user_doc_id')->extension();
+                $path = $request->user_doc_id->storeAs('/public/id', $name);
 
-                File::delete(public_path("file/id/".$profile->user_doc_id));
-
-                $file=$request->file("user_doc_id");
-                $nombre = "id_".$request->user_curp.time().".".$file->guessExtension();
-                $ruta = public_path("file/id/".$nombre);
-                copy($file, $ruta);
-                $profile->user_doc_id = $nombre;
+                $profile->user_doc_id = $name;
                 $profile->user_check_id = 'En revisión';
             }
 
-            if($request->hasFile("user_doc_foto")){
 
-                File::delete(public_path("file/photo/".$profile->user_doc_foto));
+            if($request->hasFile('user_doc_foto')){
+                Storage::disk('public')->delete('photo/'.$profile->user_doc_foto);
 
-                $file=$request->file("user_doc_foto");
-                $nombre = "photo_".$request->user_curp.time().".".$file->guessExtension();
-                $ruta = public_path("file/photo/".$nombre);
-                copy($file, $ruta);
-                $profile->user_doc_foto = $nombre;
-                $profile->user_check_foto = 'Aceptado';
+                $name = "foto_".$request->user_curp.time().".".$request->file('user_doc_foto')->extension();
+
+                $path = $request->user_doc_foto->storeAs('/public/photo', $name);
+                $path2 ="/id".'/'.$name;
+                //Image::create(['path' => $path2]);
+
+                $profile->user_doc_foto = $name;
+                $profile->user_check_foto = 'En revisión';
             }
+
 
             $profile->save();
 

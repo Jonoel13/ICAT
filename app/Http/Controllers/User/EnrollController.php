@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 use DB;
 use File;
@@ -147,39 +148,35 @@ class EnrollController extends Controller
             ---------------------------------------------------------------
             */
 
-            if($request->hasFile("enrol_user_doc_curp")){
-
-                $file=$request->file("enrol_user_doc_curp");
-                $nombre = "curp_".$request->enrol_user_curp.time().".".$file->guessExtension();
-                $ruta = public_path("file/curp/".$nombre);
-                move_uploaded_file($file, $ruta);
-                $profile->user_doc_curp = $nombre;
-            }
-            else{
+            if($request->hasFile('enrol_user_doc_curp')){
+                $name = "curp_".$request->enrol_user_curp.time().".".$request->file('enrol_user_doc_curp')->extension();
+                $path = $request->enrol_user_doc_curp->storeAs('/public/curp', $name);
+                $path2 ="/curp".'/'.$name;
+                //Image::create(['path' => $path2]);
+                $profile->user_doc_curp = $name;
+                
+            }else{
                 $profile->user_doc_curp = 'N/A';
             }
-       
-            if($request->hasFile("enrol_user_doc_id")){
 
-                $file=$request->file("enrol_user_doc_id");
-                $nombre = "id_".$request->enrol_user_curp.time().".".$file->guessExtension();
-                $ruta = public_path("file/id/".$nombre);
-                move_uploaded_file($file, $ruta);
-                $profile->user_doc_id = $nombre;
-            }
-            else{
+
+            if($request->hasFile('enrol_user_doc_id')){
+                $name = "id_".$request->enrol_user_curp.time().".".$request->file('enrol_user_doc_id')->extension();
+                $path = $request->enrol_user_doc_id->storeAs('/public/id', $name);
+                $path2 ="/id".'/'.$name;
+                //Image::create(['path' => $path2]);
+                $profile->user_doc_id = $name;
+                
+            }else{
                 $profile->user_doc_id = 'N/A';
             }
 
-            if($request->hasFile("enrol_user_doc_foto")){
-
-                $file=$request->file("enrol_user_doc_foto");
-                $nombre = "photo_".$request->enrol_user_curp.time().".".$file->guessExtension();
-                $ruta = public_path("file/photo/".$nombre);
-                move_uploaded_file($file, $ruta);
-                $profile->user_doc_foto = $nombre;
-            }
-            else{
+            if($request->hasFile('enrol_user_doc_foto')){
+                $name = "photo_".$request->enrol_user_curp.time().".".$request->file('enrol_user_doc_foto')->extension();
+                $path = $request->enrol_user_doc_foto->storeAs('/public/photo', $name);
+                $profile->user_doc_foto = $name;
+                
+            }else{
                 $profile->user_doc_foto = 'N/A';
             }
 

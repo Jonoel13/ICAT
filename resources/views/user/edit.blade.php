@@ -358,7 +358,7 @@
     <div class="form-row">
         <div class="col-md-12">
             <label>CURP:</label>
-            <a href="{{url('public/file/curp')}}/{{$profile->user_doc_curp}}" target="_blank">{{$profile->user_doc_curp}}</a>
+            <a href="{{ asset ('storage/curp/'. $profile->user_doc_curp)}}" target="_blank">{{$profile->user_doc_curp}}</a>
         </div>
         <div class="col-md-12">
             <label for="user_doc_curp">Actualizar CURP:</label>
@@ -370,7 +370,7 @@
     <br><br>
     <div class="form-row">
         <div class="col-md-12">
-            <label>Identificación oficial con fotografía:</label> <a href="{{url('public/file/id')}}/{{$profile->user_doc_id}}" target="_blank">{{$profile->user_doc_id}}</a>
+            <label>Identificación oficial con fotografía:</label> <a href="{{ asset ('storage/id/'. $profile->user_doc_id)}}" target="_blank">{{$profile->user_doc_id}}</a>
         </div>
         <div class="col-md-12">
             <label for="user_doc_id">Actualizar identificación oficial con fotografía (INE, Cédula Profesional o Pasaporte)</label>
@@ -382,7 +382,7 @@
     <hr><br><br>
     <div class="form-row">
         <div class="col-md-2"> 
-            <img class="img-responsive" src="{{url('public/file/photo')}}/{{$profile->user_doc_foto}}" height="120" width="120">
+            <img class="img-responsive" src="{{ asset ('storage/photo/'. $profile->user_doc_foto)}}" height="120" width="120">
         </div>
         <div class="form-group col-md-10">
             <label for="user_doc_foto">Actualizar Fotografía:</label>

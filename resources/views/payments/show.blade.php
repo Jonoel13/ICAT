@@ -17,7 +17,7 @@
         <td>{{$pay->pay_type_service}}</td>
         <td><span class="{{$pay->pay_status}}">{{$pay->pay_status}}</span></td>
         <td>
-          <a href="{{asset('file/pay')}}/{{$pay->pay_documento}}" target="_blank">Descargar documento</a>
+          <a href="{{ asset ('storage/pay/'. $pay->pay_documento)}}" target="_blank">Descargar documento</a>
         </td>
         <td>
           <!-- Button trigger modal -->
@@ -29,7 +29,7 @@
   </table>
 </div>
 <div class="container-fluid text-center">
-  <embed src="{{asset('file/pay')}}/{{$pay->pay_documento}}" type="application/pdf" width="100%" height="600px" />
+  <embed src="{{ asset ('storage/pay/'. $pay->pay_documento)}}" type="application/pdf" width="100%" height="600px" />
 </div>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">

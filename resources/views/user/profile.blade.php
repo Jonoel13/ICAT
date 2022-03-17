@@ -73,7 +73,7 @@
     <div class="col-md-7 profile">
         <div class="row">
             <div class="col-md-3">
-                <img class="img-responsive" src="{{url('public/file/photo/')}}/{{$profile->user_doc_foto}}" height="120" width="120">
+                <img class="img-responsive" src="{{ asset ('storage/photo/'. $profile->user_doc_foto)}}" height="120" width="120">
             </div>
             <div class="col-md-9">
                 <h4 class="">{{$profile->user_nombre}} {{$profile->user_app}} {{$profile->user_apm}}</h4>
@@ -122,11 +122,11 @@
         <h4 class="text-b">Documentos</h4>
         <hr class="my-4">
         <p class="">
-          <span>CURP: <a href="{{url('public/file/curp')}}/{{$profile->user_doc_curp}}" target="_blank">{{$profile->user_doc_curp}}</a></span><br>
+          <span>CURP: <a href="{{ asset ('storage/curp/'. $profile->user_doc_curp)}}" target="_blank">{{$profile->user_doc_curp}}</a></span><br>
 
-          <span>Identificación Oficial con fotografía: <a href="{{url('public/file/id')}}/{{$profile->user_doc_id}}" target="_blank">{{$profile->user_doc_id}}</a></span><br>
+          <span>Identificación Oficial con fotografía: <a href="{{ asset ('storage/id/'. $profile->user_doc_id)}}" target="_blank">{{$profile->user_doc_id}}</a></span><br>
 
-          <span>Fotografía: <a href="{{url('public/file/photo')}}/{{$profile->user_doc_foto}}" target="_blank">{{$profile->user_doc_foto}}</a></span><br>
+          <span>Fotografía: <a href="{{ asset ('storage/photo/'. $profile->user_doc_foto)}}" target="_blank">{{$profile->user_doc_foto}}</a></span><br>
         </p>
     </div>
 

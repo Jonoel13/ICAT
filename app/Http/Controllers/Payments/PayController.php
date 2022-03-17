@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 use DB;
 use File;
@@ -99,21 +100,21 @@ class PayController extends Controller
             $pay->pay_standar = $request->pay_standar;
             $pay->pay_status = 'En revisión';
             $pay->pay_monto = 'N/A';
-            
-            if($request->hasFile('pay_documento')){
 
-                $file=$request->file('pay_documento');
-                $nombre = "pay_".$request->pay_curp.time().".".$file->guessExtension();
-                $ruta = public_path("file/pay/".$nombre);
-                copy($file, $ruta);
-                $pay->pay_documento = $nombre;
-                $pay->pay_link = 'file/photo/'.$nombre;
-                //$pay->pay_link = 'public/file/photo/'.$nombre;
-            }
-            else{
+
+            if($request->hasFile('pay_documento')){
+                $name = "pay_".$request->pay_curp.time().".".$request->file('pay_documento')->extension();
+                $path = $request->pay_documento->storeAs('/public/pay', $name);
+                $path2 ="/pay".'/'.$name;
+                //Image::create(['path' => $path2]);
+                $pay->pay_documento = $name;
+                $pay->pay_link = $name;
+                
+            }else{
                 $pay->pay_documento = 'N/A';
                 $pay->pay_link = 'N/A';
             }
+
 
             $certification = Certification::find($request->id_service);
             $certification->pago = "En revisión";
@@ -189,22 +190,20 @@ class PayController extends Controller
 
             if($request->hasFile('pay_documento')){
 
-
-
-                File::delete(public_path("file/pay/". $pay->pay_documento));
-
-                $file=$request->file('pay_documento');
-                $nombre = "pay_".$request->pay_curp.time().".".$file->guessExtension();
-                $ruta = public_path("file/pay/".$nombre);
-                copy($file, $ruta);
-                $pay->pay_documento = $nombre;
-                $pay->pay_link = 'file/pay/'.$nombre;
-                //$pay->pay_link = 'public/file/photo/'.$nombre;
-            }
-            else{
+                Storage::disk('public')->delete('pay/'.$pay->pay_documento);
+                $name = "pay_".$pay->pay_curp.time().".".$request->file('pay_documento')->extension();
+                $path = $request->pay_documento->storeAs('/public/pay', $name);
+                $path2 ="/pay".'/'.$name;
+                //Image::create(['path' => $path2]);
+                $pay->pay_documento = $name;
+                $pay->pay_link = $name;
+                
+            }else{
                 $pay->pay_documento = 'N/A';
                 $pay->pay_link = 'N/A';
             }
+
+
 
             $certification = Certification::find($request->id_service);
             $certification->pago = "En revisión";
