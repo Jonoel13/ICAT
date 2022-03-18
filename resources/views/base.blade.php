@@ -34,8 +34,6 @@
 
                 @if(Auth::user()->id_rol == 10)
                     <a href="{{ url('usuario/perfil') }}/{{Auth::user()->name}}" class="list-group-item list-group-item-action">Perfil </a>
-                    <a href="{{ url('usuario/capacitaciones') }}/{{Auth::user()->name}}" class="list-group-item list-group-item-action">Capacitaciones </a>
-                    <a href="{{ url('usuario/certificaciones') }}/{{Auth::user()->name}}" class="list-group-item list-group-item-action">Certificaciones </a>
                     <a href="{{ url('usuario/preguntas') }}" class="list-group-item list-group-item-action">Preguntas frecuentes</a>
                 @endif
             </div>

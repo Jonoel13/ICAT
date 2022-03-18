@@ -23,17 +23,19 @@
   <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
 
   <!-- Vendor CSS Files -->
-  <link rel="stylesheet" href="{{ URL::asset('storage/assets/vendor/bootstrap/css/bootstrap.min.css') }}" />
-  <link rel="stylesheet" href="{{ URL::asset('storage/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" />
-  <link rel="stylesheet" href="{{ URL::asset('storage/assets/vendor/boxicons/css/boxicons.min.css') }}" />
-  <link rel="stylesheet" href="{{ URL::asset('storage/assets/vendor/quill/quill.snow.css') }}" />
-  <link rel="stylesheet" href="{{ URL::asset('storage/assets/vendor/quill/quill.bubble.css') }}" />
-  <link rel="stylesheet" href="{{ URL::asset('storage/assets/vendor/remixicon/remixicon.css') }}" />
-  <link rel="stylesheet" href="{{ URL::asset('storage/assets/vendor/simple-datatables/style.css') }}" />
+  <link rel="stylesheet" href="https://drive.google.com/uc?export=view&id=1W-jn9iasVeM_xs1lJUcPPuCaA_vKR70m" />
+  <link rel="stylesheet" href="https://drive.google.com/uc?export=view&id=1b3r-pIXRwfr62djoweJ-5zoRII87QvlG" />
+  <link rel="stylesheet" href="https://drive.google.com/uc?export=view&id=1Qxsjz1RUhwA_pL31rEz6VBBIsSCo-VLu" />
+  <link rel="stylesheet" href="https://drive.google.com/uc?export=view&id=1K9S04WlaK4za-21YGERJIuixHbAwzPLn" />
+  <link rel="stylesheet" href="https://drive.google.com/uc?export=view&id=1TCBX-dXMJ3rVjQK7FVfa4i8Ny_4Hcq0r" />
+  <link rel="stylesheet" href="https://drive.google.com/uc?export=view&id=1KrgQ0GFyYXItj0WXgAta0h-gpxhbUxeW" />
+  <link rel="stylesheet" href="https://drive.google.com/uc?export=view&id=1zE2GTZDgULo-K0nUH5rlp_rQYM_DPu_Z" />
+
 
 
   <!-- Template Main CSS File -->
-  <link rel="stylesheet" href="{{ URL::asset('assets/css/style.css') }}" />
+  <link rel="stylesheet" href="https://drive.google.com/uc?export=view&id=1sKMgsbvL8Hq6-39rN9fs95rdev29AhQU" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
   <style type="text/css">
     .btn-outline-success{
       color: #ffffff !important;
@@ -503,67 +505,67 @@
       @if(Auth::user()->id_rol == 1)
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('home') }}">
-              <i class="bi bi-grid"></i><span>Dashboard</span>
+              <i class="bi bi-columns-gap"></i><span>Dashboard</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('admin/estandar/lista') }}">
-              <i class="bx bx-award"></i><span>Estándares/Cursos</span>
+              <i class="bi bi-bookmarks"></i><span>Estándares/Cursos</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('admin/groups/lista') }}">
-              <i class="bx bx-group"></i><span>Grupos</span>
+              <i class="bi bi-diagram-3"></i><span>Grupos</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('admin/instructor/lista') }}">
-              <i class="bx bx-user-voice"></i><span>Instructores</span>
+              <i class="bi bi-pen"></i><span>Instructores</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('usuarios') }}">
-              <i class="bx bx-group"></i><span>Usuarios</span>
+              <i class="bi bi-people"></i><span>Usuarios</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('candidatos') }}">
-              <i class="bx bx-speaker"></i><span>Candidatos</span>
+              <i class="bi bi-person-bounding-box"></i><span>Candidatos</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('certificaciones') }}">
-              <i class="bx bx-select-multiple"></i><span>Certificaciones</span>
+              <i class="bi bi-bookmark-check"></i><span>Certificaciones</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('certificados') }}">
-              <i class="bx bx-spreadsheet"></i><span>Certificados pendientes</span>
+              <i class="bi bi-bookmark-plus"></i><span>Certificados pendientes</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('agenda') }}">
-              <i class="bx bx-task"></i><span>Agenda</span>
+              <i class="bi bi-journal-check"></i><span>Agenda</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('documentos') }}">
-              <i class="bx bxs-file-blank"></i><span>Documentos recibidos</span>
+              <i class="bi bi-folder-check"></i><span>Documentos recibidos</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('pagos') }}">
-              <i class="bx bxs-credit-card"></i><span>Pagos recibidos</span>
+              <i class="bi bi-credit-card-2-back"></i><span>Pagos recibidos</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('citas/lista') }}">
-              <i class="bx bx-time"></i><span>Citas</span>
+              <i class="bi bi-smartwatch"></i><span>Citas</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('usuario/perfil') }}/{{Auth::user()->name}}">
-              <i class="bx bx-user"></i><span>Perfil</span>
+              <i class="bi bi-person"></i><span>Perfil</span>
             </a>
           </li>
           <li class="nav-item">
@@ -575,27 +577,27 @@
       @if(Auth::user()->id_rol == 2)
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('documentos') }}">
-              <i class="bx bxs-file-blank"></i><span>Documentos recibidos</span>
+              <i class="bi bi-folder-check"></i><span>Documentos recibidos</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('agenda') }}">
-              <i class="bx bx-task"></i><span>Agenda</span>
+              <i class="bi bi-journal-check"></i><span>Agenda</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('citas/lista') }}">
-              <i class="bx bx-time"></i><span>Citas</span>
+              <i class="bi bi-smartwatch"></i><span>Citas</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('certificaciones') }}">
-              <i class="bx bx-select-multiple"></i><span>Certificaciones</span>
+              <i class="bi bi-bookmark-check"></i><span>Certificaciones</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('certificados') }}">
-              <i class="bx bx-spreadsheet"></i><span>Certificados pendientes</span>
+              <i class="bi bi-bookmark-plus"></i><span>Certificados pendientes</span>
             </a>
           </li>
           <li class="nav-item">
@@ -607,14 +609,14 @@
       @if(Auth::user()->id_rol == 3)
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('pagos') }}">
-              <i class="bx bxs-credit-card"></i><span>Pagos recibidos</span>
+              <i class="bi bi-credit-card-2-back"></i><span>Pagos recibidos</span>
             </a>
           </li>
       @endif
       @if(Auth::user()->id_rol == 10)
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('usuario/perfil') }}/{{Auth::user()->name}}">
-              <i class="bx bx-user"></i><span>Perfil</span>
+              <i class="bi bi-person"></i><span>Perfil</span>
             </a>
           </li>
           <!--li class="nav-item">
@@ -658,19 +660,20 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+
   <!-- Vendor JS Files -->
-  <script src="{{ URL::asset('storage/assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
-  <script src="{{ URL::asset('storage/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ URL::asset('storage/assets/vendor/chart.js/chart.min.js') }}"></script>
-  <script src="{{ URL::asset('storage/assets/vendor/echarts/echarts.min.js') }}"></script>
-  <script src="{{ URL::asset('storage/assets/vendor/quill/quill.min.js') }}"></script>
-  <script src="{{ URL::asset('storage/assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
-  <script src="{{ URL::asset('storage/assets/vendor/tinymce/tinymce.min.js') }}"></script>
-  <script src="{{ URL::asset('storage/assets/vendor/php-email-form/validate.js') }}"></script>
+  <script src="https://drive.google.com/uc?export=view&id=1puV9Vpxy5vTau1yM8-KTAB1BvQb_p2t1"></script>
+  <script src="https://drive.google.com/uc?export=view&id=1V4CzDNEvUD9uhQI6hlOe943EbBGamnnq"></script>
+  <script src="https://drive.google.com/uc?export=view&id=1rBN4c8NcOfSNrWVb7FT1XtTaTHbGkqjI"></script>
+  <script src="https://drive.google.com/uc?export=view&id=1-7EMXtf8NTtHlVN9HRmwBAqGakMpCR7-"></script>
+  <script src="https://drive.google.com/uc?export=view&id=1uqp8Yd__8_5sOWG_wlkqdk_KAndSuLWG"></script>
+  <script src="https://drive.google.com/uc?export=view&id=13lT_0Ed3-XlV9WTv54ztX-WrV0Qx3dj6"></script>
+  <script src="https://drive.google.com/uc?export=view&id=1y-UogpnKT5mwKbydiAu-0OHoOiFdRFF0"></script>
+  <script src="https://drive.google.com/uc?export=view&id=1kHJb-JacBKIuCSbpRsyGE0PgY616LcOl"></script>
 
 
   <!-- Template Main JS File -->
-  <script src="{{ URL::asset('storage/assets/js/main.js') }}"></script>
+  <script src="https://drive.google.com/uc?export=view&id=1e7Uen6C8Miy85N4ryVtGNWvV2EC-7uc9"></script>
 
 
 </body>
