@@ -1,6 +1,6 @@
 Hola <strong>{{ $name }}</strong>,
 <p>
-Para generar tu cita <strong>es necesario que realices tu pago y subas tu comprobante</strong> en la plataforma <a href="https://icatcdmx.mx/sii/auth/login" target="_blank">Icat CDMX mi perfil</a> . 
+Para generar tu cita <strong>es necesario que realices tu pago y subas tu comprobante</strong> en la plataforma <a href="https://sii.icatadistancia.cdmx.gob.mx/" target="_blank">Icat CDMX mi perfil</a> . 
 <br><br>
 
 <h4 class="text-b">DEPÓSITO EN EFECTIVO (EN SUCURSAL BANCARIA)</h4>

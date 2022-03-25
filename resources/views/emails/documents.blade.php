@@ -1,6 +1,6 @@
 Hola <strong>{{ $name }}</strong>,
 <p>
-	Tus documentos están siendo validados por el área correspondiente, para <strong>consultar su estatus</strong> ingresa a tu perfil dando clic <a href="https://icatcdmx.mx/sii/auth/login" target="_blank">aquí Icat CDMX mi perfil</a> 
+	Tus documentos están siendo validados por el área correspondiente, para <strong>consultar su estatus</strong> ingresa a tu perfil dando clic <a href="https://sii.icatadistancia.cdmx.gob.mx/" target="_blank">aquí Icat CDMX mi perfil</a> 
 </p>
 <style>
     .title {

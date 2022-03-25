@@ -1,5 +1,5 @@
 Hola <span class="text-b text-success">{{ $name }}</span>,
-<p><span class="text-b text-success">tus datos han sido guardados exitosamente</span> y podrás ver tu perfil dando clic <a href="https://icatcdmx.mx/sii/auth/login" class="text-b text-succes"> aquí Icat CDMX mi perfil </a>  ingresando los siguientes datos de acceso:
+<p><span class="text-b text-success">tus datos han sido guardados exitosamente</span> y podrás ver tu perfil dando clic <a href="https://sii.icatadistancia.cdmx.gob.mx/" class="text-b text-succes"> aquí Icat CDMX mi perfil </a>  ingresando los siguientes datos de acceso:
 <br><br>
 Usuario: <span class="text-b text-success">{{$user}}</span><br>
 Contraseña: <span class="text-b text-success">{{$password}}</span>
