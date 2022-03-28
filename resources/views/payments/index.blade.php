@@ -48,7 +48,7 @@
       $('#curp').change(function() {
           $('#curpLink').attr('href', '');
           var curp = $('#curp').val();
-          var url      = window.location.origin+'/sii/pagos/buscar/'+curp;
+          var url      = window.location.origin+'/pagos/buscar/'+curp;
           $('#curpLink').attr('href', url);
       });
   });

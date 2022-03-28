@@ -48,7 +48,7 @@
         $('#curp').change(function() {
                 $('#curpLink').attr('href', '');
                 var curp = $('#curp').val();
-                var url      = window.location.origin+'/sii/certificaciones/'+curp;
+                var url      = window.location.origin+'/certificaciones/'+curp;
                 $('#curpLink').attr('href', url);
             });
     });

@@ -67,7 +67,7 @@
         $('#date').change(function() {
                 $('#dateLink').attr('href', '');
                 var date = $('#date').val();
-                var url      = window.location.origin+'/sii/agenda/buscar/'+date;
+                var url      = window.location.origin+'/agenda/buscar/'+date;
                 $('#dateLink').attr('href', url);
             });
     });

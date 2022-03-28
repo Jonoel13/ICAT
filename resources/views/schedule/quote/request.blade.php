@@ -184,7 +184,7 @@
         $('#quote_date').change(function() {
                 $('#dateLink').attr('href', '');
                 var date = $('#quote_date').val();
-                var url      = window.location.origin+'/sii/usuario/citas/'+date;
+                var url      = window.location.origin+'/usuario/citas/'+date;
                 $('#dateLink').attr('href', url);
             });
     });
