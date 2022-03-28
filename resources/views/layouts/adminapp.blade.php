@@ -37,6 +37,9 @@
   <link rel="stylesheet" href="https://drive.google.com/uc?export=view&id=1sKMgsbvL8Hq6-39rN9fs95rdev29AhQU" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
   <style type="text/css">
+    .main{
+      background: #FFFFFF;
+    }
     .btn-outline-success{
       color: #ffffff !important;
       margin-right: 5px;
@@ -261,12 +264,7 @@
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
-    <div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-      </form>
-    </div><!-- End Search Bar -->
+  
 
     <nav class="header-nav ms-auto">
       @guest
@@ -288,7 +286,7 @@
               </a>
             </li><!-- End Search Icon-->
 
-            <li class="nav-item dropdown">
+            <li class="nav-item ">
 
               <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
                 <i class="bi bi-bell"></i>
@@ -432,51 +430,14 @@
             <li class="nav-item dropdown pe-3">
 
               <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                <img src="" alt="Profile" class="rounded-circle">
-                <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->name }}</span>
+                <i class="bi bi-person"></i>
+                <span class="d-none d-md-block  ps-2">{{ Auth::user()->name }}</span>
               </a><!-- End Profile Iamge Icon -->
 
-              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-                <li class="dropdown-header">
-                  <h6>{{ Auth::user()->name }}</h6>
-                  <span></span>
-                </li>
-                <!--li>
-                  <hr class="dropdown-divider">
-                </li>
-
-                <li>
-                  <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                    <i class="bi bi-person"></i>
-                    <span>My Profile</span>
-                  </a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-
-                <li>
-                  <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                    <i class="bi bi-gear"></i>
-                    <span>Account Settings</span>
-                  </a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-
-                <li>
-                  <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                    <i class="bi bi-question-circle"></i>
-                    <span>Need Help?</span>
-                  </a>
-                </li-->
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-
-                <li>
-                  <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}"
+           
+            </li>
+            <li>
+                  <a class="d-none d-md-block  ps-2" href="{{ route('logout') }}"
                      onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();">
                       <i class="bi bi-box-arrow-right"></i>
@@ -487,9 +448,7 @@
                       @csrf
                   </form>
                 </li>
-
-              </ul><!-- End Profile Dropdown Items -->
-            </li><!-- End Profile Nav -->
+            <!-- End Profile Nav -->
           </ul>
       @endguest
 
