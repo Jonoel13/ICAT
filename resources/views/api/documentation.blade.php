@@ -14,8 +14,8 @@
         <div class="">
             <div class="bg-code">
                 <p class="url-code">
-                    <a href="{{url()}}/api/curp/curpdeprueba" target="_blank">
-                      <span class="method">GET</span> {{url()}}/api/curp/<span class="params">curpdeprueba</span>
+                    <a href="{{url('/')}}/api/curp/curpdeprueba" target="_blank">
+                      <span class="method">GET</span> {{url('/')}}/api/curp/<span class="params">curpdeprueba</span>
                     </a>
                 </p>
                 <hr>
@@ -30,7 +30,7 @@
                 ]
                 </pre>
             </div>
-            <span class="bg-danger params">Nota: el uso de variables para la identificación de parámetros no es necesarios en las solicitudes, por lo que se recomienda no utilizar la nomenclatura "{{url()}}/api/curp/?variable=valor".</span>
+            <span class="bg-danger params">Nota: el uso de variables para la identificación de parámetros no es necesarios en las solicitudes, por lo que se recomienda no utilizar la nomenclatura "{{url('/')}}/api/curp/?variable=valor".</span>
             <div class="schema-info">
                 <h4>Esquema de certificación</h4>
                 <table class="table table-striped">
