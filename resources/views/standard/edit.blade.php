@@ -15,9 +15,9 @@
 
       <div class="form-row">
         <div class="col-md-12">
-            <label>Imagen:</label>
+            <label>Imagen:</label><br>
             <!--img class="img-responsive" src="{{url('public/file/standard')}}/{{$standard->image}}" height="120" width="120"-->
-            <embed src="{{url('public/file/standard')}}/{{$standard->image}}" type="application/pdf" width="100%" height="200px" />
+            <img class="img-responsive" src="{{ asset ('storage/standard/'. $standard->image)}}" type="application/pdf" width="300px" height="100%" />
         </div>
         <div class="col-md-12">
             <label for="image">Actualizar Imagen:</label>

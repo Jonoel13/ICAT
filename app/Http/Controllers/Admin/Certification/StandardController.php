@@ -100,16 +100,15 @@ class StandardController extends Controller
             $standard->documentation = $request->documentation;
             $standard->link = $request->link;
 
-            if($request->hasFile("image")){
 
-                $file=$request->file("image");
-                $nombre = "standard_".$request->shortname.time().".".$file->guessExtension();
-                $nombre = str_replace(' ', '', $nombre);
-                $ruta = public_path("file/standard/".$nombre);
-                copy($file, $ruta);
-                $standard->image = $nombre;
-            }
-            else{
+            if($request->hasFile('image')){
+                $name = "standard_".$request->shortname.time().".".$request->file('image')->extension();
+                $path = $request->image->storeAs('/public/standard', $name);
+                $path2 ="/standard".'/'.$name;
+                //Image::create(['path' => $path2]);
+                $standard->image = $name;
+
+            }else{
                 $standard->image = 'N/A';
             }
 
@@ -118,7 +117,6 @@ class StandardController extends Controller
 
             return redirect('admin/estandar/lista')->with('message', 'Registro exitoso');
         }
-
 
     }
 
@@ -132,7 +130,6 @@ class StandardController extends Controller
     public function update(Request $request, $id)
     {
         $standard = Standard::find($id) ;
-
         $standard->name = $request->name;
         $standard->shortname = $request->shortname;
         $standard->description = $request->description;
