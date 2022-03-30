@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 use DB;
 use File;
@@ -104,8 +105,6 @@ class StandardController extends Controller
             if($request->hasFile('image')){
                 $name = "standard_".$request->shortname.time().".".$request->file('image')->extension();
                 $path = $request->image->storeAs('/public/standard', $name);
-                $path2 ="/standard".'/'.$name;
-                //Image::create(['path' => $path2]);
                 $standard->image = $name;
 
             }else{
@@ -140,15 +139,14 @@ class StandardController extends Controller
         $standard->documentation = $request->documentation;
         $standard->link = $request->link;
 
-        if($request->hasFile("image")){
-            File::delete(public_path("file/standard/".$standard->image));
-            $file=$request->file("image");
-            $nombre = "standard_".$request->shortname.time().".".$file->guessExtension();
-            $nombre = str_replace(' ', '', $nombre);
-            $ruta = public_path("file/standard/".$nombre);
-            copy($file, $ruta);
 
-            $standard->image = $nombre;
+        if($request->hasFile('image')){
+
+            Storage::disk('public')->delete('standard/'.$standard->image);
+            $name = "standard_".$request->shortname.time().".".$request->file('image')->extension();
+            $path = $request->image->storeAs('/public/standard', $name);
+
+            $standard->image = $name;
 
         }
 
