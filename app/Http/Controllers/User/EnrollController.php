@@ -16,6 +16,7 @@ use App\Models\User;
 use App\Models\Profile;
 use App\Models\Enroll;
 use App\Models\Certification;
+use App\Models\Standard;
 use Illuminate\Support\Str;
 use Illuminate\Support\Arr;
 
@@ -272,6 +273,88 @@ class EnrollController extends Controller
         $standards = Standard::orderBy('name', 'desc')->get();
 
         return view('enroll.certification.enrollByCurp', ['profile' => $profile, 'standards' => $standards]);
+    }
+
+    public function fastEnroll(Request $request)
+    {
+
+
+        $rules = array(
+            'enrol_user_curp'=> 'required',
+            'enrol_user_email' => 'required',
+        );
+
+        $messages = array(
+            'enrol_user_curp.required' =>'Este campo es requerido',
+            'enrol_user_email.required' =>'Este campo es requerido',
+
+        );
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withInput()
+                ->withErrors($validator)
+                ->with('message-error', 'Completar campos requeridos');
+
+        } else {
+
+
+
+
+
+            $standard = Standard::where('name', $request->enrol_course_name)->first();
+
+
+
+            $enroll = new Enroll;
+            $enroll->enrol_course_id = $standard->id;
+            $enroll->enrol_course_type = "Certificación";
+            $enroll->enrol_user_curp = strtoupper($request->enrol_user_curp);
+            $enroll->enrol_user_diagnostico = "Pendiente";
+            $enroll->enrol_user_certificado = "Pendiente";
+
+            $certification = new Certification;
+            $certification->curp = strtoupper($request->enrol_user_curp);
+            $certification->estandar = $standard->name;
+            $certification->sector = $standard->sector;
+            $certification->estatus = "Candidato";
+            $certification->calificacion = "0";
+            $certification->fecha = date("d-m-Y");
+            $certification->n_intento = '0';
+            $certification->vigencia = 'N/A';
+            $certification->documento = 'Pendiente';
+            $certification->constancia = 'N/A';
+            $certification->link_documentacion = 'N/A';
+            $certification->pago = 'Pendiente';
+            $certification->diagnostico_status = 'Pendiente';
+            $certification->diagnostico = 'https://docs.google.com/forms/d/e/1FAIpQLSegHzFH_DmYFbrG8t4bebt0nrrK-24vhO7DwQRBX9AthIj0lw/viewform?usp=sf_link';
+
+
+
+
+            $certification->save();
+            $enroll->save();
+
+            return redirect('login')->with('message', 'Registro exitoso');
+/*
+
+            $to_name = $request->enrol_user_nombre;
+            $to_email = $request->enrol_user_email;
+
+            $data = array( 'name' => $request->enrol_user_nombre, 'user' => $request->enrol_user_email, 'password' => $password);
+
+            Mail::send('emails.password', $data, function($message) use ($to_name, $to_email) {
+                $message->to($to_email, $to_name)
+                ->subject('Datos de acceso');
+                $message->from('icat@cdmx.gob.mx','Icat CDMX');
+            });
+
+            return redirect('login')->with('message', 'El usuario y contraseña para ingresar se te envió por correo electrónico');
+*/
+
+        }
     }
 
     public function enroll(Request $request)
