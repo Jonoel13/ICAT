@@ -3,7 +3,7 @@ Hola <strong>{{ $name }}</strong>,
 	
 <br>
 @if($pay == 'Aceptado')
-Ya puedes agendar tu cita para realizar el proceso de evaluación iniciando sesión en tu perfil <a href="https://sii.icatadistancia.cdmx.gob.mx/usuario/citas" target="_blank"><strong>iniciando sesión en tu perfil</strong></a>
+Ya puedes agendar tu cita para realizar el proceso de evaluación iniciando sesión en tu perfil <a href="https://sii.icatadistancia.cdmx.gob.mx" target="_blank"><strong>iniciando sesión en tu perfil</strong></a>
 @else
 Por los siguientes motivos:<br>
 <p>{{$details}}</p>
