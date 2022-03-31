@@ -52,7 +52,7 @@
       <td>{{$date->date_standar}}</td>
       <td>{{$date->date_place}}</td>
       <td class="{{$date->date_status}}"><strong>{{$date->date_status}}</strong></td>
-      <td><a href="{{url('agenda')}}/{{$date->id}}"><i class="fa fa-edit text-success"></i></a></td>
+      <td><a href="{{url('agenda')}}/{{$date->id}}" class="text-success"><i class="bi bi-pen text-success"></i>Editar</a></td>
     </tr>
     @endforeach
   </tbody>

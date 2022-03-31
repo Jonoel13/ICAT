@@ -237,6 +237,9 @@
   .text-notify{
     color: #235B4E;
   }
+  .text-success{
+    color: #691C32 !important;
+  }
 
 
   </style>
