@@ -14,7 +14,7 @@
 
   <h2><a href="{{url('registro/buscar/usuario')}}">Ya tengo cuenta</a></h2>
 
-  <form method="POST" action="{{url('registro/guardar')}}" autocomplete="off" enctype="multipart/form-data">
+  <form method="POST" action="{{url('registro/guardar/alt')}}" autocomplete="off" enctype="multipart/form-data">
      <input type="hidden" name="_token" value="{{ csrf_token() }}" />
     <h4 style="font-weight: 600 !important;">Ficha de Registro de Personas para Proceso de Evaluación con fines a la Certificación</h4>
     <hr>
@@ -377,7 +377,7 @@
             <p>
               El documento debe ser en formato PDF.
               <br>
-              Puede descargarlo aquí 
+              Puede descargarlo aquí
               <a href="https://www.gob.mx/curp/" target="_blank" class="text-success">https://www.gob.mx/curp</a>
             </p>
         </div>
@@ -448,6 +448,7 @@
     <button type="submit" class="btn btn-success btn-lg btnt" onclick="this.disabled=true; this.value='Enviando, espere ...'; this.form.submit();">Enviar</button>
 
   </form>
+
 </div>
 
 <style type="text/css">
@@ -467,7 +468,7 @@
   }
 </style>
 <script type="text/javascript">
-
+/*
   $('.btnt').show();
   $('.btnf').hide();
   function validarInput(input) {
@@ -514,6 +515,8 @@
               
         return true; //Validado
       }
+
+      */
 </script>
 
 @endsection

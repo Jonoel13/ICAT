@@ -1,11 +1,25 @@
 @extends('base')
 @section('content')
-<div class="col-md-11">
+<div class="container-fluid">
 
 
-{{$profile->user_email}}
+
+
+<div class="row-fluid">
+	<p>
+		<h2>Tus datos coinciden con el siguiente perfil:</h2>
+		Correo electrónio: {{$profile->user_email}}
+		<br>
+		Nombre: {{$profile->user_nombre}} {{$profile->user_app}} {{$profile->user_apm}}
+		<br>
+		<span>Sí, son mis datos.</span>
+	</p>
+
+</div>
+
 
 	<form method="POST" action="{{url('registro/guardar')}}" autocomplete="off" enctype="multipart/form-data">
+		Inscribirme a:
 		<div class="form-row">
 	      <div class="form-group col-md-4">
 	        <label for="enrol_user_nombre">:</label>
