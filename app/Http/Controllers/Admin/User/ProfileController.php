@@ -97,4 +97,13 @@ class ProfileController extends Controller
     }
 
 
+    public function delete(Request $request, $id)
+    {
+        $user = User::find($id);
+        $profile = Profile::where('user_curp', $user->name)->delete();
+
+        $user->delete();
+    }
+
+
 }

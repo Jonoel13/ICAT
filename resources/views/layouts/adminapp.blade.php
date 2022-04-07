@@ -471,6 +471,11 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link"  href="{{ url('admin/certificaciones/lista') }}">
+              <i class="bi bi-bookmark-check"></i><span>Administración de Certificaciones</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link"  href="{{ url('admin/estandar/lista') }}">
               <i class="bi bi-bookmarks"></i><span>Estándares/Cursos</span>
             </a>

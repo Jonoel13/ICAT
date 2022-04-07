@@ -213,5 +213,22 @@ class CertificationController extends Controller
 
     }
 
+    public function adminList(Request $request)
+    {
+        $certifications = Certification::orderBy('id', 'desc')->get();
+        return view('admin.certification.index', ['certifications' => $certifications]);
+
+    }
+
+    public function delete(Request $request, $id)
+    {
+        $certification = Certification::find($id);
+        $certification->delete();
+
+        return redirect()->back()->with('message', 'Registro eliminado');
+    }
+
+
+
 
 }
