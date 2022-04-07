@@ -69,6 +69,7 @@ Route::any('admin/instructor/delete/{id}', [App\Http\Controllers\Admin\User\Inst
 
 Route::any('admin/certificaciones/lista', [App\Http\Controllers\Admin\Certification\CertificationController::class, 'adminList']);
 Route::any('admin/certificaciones/delete/{id}', [App\Http\Controllers\Admin\Certification\CertificationController::class, 'delete']);
+Route::any('admin/certificaciones/edit/{id}', [App\Http\Controllers\Admin\Certification\CertificationController::class, 'editCert']);
 
 
 Route::get('certificaciones', [App\Http\Controllers\Admin\Certification\CertificationController::class, 'index']);

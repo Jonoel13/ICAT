@@ -52,6 +52,7 @@
                   <td>{{$certification->curp}}</td>
                   <td>{{$certification->estatus}}</td>
                   <td>{{$certification->pago}}</td>
+                  <td><a href="{{url('admin/certificaciones/edit')}}/{{$certification->id}}">Candidato</a></td>
                   <td><a href="{{url('admin/certificaciones/delete')}}/{{$certification->id}}">Eliminar</a></td>
               </tr>
               @endforeach

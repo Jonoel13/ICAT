@@ -220,6 +220,15 @@ class CertificationController extends Controller
 
     }
 
+    public function editCert(Request $request, $id)
+    {
+        $certification = Certification::find($id);
+        $certification->n_intento = '1';
+        $certification->save();
+
+        return redirect()->back()->with('message', 'Registro actualizado');
+    }
+
     public function delete(Request $request, $id)
     {
         $certification = Certification::find($id);
