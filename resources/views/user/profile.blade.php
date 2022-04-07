@@ -202,8 +202,8 @@
                   <ul class="list-group">
                       <li class="list-group-item">
                         <div class="custom-control custom-switch">
-                          <input type="checkbox" class="custom-control-input" id="diagnostico_status" name="diagnostico_status">
-                          <label class="custom-control-label" for="diagnostico_status">Realizada</label><span class="alert-danger"> {{$errors->first('diagnostico_status')}}</span>
+                          <input type="checkbox" class="" id="diagnostico_status" name="diagnostico_status">
+                          <label class="" for="">Realizada</label><span class="alert-danger"> {{$errors->first('diagnostico_status')}}</span>
                       </li>
                       <li class="list-group-item">
                           <div class="">

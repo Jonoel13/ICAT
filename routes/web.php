@@ -24,6 +24,8 @@ Route::any('registro/email', [App\Http\Controllers\User\EnrollController::class,
 
 Route::any('registro', [App\Http\Controllers\User\EnrollController::class, 'formCertification']);
 Route::any('registro/guardar', [App\Http\Controllers\User\EnrollController::class, 'store']);
+Route::any('registro/guardar/alt', [App\Http\Controllers\User\EnrollController::class, 'enroll']);
+Route::any('registro/rapido', [App\Http\Controllers\User\EnrollController::class, 'fastEnroll']);
 
 
 
