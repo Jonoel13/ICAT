@@ -109,6 +109,7 @@ class ProfileController extends Controller
     {
         $profile = Profile::find($id);
         $profile->delete();
+        return redirect()->back()->with('message', 'Registro Eliminado');
     }
 
     public function delete(Request $request, $id)
