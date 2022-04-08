@@ -25,7 +25,7 @@
       @foreach($profiles as $profile)
       <tr>
         <td>{{$profile->id}}</td>
-        <td>{{$profile->user_curp}}</td>
+        <td><a href="{{url('usuario/perfil')}}/{{$profile->user_curp}}">{{$profile->user_curp}}</a></td>
         <td>{{$profile->user_email}}</td>
         <td>{{$profile->user_check_curp}}</td>
         <td>{{$profile->user_check_id}}</td>
