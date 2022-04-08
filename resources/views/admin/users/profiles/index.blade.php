@@ -18,6 +18,7 @@
           <th>Documento Id</th>
           <th>Documento Curp</th>
           <th>Documentos estatus</th>
+          <th></th>
       </tr>
   </thead>
   <tbody>
@@ -28,9 +29,6 @@
         <td>{{$profile->user_email}}</td>
         <td>{{$profile->user_check_curp}}</td>
         <td>{{$profile->user_check_id}}</td>
-        <td>{{$profile->user_check_ok}}</td>
-        <td>{{$profile->user_check_ok}}</td>
-        <td>{{$profile->user_check_ok}}</td>
         <td>{{$profile->user_check_ok}}</td>
         <td><a class="btn btn-success" href="{{url('usuarios')}}/{{$profile->id}}">Eliminar</a></td>
       </tr>
