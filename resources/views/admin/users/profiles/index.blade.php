@@ -30,7 +30,7 @@
         <td>{{$profile->user_check_curp}}</td>
         <td>{{$profile->user_check_id}}</td>
         <td>{{$profile->user_check_ok}}</td>
-        <td><a class="btn btn-success" href="{{url('usuarios')}}/{{$profile->id}}">Eliminar</a></td>
+        <td><a class="btn btn-success" href="{{url('admin/usuarios/perfiles/eliminar/')}}/{{$profile->id}}">Eliminar</a></td>
       </tr>
 
 
