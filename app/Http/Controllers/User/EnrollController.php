@@ -54,7 +54,6 @@ class EnrollController extends Controller
             'enrol_user_app'=> 'required',
             'enrol_user_apm'=> 'required',
             'enrol_user_curp'=> 'required|unique:profiles,user_curp',
-            'enrol_user_curp'=> 'required',
             'enrol_user_edad'=> 'required',
             'enrol_user_sexo'=> 'required',
             'enrol_user_calle'=> 'required',
@@ -63,7 +62,6 @@ class EnrollController extends Controller
             'enrol_user_estado'=> 'required',
             'enrol_user_cp'=> 'required',
             'enrol_user_telefono'=> 'required',
-            'enrol_user_email' => 'required|unique:users,email',
             'enrol_user_email' => 'required|unique:users,email',
             'enrol_user_academico'=> 'required',
             'enrol_user_productivo'=> 'required',
@@ -259,20 +257,73 @@ class EnrollController extends Controller
         return view('enroll.certification.search');
     }
 
+
     public function crupEnroll(Request $request)
     {
 
-        $profile = Profile::where('user_curp', $request->enrol_user_curp)->first();
+        $rules = array(
+            'enrol_user_curp'=> 'required',
 
-        return view('enroll.certification.enrollByCurp', ['profile' => $profile]);
+        );
+
+        $messages = array(
+            'enrol_user_curp.required' =>'Este campo es requerido',
+        );
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withInput()
+                ->withErrors($validator)
+                ->with('message-error', 'Completar campos requeridos');
+
+        } else {
+
+            $profile = Profile::where('user_curp', $request->enrol_user_curp)->first();
+            $standards = Standard::orderBy('name', 'desc')->get();
+
+            return view('enroll.certification.enrollByCurp', ['profile' => $profile, 'standards' => $standards]);
+        }
     }
+
+
 
     public function emailEnroll(Request $request)
     {
-        $profile = Profile::where('user_email', $request->enrol_user_email)->first();
-        $standards = Standard::orderBy('name', 'desc')->get();
+        $rules = array(
+            'enrol_user_email'=> 'required',
 
-        return view('enroll.certification.enrollByCurp', ['profile' => $profile, 'standards' => $standards]);
+        );
+
+        $messages = array(
+            'enrol_user_email.required' =>'Este campo es requerido',
+        );
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withInput()
+                ->withErrors($validator)
+                ->with('message-error', 'Completar campos requeridos');
+
+        } else {
+            $profile = Profile::where('user_email', $request->enrol_user_email)->first();
+            $standards = Standard::orderBy('name', 'desc')->get();
+
+            return view('enroll.certification.enrollByCurp', ['profile' => $profile, 'standards' => $standards]);
+
+        }
+    }
+
+    public function standardEnroll(Request $request, $name)
+    {
+
+        #$profile = Profile::where('user_curp', $request->enrol_user_curp)->first();
+        $standard = Standard::where('name', $name)->first();
+
+        return view('enroll.certification.formDynamic', ['standard' => $standard]);
     }
 
     public function fastEnroll(Request $request)
@@ -301,11 +352,7 @@ class EnrollController extends Controller
         } else {
 
 
-
-
-
             $standard = Standard::where('name', $request->enrol_course_name)->first();
-
 
 
             $enroll = new Enroll;
@@ -361,10 +408,11 @@ class EnrollController extends Controller
     {
 
         $rules = array(
+            'enrol_course_id'=> 'required',
             'enrol_user_nombre'=> 'required',
             'enrol_user_app'=> 'required',
             'enrol_user_apm'=> 'required',
-            #'enrol_user_curp'=> 'required|unique:profiles,user_curp',
+            'enrol_user_curp'=> 'required|unique:profiles,user_curp',
             'enrol_user_curp'=> 'required',
             'enrol_user_edad'=> 'required',
             'enrol_user_sexo'=> 'required',
@@ -374,19 +422,20 @@ class EnrollController extends Controller
             'enrol_user_estado'=> 'required',
             'enrol_user_cp'=> 'required',
             'enrol_user_telefono'=> 'required',
-            #'enrol_user_email' => 'required|unique:users,email',
+            'enrol_user_email' => 'required|unique:users,email',
             'enrol_user_email' => 'required',
             'enrol_user_academico'=> 'required',
             'enrol_user_productivo'=> 'required',
             'enrol_user_indigena'=> 'required',
             'enrol_user_lengua'=> 'required',
-            #'enrol_user_doc_curp'=> 'required|mimes:pdf',
-            #'enrol_user_doc_id'=> 'required|mimes:pdf',
+            'enrol_user_doc_curp'=> 'required|mimes:pdf',
+            'enrol_user_doc_id'=> 'required|mimes:pdf',
             #'enrol_user_doc_foto'=> 'required|image|mimes:png,jpg,jpeg,bmp',
             'enrol_user_uso_dato'=> 'required',
         );
 
         $messages = array(
+            'enrol_course_id.required' =>'Este campo es requerido',
             'enrol_user_nombre.required' =>'Este campo es requerido',
             'enrol_user_app.required' =>'Este campo es requerido',
             'enrol_user_apm.required' =>'Este campo es requerido',
@@ -398,10 +447,9 @@ class EnrollController extends Controller
             'enrol_user_colonia.required' =>'Este campo es requerido',
             'enrol_user_alcaldia.required' =>'Este campo es requerido',
             'enrol_user_estado.required' =>'Este campo es requerido',
-            'enrol_user_cp.required' =>'Este campo es requerido',
             'enrol_user_telefono.required' =>'Este campo es requerido',
             'enrol_user_email.required' =>'Este campo es requerido',
-            #'enrol_user_email.unique' =>'Esta dirección de correo ya se encuentra registrada',
+            'enrol_user_email.unique' =>'Esta dirección de correo ya se encuentra registrada',
             'enrol_user_academico.required' =>'Este campo es requerido',
             'enrol_user_productivo.required' =>'Este campo es requerido',
             'enrol_user_indigena.required' =>'Este campo es requerido',
@@ -433,6 +481,10 @@ class EnrollController extends Controller
                 */
 
                 return redirect('registro/buscar/usuario')->with('message', 'Esta dirección de correo ya se encuentra registrada: '. $request->enrol_user_email);
+
+            elseif(User::where('name', '=', $request->enrol_user_curp)->exists()):
+
+                return redirect('registro/buscar/usuario')->with('message', 'La siguiente CURP ya se encuentra registrada: ' . $request->enrol_user_curp);
 
             else:
 

@@ -18,6 +18,8 @@ Route::get('/', function () {
 });
 
 Route::any('registro/alt', [App\Http\Controllers\Admin\Certification\StandardController::class, 'registro']);
+Route::any('registro/estandard/{name}', [App\Http\Controllers\User\EnrollController::class, 'standardEnroll']);
+
 Route::any('registro/buscar/usuario', [App\Http\Controllers\User\EnrollController::class, 'searchUser']);
 Route::any('registro/curp', [App\Http\Controllers\User\EnrollController::class, 'crupEnroll']);
 Route::any('registro/email', [App\Http\Controllers\User\EnrollController::class, 'emailEnroll']);
