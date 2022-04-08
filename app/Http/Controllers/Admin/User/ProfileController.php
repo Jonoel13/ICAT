@@ -43,6 +43,13 @@ class ProfileController extends Controller
         return view('admin.users.index',['users' => $users]);
     }
 
+    public function Profiles()
+    {
+        $profiles = Profile::all();
+
+        return view('admin.users.profiles.index',['profiles' => $profiles]);
+    }
+
     public function formPassword(Request $request, $id)
     {
         $user = User::find($id);
@@ -96,6 +103,13 @@ class ProfileController extends Controller
         } 
     }
 
+
+
+    public function deleteProfile(Request $request, $id)
+    {
+        $profile = Profile::find($id);
+        $profile->delete();
+    }
 
     public function delete(Request $request, $id)
     {

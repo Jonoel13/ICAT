@@ -44,6 +44,9 @@ Route::any('usuarios', [App\Http\Controllers\Admin\User\ProfileController::class
 Route::any('usuarios/{id}', [App\Http\Controllers\Admin\User\ProfileController::class, 'formPassword']);
 Route::any('usuarios/password/{id}', [App\Http\Controllers\Admin\User\ProfileController::class, 'updatePassword']);
 
+Route::any('admin/usuarios/perfiles/', [App\Http\Controllers\Admin\User\ProfileController::class, 'profiles']);
+Route::any('admin/usuarios/perfiles/eliminar/{id}', [App\Http\Controllers\Admin\User\ProfileController::class, 'deleteProfile']);
+
 Route::get('admin/estandar/lista', [App\Http\Controllers\Admin\Certification\StandardController::class, 'index']);
 Route::get('admin/estandar/from', [App\Http\Controllers\Admin\Certification\StandardController::class, 'form']);
 Route::any('admin/estandar/guardar', [App\Http\Controllers\Admin\Certification\StandardController::class, 'store']);
