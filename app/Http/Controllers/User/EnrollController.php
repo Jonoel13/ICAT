@@ -53,7 +53,6 @@ class EnrollController extends Controller
             'enrol_user_app'=> 'required',
             'enrol_user_apm'=> 'required',
             'enrol_user_curp'=> 'required|unique:profiles,user_curp',
-            'enrol_user_curp'=> 'required',
             'enrol_user_edad'=> 'required',
             'enrol_user_sexo'=> 'required',
             'enrol_user_calle'=> 'required',
