@@ -24,7 +24,7 @@
             <input type="file" class="form-control" id="image" name="image"  value="">
             <span class="alert-danger">{{$errors->first('image')}}</span>
         </div>
-    </div>
+      </div>
 
       <div class="form-group col-md-12">
         <label for="name"><strong>Nombre del estándar:</strong></label>
@@ -37,6 +37,18 @@
         <input type="text" class="form-control" id="shortname" name="shortname" value="{{ $standard->shortname }}">
         <span class="alert-danger">{{$errors->first('shortname')}}</span>
       </div>
+
+      <div class="form-group col-md-12">
+        <label for="sector"><strong>Sector:</strong></label>
+        <select class="form-control" id="type" name="sector" value="{{ old('sector') }}" required>
+            <option value="">Seleccionar</option>
+            <option {{ $standard->sector == 'Sector 1' ? 'selected' : '' }} value="Sector 1">Sector 1</option>
+            <option {{ $standard->sector == 'Sector 2' ? 'selected' : '' }} value="Sector 2">Sector 2</option>
+            <option {{ $standard->sector == 'Sector 3' ? 'selected' : '' }} value="Sector 3">Sector 3</option>
+        </select>
+        <span class="alert-danger">{{$errors->first('sector')}}</span>
+      </div>
+
 
       <div class="form-group col-md-12">
         <label for="type"><strong>Tipo:</strong></label>
@@ -53,6 +65,12 @@
         <label for="description"><strong>Descripción:</strong></label>
         <textarea type="text" class="form-control" id="description" name="description">{{ $standard->description }}</textarea>
         <span class="alert-danger">{{$errors->first('description')}}</span>
+      </div>
+
+      <div class="form-group col-md-12">
+        <label for="diagnostico"><strong>Enlace de examen diagnóstico:</strong></label>
+        <input type="file" class="form-control" id="diagnostico" name="diagnostico"  value="{{ $standard->diagnostico }}">
+        <span class="alert-danger">{{$errors->first('diagnostico')}}</span>
       </div>
 
       <div class="form-group col-md-6">

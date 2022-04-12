@@ -15,14 +15,25 @@
 
       <div class="form-group col-md-12">
         <label for="name"><strong>Nombre del estándar:</strong></label>
-        <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
+        <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" placeholder="Ejemplo: EC1331">
         <span class="alert-danger">{{$errors->first('name')}}</span>
       </div>
 
       <div class="form-group col-md-12">
-        <label for="shortname"><strong>Nombre corto del estándar:</strong></label>
-        <input type="text" class="form-control" id="shortname" name="shortname" value="{{ old('shortname') }}">
+        <label for="shortname"><strong>Nombre público del estándar:</strong></label>
+        <input type="text" class="form-control" id="shortname" name="shortname" value="{{ old('shortname') }}" placeholder="Ejemplo: EC1331 Condución del vehículo para su uso en la vialida">
         <span class="alert-danger">{{$errors->first('shortname')}}</span>
+      </div>
+
+      <div class="form-group col-md-12">
+        <label for="sector"><strong>Sector:</strong></label>
+        <select class="form-control" id="type" name="sector" value="{{ old('sector') }}" required>
+            <option value="">Seleccionar</option>
+            <option value="Sector 1">Sector 1</option>
+            <option value="Sector 2">Sector 2</option>
+            <option value="Sector 3">sector 3</option>
+        </select>
+        <span class="alert-danger">{{$errors->first('sector')}}</span>
       </div>
 
       <div class="form-group col-md-12">
@@ -42,16 +53,28 @@
         <span class="alert-danger">{{$errors->first('description')}}</span>
       </div>
 
-      <div class="form-group col-md-6">
-        <label for="cert_place"><strong>Sede de evaluación:</strong></label>
-        <input type="text" class="form-control" id="cert_place" name="cert_place" value="{{ old('cert_place') }}">
-        <span class="alert-danger">{{$errors->first('cert_place')}}</span>
+      <div class="form-group col-md-12">
+        <label for="diagnostico"><strong>Enlace de examen diagnóstico:</strong></label>
+        <input type="text" class="form-control" id="diagnostico" name="diagnostico"  value="{{ old('diagnostico') }}">
+        <span class="alert-danger">{{$errors->first('diagnostico')}}</span>
       </div>
 
       <div class="form-group col-md-12">
         <label for="image"><strong>Imagen:</strong></label>
         <input type="file" class="form-control" id="image" name="image"  value="{{ old('image') }}">
         <span class="alert-danger">{{$errors->first('image')}}</span>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="cert_place"><strong>Sede de evaluación:</strong></label>
+        <input type="text" class="form-control" id="cert_place" name="cert_place" value="{{ old('cert_place') }}">
+        <span class="alert-danger">{{$errors->first('cert_place')}}</span>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="link"><strong>Enlace de información completa del estadar:</strong></label>
+        <input type="text" class="form-control" id="link" name="link" value="{{ old('link') }}">
+        <span class="alert-danger">{{$errors->first('link')}}</span>
       </div>
 
       <div class="form-group col-md-12">

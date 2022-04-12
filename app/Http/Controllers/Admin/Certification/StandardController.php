@@ -56,6 +56,7 @@ class StandardController extends Controller
             'name' => 'required',
             'shortname' => 'required',
             'description' => 'required',
+            'diagnostico' => 'required',
             'image' => 'required',
             'type' => 'required',
             'cert_place' => 'required',
@@ -69,6 +70,7 @@ class StandardController extends Controller
             'name.required' =>'Este campo es requerido',
             'shortname.required' =>'Este campo es requerido',
             'description.required' =>'Este campo es requerido',
+            'diagnostico.required' =>'Este campo es requerido',
             'image.required' =>'Este campo es requerido',
             'type.required' =>'Este campo es requerido',
             'cert_place.required' =>'Este campo es requerido',
@@ -92,7 +94,9 @@ class StandardController extends Controller
 
             $standard->name = $request->name;
             $standard->shortname = $request->shortname;
+            $standard->sector = $request->sector;
             $standard->description = $request->description;
+            $standard->diagnostico = $request->diagnostico;
             $standard->image = $request->image;
             $standard->type = $request->type;
             $standard->cert_place = $request->cert_place;
@@ -131,7 +135,9 @@ class StandardController extends Controller
         $standard = Standard::find($id) ;
         $standard->name = $request->name;
         $standard->shortname = $request->shortname;
+        $standard->sector = $request->sector;
         $standard->description = $request->description;
+        $standard->diagnostico = $request->diagnostico;
         $standard->type = $request->type;
         $standard->cert_place = $request->cert_place;
         $standard->cert_material = $request->cert_material;
