@@ -159,6 +159,11 @@ class EnrollController extends Controller
             }else{
                 $profile->user_doc_curp = 'N/A';
             }
+            /*
+            ---------------------------------------------------------------
+                Subir documento de Identificación oficial
+            ---------------------------------------------------------------
+            */
 
 
             if($request->hasFile('enrol_user_doc_id')){
@@ -171,6 +176,12 @@ class EnrollController extends Controller
             }else{
                 $profile->user_doc_id = 'N/A';
             }
+
+            /*
+            ---------------------------------------------------------------
+                Subir documento de Fotografía
+            ---------------------------------------------------------------
+            */
 
             if($request->hasFile('enrol_user_doc_foto')){
                 $name = "photo_".$request->enrol_user_curp.time().".".$request->file('enrol_user_doc_foto')->extension();
@@ -275,6 +286,8 @@ class EnrollController extends Controller
 
         return view('enroll.certification.enrollByCurp', ['profile' => $profile]);
     }
+
+
 
 
 }
