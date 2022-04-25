@@ -59,12 +59,12 @@ Route::any('admin/estandar/update/{id}', [App\Http\Controllers\Admin\Certificati
 Route::any('admin/estandar/delete/{id}', [App\Http\Controllers\Admin\Certification\StandardController::class, 'delete']);
 
 
-Route::get('admin/groups/lista', [App\Http\Controllers\Admin\Capacitation\GroupsController::class, 'index']);
-Route::any('admin/groups/form', [App\Http\Controllers\Admin\Capacitation\GroupsController::class, 'form']);
-Route::any('admin/groups/guardar', [App\Http\Controllers\Admin\Capacitation\GroupsController::class, 'store']);
-Route::any('admin/groups/edit/{id}', [App\Http\Controllers\Admin\Capacitation\GroupsController::class, 'edit']);
-Route::any('admin/groups/update/{id}', [App\Http\Controllers\Admin\Capacitation\GroupsController::class, 'update']);
-Route::any('admin/groups/delete/{id}', [App\Http\Controllers\Admin\Capacitation\GroupsController::class, 'delete']);
+Route::get('admin/groups/lista', [App\Http\Controllers\Admin\Standard\GroupsController::class, 'index']);
+Route::any('admin/groups/form', [App\Http\Controllers\Admin\Standard\GroupsController::class, 'form']);
+Route::any('admin/groups/guardar', [App\Http\Controllers\Admin\Standard\GroupsController::class, 'store']);
+Route::any('admin/groups/edit/{id}', [App\Http\Controllers\Admin\Standard\GroupsController::class, 'edit']);
+Route::any('admin/groups/update/{id}', [App\Http\Controllers\Admin\Standard\GroupsController::class, 'update']);
+Route::any('admin/groups/delete/{id}', [App\Http\Controllers\Admin\Standard\GroupsController::class, 'delete']);
 
 
 Route::get('admin/instructor/lista', [App\Http\Controllers\Admin\User\InstructorsController::class, 'index']);

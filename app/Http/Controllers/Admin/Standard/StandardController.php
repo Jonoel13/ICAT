@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Certification;
+namespace App\Http\Controllers\Admin\Standard;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
