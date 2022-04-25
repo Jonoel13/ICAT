@@ -30,7 +30,7 @@
         <td>{{$quote->quote_user_name}} {{$quote->quote_user_ap_p}} {{$quote->quote_user_ap_m}}</td>
         <td>{{$quote->quote_user_curp}}</td>
         <td>{{$quote->quote_user_email}}</td>
-        <td><a href="{{url('citas')}}/{{$quote->id}}"><i class="fa fa-eye text-success" title="Consultar"></i></a></td>
+        <td><a href="{{url('citas')}}/{{$quote->id}}"><i class="bi bi-pen text-success" title="Consultar"></i>Consultar</a></td>
       </tr>
       @endforeach
   </tbody>
