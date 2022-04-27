@@ -465,9 +465,15 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       @if(Auth::user()->id_rol == 1)
+
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('home') }}">
               <i class="bi bi-columns-gap"></i><span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  href="{{ url('admin/alianzas') }}">
+              <i class="bi bi-columns-gap"></i><span>Alianzas</span>
             </a>
           </li>
           <li class="nav-item">

@@ -17,6 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/*
+|--------------------------------------------------------------------------
+| Routes Enroll methos
+|--------------------------------------------------------------------------
+*/
+
 Route::any('registro/alt', [App\Http\Controllers\Admin\Certification\StandardController::class, 'registro']);
 Route::any('registro/estandard/{name}', [App\Http\Controllers\User\EnrollController::class, 'standardEnroll']);
 
@@ -50,7 +56,11 @@ Route::any('usuarios/password/{id}', [App\Http\Controllers\Admin\User\ProfileCon
 
 Route::any('admin/usuarios/perfiles/', [App\Http\Controllers\Admin\User\ProfileController::class, 'profiles']);
 Route::any('admin/usuarios/perfiles/eliminar/{id}', [App\Http\Controllers\Admin\User\ProfileController::class, 'deleteProfile']);
-
+/*
+|--------------------------------------------------------------------------
+| Routes Standard Controller
+|--------------------------------------------------------------------------
+*/
 Route::get('admin/estandar/lista', [App\Http\Controllers\Admin\Certification\StandardController::class, 'index']);
 Route::get('admin/estandar/from', [App\Http\Controllers\Admin\Certification\StandardController::class, 'form']);
 Route::any('admin/estandar/guardar', [App\Http\Controllers\Admin\Certification\StandardController::class, 'store']);
@@ -58,6 +68,11 @@ Route::any('admin/estandar/edit/{id}', [App\Http\Controllers\Admin\Certification
 Route::any('admin/estandar/update/{id}', [App\Http\Controllers\Admin\Certification\StandardController::class, 'update']);
 Route::any('admin/estandar/delete/{id}', [App\Http\Controllers\Admin\Certification\StandardController::class, 'delete']);
 
+/*
+|--------------------------------------------------------------------------
+| Routes Groups Controller
+|--------------------------------------------------------------------------
+*/
 
 Route::get('admin/groups/lista', [App\Http\Controllers\Admin\Standard\GroupsController::class, 'index']);
 Route::any('admin/groups/form', [App\Http\Controllers\Admin\Standard\GroupsController::class, 'form']);
@@ -65,7 +80,11 @@ Route::any('admin/groups/guardar', [App\Http\Controllers\Admin\Standard\GroupsCo
 Route::any('admin/groups/edit/{id}', [App\Http\Controllers\Admin\Standard\GroupsController::class, 'edit']);
 Route::any('admin/groups/update/{id}', [App\Http\Controllers\Admin\Standard\GroupsController::class, 'update']);
 Route::any('admin/groups/delete/{id}', [App\Http\Controllers\Admin\Standard\GroupsController::class, 'delete']);
-
+/*
+|--------------------------------------------------------------------------
+| Routes Instructors Controller
+|--------------------------------------------------------------------------
+*/
 
 Route::get('admin/instructor/lista', [App\Http\Controllers\Admin\User\InstructorsController::class, 'index']);
 Route::any('admin/instructor/form', [App\Http\Controllers\Admin\User\InstructorsController::class, 'form']);
@@ -77,8 +96,29 @@ Route::any('admin/instructor/delete/{id}', [App\Http\Controllers\Admin\User\Inst
 Route::any('admin/certificaciones/lista', [App\Http\Controllers\Admin\Certification\CertificationController::class, 'adminList']);
 Route::any('admin/certificaciones/delete/{id}', [App\Http\Controllers\Admin\Certification\CertificationController::class, 'delete']);
 Route::any('admin/certificaciones/edit/{id}', [App\Http\Controllers\Admin\Certification\CertificationController::class, 'editCert']);
+/*
+|--------------------------------------------------------------------------
+| Routes Allience Controller
+|--------------------------------------------------------------------------
+*/
+
+Route::get('admin/alianzas', [App\Http\Controllers\Admin\Allience\AllienceController::class, 'index']);
+Route::any('admin/alianzas/add', [App\Http\Controllers\Admin\Allience\AllienceController::class, 'add']);
+Route::any('admin/alianzas/{id}', [App\Http\Controllers\Admin\Allience\AllienceController::class, 'find']);
+Route::any('admin/alianzas/edit/{id}', [App\Http\Controllers\Admin\Allience\AllienceController::class, 'edit']);
+Route::any('admin/alianza/form', [App\Http\Controllers\Admin\Allience\AllienceController::class, 'form']);
+Route::any('admin/alianzas/delete/{id}', [App\Http\Controllers\Admin\Allience\AllienceController::class, 'delete']);
+Route::any('admin/alianzas/filter', [App\Http\Controllers\Admin\Allience\AllienceController::class, 'filter']);
 
 
+#Route::any('/alianza/filter/{param}/{value}', 'Allience\AllienceController@filter');
+
+
+/*
+|--------------------------------------------------------------------------
+| Routes Certification Controller
+|--------------------------------------------------------------------------
+*/
 Route::get('certificaciones', [App\Http\Controllers\Admin\Certification\CertificationController::class, 'index']);
 Route::get('certificaciones/{curp}', [App\Http\Controllers\Admin\Certification\CertificationController::class, 'edit']);
 Route::any('certificaciones/edit/{curp}', [App\Http\Controllers\Admin\Certification\CertificationController::class, 'update']);
@@ -92,7 +132,11 @@ Route::any('candidatos', [App\Http\Controllers\Admin\Certification\Certification
 Route::any('candidatos/edit/{id}', [App\Http\Controllers\Admin\Certification\CertificationController::class, 'enrollFind']);
 Route::any('candidatos/{id}', [App\Http\Controllers\Admin\Certification\CertificationController::class, 'findCertification']);
 
-
+/*
+|--------------------------------------------------------------------------
+| Routes Schedule Controller
+|--------------------------------------------------------------------------
+*/
 Route::any('agenda', [App\Http\Controllers\Admin\Certification\ScheduleController::class, 'index']);
 Route::any('agenda/buscar/{date}', [App\Http\Controllers\Admin\Certification\ScheduleController::class, 'search']);
 Route::any('agenda/{id}', [App\Http\Controllers\Admin\Certification\ScheduleController::class, 'find']);
@@ -106,6 +150,11 @@ Route::any('banco/perfiles', [App\Http\Controllers\Admin\User\BankController::cl
 Route::any('nuevo', [App\Http\Controllers\Admin\Certification\ScheduleController::class, 'form']);
 Route::any('nuevo/citas/crear', [App\Http\Controllers\Admin\Certification\ScheduleController::class, 'store']);
 
+/*
+|--------------------------------------------------------------------------
+| Routes Quote Controller
+|--------------------------------------------------------------------------
+*/
 Route::any('citas', [App\Http\Controllers\Certification\QuoteController::class, 'form']);
 Route::any('citas/buscar', [App\Http\Controllers\Certification\QuoteController::class, 'search']);
 Route::any('citas/guardar', [App\Http\Controllers\Certification\QuoteController::class, 'store']);
@@ -117,6 +166,11 @@ Route::any('fechas', [App\Http\Controllers\Certification\QuoteController::class,
 Route::any('fechas/id', [App\Http\Controllers\Certification\QuoteController::class, 'datesById']);
 
 
+Route::any('usuario/citas', [App\Http\Controllers\Certification\QuoteController::class, 'formLog']);
+Route::any('usuario/citas/{day}', [App\Http\Controllers\Certification\QuoteController::class, 'formResponse']);
+
+Route::any('usuario/citas/agendar/cita', [App\Http\Controllers\Certification\QuoteController::class, 'storeLog']);
+
 
 Route::any('api/documentacion', [App\Http\Controllers\Api\ApiCertificationController::class, 'documentation']);
 Route::any('api/curp/{curp}', [App\Http\Controllers\Api\ApiCertificationController::class, 'getByCurp']);
@@ -124,19 +178,18 @@ Route::any('api/certificaciones', [App\Http\Controllers\Api\ApiCertificationCont
 Route::any('api/perfiles/{sector}', [App\Http\Controllers\Api\ApiCertificationController::class, 'getAll']);
 
 
+
+/*
+|--------------------------------------------------------------------------
+| Routes Profile Controller
+|--------------------------------------------------------------------------
+*/
 Route::any('usuario/perfil/{curp}', [App\Http\Controllers\User\ProfileController::class, 'index']);
 Route::any('usuario/formulario', [App\Http\Controllers\User\ProfileController::class, 'form']);
 Route::any('usuario/editar/{id}', [App\Http\Controllers\User\ProfileController::class, 'edit']);
 Route::any('usuario/actualizar/{id}', [App\Http\Controllers\User\ProfileController::class, 'update']);
 Route::any('usuario/preguntas', [App\Http\Controllers\User\ProfileController::class, 'info']);
 
-
-Route::any('usuario/citas', [App\Http\Controllers\Certification\QuoteController::class, 'formLog']);
-Route::any('usuario/citas/{day}', [App\Http\Controllers\Certification\QuoteController::class, 'formResponse']);
-
-
-Route::any('usuario/citas/agendar/cita', [App\Http\Controllers\Certification\QuoteController::class, 'storeLog']);
-Route::any('usuario/pago/actualizar', [App\Http\Controllers\Payments\PayController::class, 'payUpdate']);
 
 Route::any('usuario/diagnostico/guardar', [App\Http\Controllers\User\ProfileController::class, 'diagnostico']);
 
@@ -146,12 +199,18 @@ Route::any('usuario/certificaciones/{id}', [App\Http\Controllers\User\Certificat
 Route::any('usuario/capacitaciones/{id}', [App\Http\Controllers\User\CapacitationController::class, 'index']);
 
 
+/*
+|--------------------------------------------------------------------------
+| Routes Pay Controller
+|--------------------------------------------------------------------------
+*/
 
 Route::any('pagos', [App\Http\Controllers\Payments\PayController::class, 'index']);
 Route::any('pagos/buscar/{curp}', [App\Http\Controllers\Payments\PayController::class, 'payByCurp']);
 Route::any('pago/guardar', [App\Http\Controllers\Payments\PayController::class, 'store']);
 Route::any('pago/{id}', [App\Http\Controllers\Payments\PayController::class, 'show']);
 Route::any('pago/actualizar/{id}', [App\Http\Controllers\Payments\PayController::class, 'update']);
+Route::any('usuario/pago/actualizar', [App\Http\Controllers\Payments\PayController::class, 'payUpdate']);
 
 
 Route::any('documentos', [App\Http\Controllers\User\ProfileController::class, 'docs']);
