@@ -4,7 +4,7 @@
 
 
 <div class="row">
-  <form method="POST" action="{{url('alianzas/add')}}" autocomplete="off" enctype="multipart/form-data">
+  <form method="POST" action="{{url('admin/alianzas/add')}}" autocomplete="off" enctype="multipart/form-data">
     {{csrf_field() }}
      <div class="form-row">
       <div class="form-group col-md-12">

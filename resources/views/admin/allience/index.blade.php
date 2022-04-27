@@ -5,7 +5,7 @@
     </div>
     <a class="" href="{{ url('admin/alianzas') }}">Ver todos</a> / <a class="" href="{{ url('admin/alianza/form') }}">Registar nuevo</a>
 
-    <form class="search-form d-flex align-items-center" method="POST" action="{{url('/alianzas/filter')}}" autocomplete="off" enctype="multipart/form-data">
+    <form class="search-form d-flex align-items-center" method="POST" action="{{url('admin/alianzas/filter')}}" autocomplete="off" enctype="multipart/form-data">
       {{csrf_field() }}
       <div class="form-group  col-md-6">
         <select class="form-control" id="filter_type" name="filter_type" required="required">
@@ -44,18 +44,18 @@
         </tr>
       </thead>
       <tbody>
-        @foreach($alliances as $alliance)
+        @foreach($alliences as $allience)
         <tr>
-          <td><a href="/alianzas/{{$alliance->id}}">{{$alliance->alianza_proyecto}}</a></td>
-          <td>{{$alliance->alianza_dependencia}}</td>
-          <td>{{$alliance->alianza_nom_convenio}}</td>
-          <td>{{$alliance->alianza_tipo}}</td>
-          <td>{{$alliance->alianza_fecha_inicio}}</td>
-          <td>{{$alliance->alianza_fecha_termino}}</td>
-          <td><a href="/pdf/alianzas/{{$alliance->alianza_urlpdf}}" target="_blank">{{$alliance->alianza_urlpdf}}</a></td>
-          <td><a href="#{{$alliance->id}}"><span class="fa fa-trash" data-toggle="modal" data-target="#modal-{{$alliance->id}}"></span></a>
+          <td><a href="{{url('admin/alianzas')}}/{{$allience->id}}">{{$allience->alianza_proyecto}}</a></td>
+          <td>{{$allience->alianza_dependencia}}</td>
+          <td>{{$allience->alianza_nom_convenio}}</td>
+          <td>{{$allience->alianza_tipo}}</td>
+          <td>{{$allience->alianza_fecha_inicio}}</td>
+          <td>{{$allience->alianza_fecha_termino}}</td>
+          <td><a href="{{ asset ('storage/allience/'. $allience->alianza_urlpdf)}}" target="_blank">{{$allience->alianza_urlpdf}}</a></td>
+          <td><a href="#{{$allience->id}}"><span class="fa fa-trash" data-toggle="modal" data-target="#modal-{{$allience->id}}"></span></a>
               <!-- Modal -->
-              <div class="modal fade" id="modal-{{$alliance->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal fade" id="modal-{{$allience->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -65,11 +65,11 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                      Confirmar la eliminación: {{$alliance->alianza_proyecto}}
+                      Confirmar la eliminación: {{$allience->alianza_proyecto}}
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                      <a href="/alianzas/delete/{{$alliance->id}}" class="btn btn-primary">Confirmar</a>
+                      <a href="/alianzas/delete/{{$allience->id}}" class="btn btn-primary">Confirmar</a>
                     </div>
                   </div>
                 </div>
@@ -80,7 +80,7 @@
       </tbody>
     </table>
     <nav aria-label="Page navigation">
-      {{ $alliances->links('pagination::bootstrap-4') }}
+      {{ $alliences->links('pagination::bootstrap-4') }}
     </nav>
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>

@@ -38,21 +38,21 @@ class AllienceController extends Controller
      */
     public function index()
     {
-        $alliances = Allience::orderBy('id', 'desc')->paginate(20);
+        $alliences = Allience::orderBy('id', 'desc')->paginate(20);
 
-        return view('admin.alliance.index', ['alliances' => $alliances]);
+        return view('admin.allience.index', ['alliences' => $alliences]);
     }
 
     public function form()
     {
-        return view('admin.alliance.form');
+        return view('admin.allience.form');
     }
 
     public function find(Request $request, $id)
     {
-        $alliance = Allience::findOrFail($id);
+        $allience = Allience::findOrFail($id);
 
-        return view('admin.alliance.edit', ['alliance' => $alliance]);
+        return view('admin.allience.edit', ['allience' => $allience]);
     }
 
     public function add(Request $request)
@@ -92,13 +92,13 @@ class AllienceController extends Controller
 
         } else {
 
-            $alliance = new Alianza;
-            $alliance->alianza_proyecto = $request->alianza_proyecto;
-            $alliance->alianza_tipo = $request->alianza_tipo;
-            $alliance->alianza_dependencia = $request->alianza_dependencia;
-            $alliance->alianza_nom_convenio = $request->alianza_nom_convenio;
-            $alliance->alianza_fecha_inicio = $request->alianza_fecha_inicio;
-            $alliance->alianza_fecha_termino = $request->alianza_fecha_termino;
+            $allience = new Allience;
+            $allience->alianza_proyecto = $request->alianza_proyecto;
+            $allience->alianza_tipo = $request->alianza_tipo;
+            $allience->alianza_dependencia = $request->alianza_dependencia;
+            $allience->alianza_nom_convenio = $request->alianza_nom_convenio;
+            $allience->alianza_fecha_inicio = $request->alianza_fecha_inicio;
+            $allience->alianza_fecha_termino = $request->alianza_fecha_termino;
 
 
             /*
@@ -109,17 +109,17 @@ class AllienceController extends Controller
 
 
             if($request->hasFile('alianza_urlpdf')){
-                $name = "alianza_".$request->alianza_urlpdf.time().".".$request->file('alianza_urlpdf')->extension();
-                $path = $request->alianza_urlpdf->storeAs('/public/alliance', $name);
-                $path2 ="/alianza".'/'.$name;
+                $name = "alianza_".$request->alianza_proyecto.time().".".$request->file('alianza_urlpdf')->extension();
+                $path = $request->alianza_urlpdf->storeAs('/public/allience', $name);
+                $path2 ="/allience".'/'.$name;
                 //Image::create(['path' => $path2]);
-                $alliance->alianza_urlpdf = $name;
+                $allience->alianza_urlpdf = $name;
 
             }else{
-                $alliance->alianza_urlpdf = 'N/A';
+                $allience->alianza_urlpdf = 'N/A';
             }
 
-            $alliance->save();
+            $allience->save();
 
             return redirect('admin/alianzas')->with('message', 'Alianza Registrada');
         }
@@ -129,13 +129,13 @@ class AllienceController extends Controller
     public function edit(Request $request, $id)
     {
 
-        $alliance = Alianza::find($id);
-        $alliance->alianza_proyecto = $request->alianza_proyecto;
-        $alliance->alianza_tipo = $request->alianza_tipo;
-        $alliance->alianza_dependencia = $request->alianza_dependencia;
-        $alliance->alianza_nom_convenio = $request->alianza_nom_convenio;
-        $alliance->alianza_fecha_inicio = $request->alianza_fecha_inicio;
-        $alliance->alianza_fecha_termino = $request->alianza_fecha_termino;
+        $allience = Allience::find($id);
+        $allience->alianza_proyecto = $request->alianza_proyecto;
+        $allience->alianza_tipo = $request->alianza_tipo;
+        $allience->alianza_dependencia = $request->alianza_dependencia;
+        $allience->alianza_nom_convenio = $request->alianza_nom_convenio;
+        $allience->alianza_fecha_inicio = $request->alianza_fecha_inicio;
+        $allience->alianza_fecha_termino = $request->alianza_fecha_termino;
 
         /*
         ---------------------------------------------------------------
@@ -146,26 +146,26 @@ class AllienceController extends Controller
 
         if($request->hasFile('alianza_urlpdf')){
 
-            Storage::disk('public')->delete('alliance/'.$alliance->alianza_urlpdf);
+            Storage::disk('public')->delete('allience/'.$allience->alianza_urlpdf);
             $name = "alianza_".$request->alianza_urlpdf.time().".".$request->file('alianza_urlpdf')->extension();
-            $path = $request->alianza_urlpdf->storeAs('/public/alliance', $name);
+            $path = $request->alianza_urlpdf->storeAs('/public/allience', $name);
 
-            $alliance->alianza_urlpdf = $name;
+            $allience->alianza_urlpdf = $name;
 
         }
 
 
-        $alliance->save();
+        $allience->save();
 
         return redirect('admin/alianzas')->with('message', 'Registro Actualizado');
     }
 
     public function delete(Request $request, $id)
     {
-        $alliance = Allience::find($id);
-        File::delete(public_path("pdf/alianzas/".$alliance->alianza_urlpdf));
+        $allience = Allience::find($id);
+        File::delete(public_path("pdf/allience/".$allience->alianza_urlpdf));
         DB::table('alianzas')->where('id', '=', $id)->delete();
-        #$alliance->delete();
+        #$allience->delete();
 
         return redirect('admin/alianzas')->with('message', 'Registro Eliminado');
 
@@ -198,15 +198,15 @@ class AllienceController extends Controller
 
             if($request->filter_type == "alianza_fecha_inicio" || $request->filter_type == "alianza_fecha_termino"){
 
-                $alliances = Allience::whereBetween($request->filter_type, [$request->filter_value, $request->filter_value_2])->orderBy('id', 'desc')->paginate(20);
+                $alliences = Allience::whereBetween($request->filter_type, [$request->filter_value, $request->filter_value_2])->orderBy('id', 'desc')->paginate(20);
             }else{
                 
-                $alliances = Allience::where($request->filter_type, 'like','%'.$request->filter_value.'%')->orderBy('id', 'desc')->paginate(20);
+                $alliences = Allience::where($request->filter_type, 'like','%'.$request->filter_value.'%')->orderBy('id', 'desc')->paginate(20);
             }
          
             
 
-            return view('admin.alliance.index', ['alliances' => $alliances]);
+            return view('admin.allience.index', ['alliences' => $alliences]);
         }
         
     }
