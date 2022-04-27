@@ -5,7 +5,7 @@
     </div>
     <a class="" href="{{ url('admin/alianzas') }}">Ver todos</a> / <a class="" href="{{ url('admin/alianza/form') }}">Registar nuevo</a>
 
-    <form class="search-form d-flex align-items-center" method="POST" action="{{url('admin/alianzas/filter')}}" autocomplete="off" enctype="multipart/form-data">
+    <form class="search-form d-flex align-items-center" method="POST" action="{{url('admin/alianzas/search/filter')}}" autocomplete="off" enctype="multipart/form-data">
       {{csrf_field() }}
       <div class="form-group  col-md-6">
         <select class="form-control" id="filter_type" name="filter_type" required="required">

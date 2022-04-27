@@ -108,10 +108,10 @@ Route::any('admin/alianzas/{id}', [App\Http\Controllers\Admin\Allience\AllienceC
 Route::any('admin/alianzas/edit/{id}', [App\Http\Controllers\Admin\Allience\AllienceController::class, 'edit']);
 Route::any('admin/alianza/form', [App\Http\Controllers\Admin\Allience\AllienceController::class, 'form']);
 Route::any('admin/alianzas/delete/{id}', [App\Http\Controllers\Admin\Allience\AllienceController::class, 'delete']);
-Route::any('admin/alianzas/filter', [App\Http\Controllers\Admin\Allience\AllienceController::class, 'filter']);
+Route::any('admin/alianzas/search/filter', [App\Http\Controllers\Admin\Allience\AllienceController::class, 'filter']);
 
 
-#Route::any('/alianza/filter/{param}/{value}', 'Allience\AllienceController@filter');
+#Route::any('admin/alianza/filter/{param}/{value}', 'Allience\AllienceController@filter');
 
 
 /*
