@@ -61,12 +61,12 @@ Route::any('admin/usuarios/perfiles/eliminar/{id}', [App\Http\Controllers\Admin\
 | Routes Standard Controller
 |--------------------------------------------------------------------------
 */
-Route::get('admin/estandar/lista', [App\Http\Controllers\Admin\Certification\StandardController::class, 'index']);
-Route::get('admin/estandar/from', [App\Http\Controllers\Admin\Certification\StandardController::class, 'form']);
-Route::any('admin/estandar/guardar', [App\Http\Controllers\Admin\Certification\StandardController::class, 'store']);
-Route::any('admin/estandar/edit/{id}', [App\Http\Controllers\Admin\Certification\StandardController::class, 'edit']);
-Route::any('admin/estandar/update/{id}', [App\Http\Controllers\Admin\Certification\StandardController::class, 'update']);
-Route::any('admin/estandar/delete/{id}', [App\Http\Controllers\Admin\Certification\StandardController::class, 'delete']);
+Route::get('admin/estandar/lista', [App\Http\Controllers\Admin\Standard\StandardController::class, 'index']);
+Route::get('admin/estandar/from', [App\Http\Controllers\Admin\Standard\StandardController::class, 'form']);
+Route::any('admin/estandar/guardar', [App\Http\Controllers\Admin\Standard\StandardController::class, 'store']);
+Route::any('admin/estandar/edit/{id}', [App\Http\Controllers\Admin\Standard\StandardController::class, 'edit']);
+Route::any('admin/estandar/update/{id}', [App\Http\Controllers\Admin\Standard\StandardController::class, 'update']);
+Route::any('admin/estandar/delete/{id}', [App\Http\Controllers\Admin\Standard\StandardController::class, 'delete']);
 
 /*
 |--------------------------------------------------------------------------

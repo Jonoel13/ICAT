@@ -41,7 +41,7 @@
             <table class="table table-striped table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col" class="">Estándar</th>
+                        <th scope="col" class="">Grupo</th>
                         <th scope="col">Fecha de inicio</th>
                         <th scope="col">Fecha de termino</th>
                         <th scope="col">Editar</th>

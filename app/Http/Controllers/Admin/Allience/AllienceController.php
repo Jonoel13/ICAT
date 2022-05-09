@@ -109,7 +109,7 @@ class AllienceController extends Controller
 
 
             if($request->hasFile('alianza_urlpdf')){
-                $name = "alianza_".$request->alianza_proyecto.time().".".$request->file('alianza_urlpdf')->extension();
+                $name = "alianza_".$request->alianza_nom_convenio.time().".".$request->file('alianza_urlpdf')->extension();
                 $path = $request->alianza_urlpdf->storeAs('/public/allience', $name);
                 $path2 ="/allience".'/'.$name;
                 //Image::create(['path' => $path2]);
@@ -146,8 +146,8 @@ class AllienceController extends Controller
 
         if($request->hasFile('alianza_urlpdf')){
 
-            Storage::disk('public')->delete('allience/'.$allience->alianza_urlpdf);
-            $name = "alianza_".$request->alianza_urlpdf.time().".".$request->file('alianza_urlpdf')->extension();
+            //Storage::disk('public')->delete('allience/'.$standard->image);
+            $name = "alianza_".$request->alianza_nom_convenio.time().".".$request->file('alianza_urlpdf')->extension();
             $path = $request->alianza_urlpdf->storeAs('/public/allience', $name);
 
             $allience->alianza_urlpdf = $name;

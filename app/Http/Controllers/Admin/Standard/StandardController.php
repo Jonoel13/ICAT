@@ -13,6 +13,7 @@ use DB;
 use File;
 use Validator;
 use App\Models\Standard;
+use App\Models\Allience;
 use App\Models\Certification;
 use Illuminate\Support\Str;
 
@@ -55,6 +56,7 @@ class StandardController extends Controller
         $rules = array(
             'name' => 'required',
             'shortname' => 'required',
+            'sector' => 'required',
             'description' => 'required',
             'diagnostico' => 'required',
             'image' => 'required',
@@ -69,6 +71,7 @@ class StandardController extends Controller
         $messages = array(
             'name.required' =>'Este campo es requerido',
             'shortname.required' =>'Este campo es requerido',
+            'sector.required' =>'Este campo es requerido',
             'description.required' =>'Este campo es requerido',
             'diagnostico.required' =>'Este campo es requerido',
             'image.required' =>'Este campo es requerido',

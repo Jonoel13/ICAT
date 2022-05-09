@@ -11,11 +11,11 @@ class Group extends Model
     protected $fillable = [
         'id',
         'id_standard',
-        'id_convenio',
-        'id_alliance',
+        'id_allience',
         'id_place',
         'id_list_activities',
         'id_instructor',
+        'group_service_type',
         'group_name',
         'group_shortname',
         'group_mode',

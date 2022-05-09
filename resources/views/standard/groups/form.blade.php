@@ -16,7 +16,7 @@
       <div class="form-group col-md-12">
         <label for="id_standard"><strong>Nombre del estándar:</strong></label>
         <select class="form-control" id="id_standard" name="id_standard">
-            <option>Selecionar</option>
+            <option value="">Selecionar</option>
             @foreach($standards as $standard)
             <option value="{{$standard->id}}">{{$standard->name}}</option>
             @endforeach
@@ -38,12 +38,25 @@
       </div>
 
       <div class="form-group col-md-12">
-        <label for="id_convenio"><strong>Convenio:</strong></label>
-        <select class="form-control" id="id_convenio" name="id_convenio">
-            <option>Selecionar</option>
+        <label for="id_allience"><strong>Convenio:</strong></label>
+        <select class="form-control" id="id_allience" name="id_allience">
+            <option value="">Selecionar</option>
+            @foreach($alliences as $allience)
+            <option value="{{$allience->id}}">{{$allience->alianza_proyecto}}</option>
+            @endforeach
             <option value="N/A">N/A</option>
+
         </select>
-        <span class="alert-danger">{{$errors->first('id_convenio')}}</span>
+        <span class="alert-danger">{{$errors->first('id_allience')}}</span>
+      </div>
+      <div class="form-group col-md-12">
+        <label for="group_service_type"><strong>Servicio:</strong></label>
+        <select class="form-control" id="group_service_type" name="group_service_type">
+            <option value="">Selecionar</option>
+            <option value="1">Capacitación</option>
+            <option value="2">Certificación</option>
+        </select>
+        <span class="alert-danger">{{$errors->first('group_service_type')}}</span>
       </div>
 
       <div class="form-group col-md-12">
@@ -54,6 +67,7 @@
             @foreach($instructors as $instructor)
                 <option value="{{$instructor->id}}">{{$instructor->instructor_name}} {{$instructor->instructor_app}} {{$instructor->instructor_app}}</option>
             @endforeach
+            <option value="N/A">N/A</option>
         </select>
 
         <span class="alert-danger">{{$errors->first('id_instructor')}}</span>
@@ -127,7 +141,7 @@
       <div class="form-group col-md-4">
         <label for="group_private"><strong>Grupo Privado:</strong></label>
         <select class="form-control" id="group_private" name="group_private">
-            <option>Selecionar</option>
+            <option value="">Selecionar</option>
             <option value="Presencial">Privado</option>
             <option value="A distancia">Público</option>
         </select>

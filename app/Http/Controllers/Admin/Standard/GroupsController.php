@@ -12,6 +12,7 @@ use DB;
 use File;
 use Validator;
 use App\Models\Standard;
+use App\Models\Allience;
 use App\Models\Instructor;
 use App\Models\Group;
 use Illuminate\Support\Str;
@@ -47,9 +48,10 @@ class GroupsController extends Controller
     {
         $standards = Standard::orderBy('updated_at', 'desc')->get();
 
+        $alliences = Allience::orderBy('updated_at', 'desc')->get();
         $instructors = Instructor::orderBy('updated_at', 'desc')->get();
 
-        return view('standard.groups.form', ['standards' => $standards, 'instructors' => $instructors]);
+        return view('standard.groups.form', ['standards' => $standards, 'instructors' => $instructors, 'alliences' => $alliences]);
     }
 
     public function store(Request $request)
@@ -58,10 +60,10 @@ class GroupsController extends Controller
 
         $rules = array(
             'id_standard' => 'required',
-            'id_service' => 'required',
-            'id_convenio' => 'required',
+            'id_allience' => 'required',
             'id_place' => 'required',
             'id_instructor' => 'required',
+            'group_service_type' => 'required',
             'group_name' => 'required',
             'group_shortname' => 'required',
             'group_level' => 'required',
@@ -79,10 +81,10 @@ class GroupsController extends Controller
 
         $messages = array(
             'id_standard.required' =>'Este campo es requerido',
-            'id_service.required' =>'Este campo es requerido',
-            'id_convenio.required' =>'Este campo es requerido',
+            'id_allience.required' =>'Este campo es requerido',
             'id_place.required' =>'Este campo es requerido',
             'id_instructor.required' =>'Este campo es requerido',
+            'group_service_type.required' =>'Este campo es requerido',
             'group_name.required' =>'Este campo es requerido',
             'group_shortname.required' =>'Este campo es requerido',
             'group_level.required' =>'Este campo es requerido',
@@ -113,7 +115,7 @@ class GroupsController extends Controller
             $group = new Group;
 
             $group->id_standard = $request->id_standard;
-            $group->id_convenio = $request->id_convenio;
+            $group->id_allience = $request->id_allience;
             $group->id_place = $request->id_place;
             $group->id_instructor = $request->id_instructor;
             $group->group_service_type = $request->group_service_type;
@@ -128,7 +130,7 @@ class GroupsController extends Controller
             $group->group_min_asistencia = $request->group_min_asistencia;
             $group->group_capacity = $request->group_capacity;
             $group->group_documentation = $request->group_documentation;
-            $group->id_alliance = 'N/A';
+            $group->id_allience = $request->id_allience;
             $group->group_link = 'N/A';
             $group->id_list_activities = 'N/A';
             $group->group_private = $request->group_private;

@@ -17,7 +17,7 @@ class CreateGroupsTable extends Migration
             $table->bigIncrements('id');
             $table->string('id_standard');
             $table->string('id_convenio');
-            $table->string('id_alliance');
+            $table->string('id_allience');
             $table->string('id_place');
             $table->string('id_list_activities');
             $table->string('id_instructor');
