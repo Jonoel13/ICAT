@@ -17,6 +17,7 @@ use App\Models\Profile;
 use App\Models\Enroll;
 use App\Models\Certification;
 use App\Models\Standard;
+use App\Models\Group;
 use Illuminate\Support\Str;
 use Illuminate\Support\Arr;
 
@@ -340,6 +341,21 @@ class EnrollController extends Controller
         return view('enroll.certification.formDynamic', ['standard' => $standard]);
     }
 
+
+    public function groupEnroll(Request $request, $name, $id)
+    {
+
+        $standard = Standard::where('name', $name)->first();
+        $group = Group::where('group_name', $id)->first();
+
+        if($group && $standard):
+
+            return view('enroll.certification.formGroup', ['standard' => $standard, 'group' => $group]);
+        else:
+            return view('errors.errorFormUrlName');
+        endif;
+    }
+
     public function fastEnroll(Request $request)
     {
 
@@ -423,6 +439,7 @@ class EnrollController extends Controller
 
         $rules = array(
             'enrol_course_id'=> 'required',
+            'enrol_group_id'=> 'required',
             'enrol_user_nombre'=> 'required',
             'enrol_user_app'=> 'required',
             'enrol_user_apm'=> 'required',
@@ -450,6 +467,7 @@ class EnrollController extends Controller
 
         $messages = array(
             'enrol_course_id.required' =>'Este campo es requerido',
+            'enrol_group_id.required' =>'Este campo es requerido',
             'enrol_user_nombre.required' =>'Este campo es requerido',
             'enrol_user_app.required' =>'Este campo es requerido',
             'enrol_user_apm.required' =>'Este campo es requerido',
@@ -509,6 +527,7 @@ class EnrollController extends Controller
                 */
 
                 $profile = new Profile;
+                $profile->user_nombre = $request->enrol_user_nombre;
                 $profile->user_nombre = $request->enrol_user_nombre;
                 $profile->user_app = $request->enrol_user_app;
                 $profile->user_apm = $request->enrol_user_apm;
@@ -575,18 +594,25 @@ class EnrollController extends Controller
                     $profile->user_doc_foto = 'N/A';
                 }
 
+                $standard = Standard::where('name', $request->enrol_course_id)->first();
+                $group = Group::where('group_name', $request->enrol_group_id)->first();
+
 
                 $enroll = new Enroll;
                 $enroll->enrol_course_id = $request->enrol_course_id;
+                $enroll->enrol_group = $request->enrol_group_id;
                 $enroll->enrol_course_type = "Certificación";
                 $enroll->enrol_user_curp = strtoupper($request->enrol_user_curp);
                 $enroll->enrol_user_diagnostico = "Pendiente";
                 $enroll->enrol_user_certificado = "Pendiente";
 
+
+
                 $certification = new Certification;
+                $certification->grupo = $request->enrol_group_id;
                 $certification->curp = strtoupper($request->enrol_user_curp);
                 $certification->estandar = $request->enrol_course_id;
-                $certification->sector = 'Transporte';
+                $certification->sector = $standard->sector;
                 $certification->estatus = "Candidato";
                 $certification->calificacion = "0";
                 $certification->fecha = date("d-m-Y");
@@ -597,7 +623,7 @@ class EnrollController extends Controller
                 $certification->link_documentacion = 'N/A';
                 $certification->pago = 'Pendiente';
                 $certification->diagnostico_status = 'Pendiente';
-                $certification->diagnostico = 'https://docs.google.com/forms/d/e/1FAIpQLSegHzFH_DmYFbrG8t4bebt0nrrK-24vhO7DwQRBX9AthIj0lw/viewform?usp=sf_link';
+                $certification->diagnostico = $standard->diagnostico;
 
 
                 $password = Str::random(12);
