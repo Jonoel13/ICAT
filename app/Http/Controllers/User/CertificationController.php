@@ -12,6 +12,7 @@ use File;
 use Validator;
 use App\Models\Certification;
 use Illuminate\Support\Str;
+use App\Http\Helper;
 
 
 class CertificationController extends Controller
@@ -32,10 +33,13 @@ class CertificationController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request, $name)
     {
 
-        return view('user.certifications.index');
+
+        $certifications = Certification::where('curp', $name)->get();
+
+        return view('user.certifications.index',['certifications' => $certifications]);
     }
 
 

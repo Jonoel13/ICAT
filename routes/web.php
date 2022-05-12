@@ -69,6 +69,8 @@ Route::any('admin/estandar/edit/{id}', [App\Http\Controllers\Admin\Standard\Stan
 Route::any('admin/estandar/update/{id}', [App\Http\Controllers\Admin\Standard\StandardController::class, 'update']);
 Route::any('admin/estandar/delete/{id}', [App\Http\Controllers\Admin\Standard\StandardController::class, 'delete']);
 
+Route::any('admin/estandar/show/{attribute}/{id}', [App\Http\Controllers\Admin\Standard\StandardController::class, 'show']);
+
 /*
 |--------------------------------------------------------------------------
 | Routes Groups Controller
@@ -194,7 +196,7 @@ Route::any('usuario/preguntas', [App\Http\Controllers\User\ProfileController::cl
 
 Route::any('usuario/diagnostico/guardar', [App\Http\Controllers\User\ProfileController::class, 'diagnostico']);
 
-Route::any('usuario/certificaciones/{id}', [App\Http\Controllers\User\CertificationController::class, 'index']);
+Route::any('usuario/certificaciones/{name}', [App\Http\Controllers\User\CertificationController::class, 'index']);
 
 
 Route::any('usuario/capacitaciones/{id}', [App\Http\Controllers\User\CapacitationController::class, 'index']);

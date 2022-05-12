@@ -190,7 +190,7 @@
                 <table class="table">
                     <tr>
                       <td>
-                          <a class="text-success" href="https://docs.google.com/forms/d/e/1FAIpQLSegHzFH_DmYFbrG8t4bebt0nrrK-24vhO7DwQRBX9AthIj0lw/viewform?usp=sf_link" target="_blank" style="font-weight: 600;">Hacer prueba</a>
+                          <a class="text-success diagnostico" href="{!! Helper::standarDiagnostico($certification->estandar) !!}" target="_blank" style="font-weight: 600;">Hacer prueba</a>
                       </td>
                       <td>
                           {{$certification->estandar}}
@@ -477,4 +477,5 @@
     @endif
 
 </div>
+
 @endsection

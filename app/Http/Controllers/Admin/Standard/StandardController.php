@@ -165,6 +165,15 @@ class StandardController extends Controller
 
     }
 
+    public function show(Request $request, $attribute, $id)
+    {
+
+
+
+        return response()->json($standard);
+
+    }
+
     public function delete(Request $request, $id)
     {
         $standard = Standard::find($id);

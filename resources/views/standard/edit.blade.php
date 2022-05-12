@@ -69,7 +69,7 @@
 
       <div class="form-group col-md-12">
         <label for="diagnostico"><strong>Enlace de examen diagnóstico:</strong></label>
-        <input type="file" class="form-control" id="diagnostico" name="diagnostico"  value="{{ $standard->diagnostico }}">
+        <input type="text" class="form-control" id="diagnostico" name="diagnostico"  value="{{ $standard->diagnostico }}">
         <span class="alert-danger">{{$errors->first('diagnostico')}}</span>
       </div>
 

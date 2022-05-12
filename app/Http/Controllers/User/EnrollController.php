@@ -598,6 +598,7 @@ class EnrollController extends Controller
                 $group = Group::where('group_name', $request->enrol_group_id)->first();
 
 
+
                 $enroll = new Enroll;
                 $enroll->enrol_course_id = $request->enrol_course_id;
                 $enroll->enrol_group = $request->enrol_group_id;
