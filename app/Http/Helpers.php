@@ -32,4 +32,11 @@ class Helpers
         return $standard->description;
     }
 
+    public static function standarMaterial($data)
+    {
+        $standard = Standard::where('name', $data)->first();
+
+        return $standard->cert_material;
+    }
+
 }
