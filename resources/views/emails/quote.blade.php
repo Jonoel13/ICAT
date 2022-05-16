@@ -35,20 +35,11 @@ Hola <span class="text-b">{{ $name }}</span>,
                 <a href="https://drive.google.com/file/d/1hWPo4-NPfwemuWQpdPFqlM-YDTsDm4RT/view?usp=sharing" target="_blank">(descargar e imprimir)</a>
               </li>
             </ul>
-          <p>
+            <p>
             <span class="text-red text-b mt-4 sub-title-info">Deberás de acudir con el siguiente equipo:</span>
             
-                <ul class="text-gray">
-                  <li>Cubrebocas (obligatorio)</li>
-                  <li>Motocicleta</li>
-                  <li>Casco para motociclistas</li>
-                  <li>Guantes para motociclista</li>
-                  <li>Ropa de manga larga</li>
-                  <li>Calzado cerrado y de suela antiderrapante</li>
-                  <li>Lentes ( en caso de prescripción médica)</li>
-                  <li>Bolígrafo azul</li>
-                </ul>
-              </p>
+                <span>{{ $material }}</span>
+            </p>
               <p class="footer-q">
                 <span class="text-b text-green">¡Te esperamos!</span>
               </p>

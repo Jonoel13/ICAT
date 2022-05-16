@@ -1,15 +1,15 @@
 @extends('base')
 @section('content')
 <h1>Certificaciones</h1>
+<div class="col-md-8">
+  @if($certification->pago == 'Pendiente')
 
-    @if($certification->pago == 'Pendiente')
-
-        @if($certification->diagnostico_status == 'Pendiente')
+    @if($certification->diagnostico_status == 'Pendiente')
         <p><span class="step-title text-b">Evaluación diagnóstica</span> <span class="step-active">(paso 3 de 7)</span></p>
         <table class="table">
             <tr>
               <td>
-                  <a class="text-success" href="https://docs.google.com/forms/d/e/1FAIpQLSegHzFH_DmYFbrG8t4bebt0nrrK-24vhO7DwQRBX9AthIj0lw/viewform?usp=sf_link" target="_blank" style="font-weight: 600;">Hacer prueba</a>
+                  <a class="text-success" href="{!! Helper::standarDiagnostico($certification->estandar) !!}" target="_blank" style="font-weight: 600;">Hacer prueba</a>
               </td>
               <td>
                   {{$certification->estandar}}
@@ -77,7 +77,6 @@
 
         @endif
 
-      </td>
     @elseif($certification->pago == 'En revisión')
 
         <p><span class="step-title text-b">Pago</span> <span class="step-active">(paso 4 de 7)</span></p>
@@ -107,7 +106,7 @@
                           {{$certification->estandar}}
                       </td>
                       <td>
-                        <a href="{{ url('usuario/citas') }}" class="btn btn-success btn-sm"
+                        <a href="{{ url('usuario/citas/standard') }}/{{$certification->estandar}}" class="btn btn-success btn-sm"
                         title="Agendar cita para realizar el proceso de evaluación de forma presencial"
                         >Agendar cita</a>
                       </td>
@@ -129,6 +128,40 @@
                   <p class="form-text-info">
                     Al resultar <span class="text-b">competente</span> en tu prueba de evaluación podrás descargar <span class="text-b">tu constancia de conclusión</span> y <span class="text-b">tu certificado de competencia</span>
                   </p>
+                </div>
+
+                <div class="mt-5">
+                  <h4 class="text-b">Mi Cita
+                    <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                      <i style="color:#BC955C;" class="fa fa-question-circle-o"
+                    title="Si debes reagendar tu cita, ponte en contacto con ece.icatcdmx@gmail.com lo mas pronto posible."
+                    ></i>
+                    </a>
+
+                    <div class="collapse" id="collapseExample">
+                      <div class="card card-body">
+                        <span class="text-tg">
+                          Si debes reagendar tu cita, ponte en contacto con <a href="mailto:ece.icatcdmx@gmail.com" class="text-success">ece.icatcdmx@gmail.com</a> lo mas pronto posible.
+                        </span>
+                      </div>
+                    </div>
+                  </h4>
+                  <hr class="my-4">
+                  <table class="table table-striped">
+                    @foreach($quotes as $quote)
+                    <tr>
+                      <td>{{date('d-m-Y', strtotime($quote->quote_date))}} {{$quote->quote_hour}} hrs</td>
+                      <td>
+                        @if($quote->date_place == 'UC-GAM')
+                        <a href="https://goo.gl/maps/3DAUw9qEcrYaowCc9" target="_blank">
+                          {{$quote->date_place}}
+                        </a>
+                        @endif
+                      </td>
+                      <td><a href="{{url('citas/consulta')}}/{{$quote->quote_access}}" class="btn btn-success btn-sm" target="_blank">Imprimir</a></td>
+                    </tr>
+                    @endforeach
+                  </table>
                 </div>
 
             @endif
@@ -237,6 +270,13 @@
           </div>
       </form>
     @endif
+</div>
+<div>
+
+</div>
+
+
+
 
 
 @endsection

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Mail;
 
 use DB;
 use File;
+use App\Http\Helper;
 use App\Models\Date;
 use App\Models\Quote;
 use App\Models\Profile;
@@ -136,7 +137,7 @@ class QuoteController extends Controller
         }
     }
 
-    public function formLog()
+    public function formLog(Request $request, $id)
     {
 
         $profile = Profile::where('user_curp', Auth::user()->name)
@@ -145,10 +146,12 @@ class QuoteController extends Controller
         $today =date("Y-m-d");
         $result = Date::where('date_status', 'Disponible')
             ->where('date_date','>=', $today)
+            ->where('date_standar', $id)
             ->orderBy('date_date', 'asc')
             ->get();
         
         $dates = [];
+        $standard = $id;
 
         $count = 0;
         foreach($result as $date){
@@ -162,10 +165,10 @@ class QuoteController extends Controller
             }
         }
 
-        return view('schedule.quote.request', ['dates' => $dates, 'profile' => $profile]);
+        return view('schedule.quote.request', ['dates' => $dates, 'profile' => $profile, 'standard' => $standard]);
     }
 
-    public function formResponse(Request $request,$day)
+    public function formResponse(Request $request, $standard, $day)
     {
 
         $profile = Profile::where('user_curp', Auth::user()->name)
@@ -173,6 +176,7 @@ class QuoteController extends Controller
 
         $today =date("Y-m-d");
         $result = Date::where('date_status', 'Disponible')
+            ->where('date_standar', $standard)
             ->where('date_date','>=', $today)
             ->orderBy('date_date', 'asc')
             ->get();
@@ -205,14 +209,14 @@ class QuoteController extends Controller
         $day = $day;
 
 
-        return view('schedule.quote.response', ['dates' => $dates, 'profile' => $profile, 'quotes' => $quotes, 'day' =>$day]);
+        return view('schedule.quote.response', ['dates' => $dates, 'profile' => $profile, 'quotes' => $quotes, 'day' =>$day, 'standard' => $standard]);
     }
 
     public function storeLog(Request $request)
     {
 
         $rules = array(
-            'quote_date_id' => 'required',
+            //'quote_date_id' => 'required',
             'quote_user_name' => 'required',
             'quote_user_ap_p' => 'required',
             'quote_user_ap_m' => 'required',
@@ -279,9 +283,11 @@ class QuoteController extends Controller
                 $to_name = $request->quote_user_name;
                 $to_email = $request->quote_user_email;
                 $date = date('d-m-Y', strtotime($quote->quote_date));
+
+                $material = Helper::standarMaterial($certification->estandar);
                 
 
-                $data = array( 'name' => $request->quote_user_name, 'date' => $date, 'hour' => $quote->quote_hour);
+                $data = array( 'name' => $request->quote_user_name, 'date' => $date, 'hour' => $quote->quote_hour, 'material' => $material);
 
 
                 Mail::send('emails.quote', $data, function($message) use ($to_name, $to_email) {
@@ -345,12 +351,20 @@ class QuoteController extends Controller
     {
         $quote = Quote::findOrFail($id);
 
-        #$alliances = Alianza::where($request->filter_type, 'like','%'.$request->filter_value.'%')->orderBy('id', 'desc')->paginate(20);
-
         return view('schedule.quote.pdf', ['quote' => $quote]);
     }
 
     public function search(Request $request, $id)
+    {
+        $quote = Quote::where('quote_access', $id)->firstOrFail();
+
+        $date = Date::findOrFail($quote->quote_date_id);
+
+        return view('schedule.quote.pdf', ['quote' => $quote, 'date' =>$date]);
+    }
+
+
+    public function myQuotes(Request $request, $id)
     {
         $quote = Quote::where('quote_access', $id)->firstOrFail();
 

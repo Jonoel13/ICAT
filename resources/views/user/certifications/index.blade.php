@@ -19,7 +19,7 @@
 			      </div>
 			    </div>
 			    <div class="col-md-2 d-flex align-items-center">
-			    	<button type="button" class="btn btn-info">Info</button>
+			    	<a href="{{url('usuario/certificaciones')}}/{{$certification->curp}}/{{$certification->id}}" class="btn btn-info">Ver</a>
 			    </div>
 			  </div>
 			</div>

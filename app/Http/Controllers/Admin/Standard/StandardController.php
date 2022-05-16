@@ -110,7 +110,7 @@ class StandardController extends Controller
 
 
             if($request->hasFile('image')){
-                $name = "standard_".$request->shortname.time().".".$request->file('image')->extension();
+                $name = "standard_".$request->name.time().".".$request->file('image')->extension();
                 $path = $request->image->storeAs('/public/standard', $name);
                 $standard->image = $name;
 
@@ -152,7 +152,7 @@ class StandardController extends Controller
         if($request->hasFile('image')){
 
             Storage::disk('public')->delete('standard/'.$standard->image);
-            $name = "standard_".$request->shortname.time().".".$request->file('image')->extension();
+            $name = "standard_".$request->name.time().".".$request->file('image')->extension();
             $path = $request->image->storeAs('/public/standard', $name);
 
             $standard->image = $name;

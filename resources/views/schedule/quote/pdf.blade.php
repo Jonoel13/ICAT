@@ -58,6 +58,7 @@
           <hr class="line">
           <h4 class="sub-title-q">Datos Cita</h4>
           <p class="text-gray">
+            <span class="text-b text-gray">Estandar: </span>{!! Helper::dateStandard($quote-> quote_date_id) !!}<br>
             <span class="text-b text-gray">Horario: </span>{{$date->date_hour}} hrs<br>
             <span class="text-b text-gray">Fecha: </span>{{date('d-m-Y', strtotime($date->date_date))}}<br>
             <span class="text-b text-gray">Sede: </span>Cuauhtémoc 30, La Pastora, Gustavo A. Madero, 07290 Ciudad de México, CDMX
@@ -93,17 +94,10 @@
             </ul>
 
             <span class="text-red text-b mt-4 sub-title-info">Deberás de acudir con el siguiente equipo:</span>
-            
-            <ul class="text-gray">
-              <li>Cubrebocas (obligatorio)</li>
-              <li>Motocicleta</li>
-              <li>Casco para motociclistas</li>
-              <li>Guantes para motociclista</li>
-              <li>Ropa de manga larga</li>
-              <li>Calzado cerrado y de suela antiderrapante</li>
-              <li>Lentes ( en caso de prescripción médica)</li>
-              <li>Bolígrafo azul</li>
-            </ul>
+            <br>
+            <span>
+              {!! Helper::dateMaterial($quote-> quote_date_id) !!}
+            </span>
           </p>
           <p class="footer-q">
             <span class="text-b text-green">¡Te esperamos!</span>

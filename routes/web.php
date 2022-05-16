@@ -164,13 +164,15 @@ Route::any('citas/guardar', [App\Http\Controllers\Certification\QuoteController:
 Route::any('citas/consulta/{id}', [App\Http\Controllers\Certification\QuoteController::class, 'search']);
 Route::any('citas/cancelar/{id}', [App\Http\Controllers\Certification\QuoteController::class, 'delete']);
 
+Route::any('usuario/citas/consulta/{id}', [App\Http\Controllers\Certification\QuoteController::class, 'search']);
+
 
 Route::any('fechas', [App\Http\Controllers\Certification\QuoteController::class, 'dates']);
 Route::any('fechas/id', [App\Http\Controllers\Certification\QuoteController::class, 'datesById']);
 
 
-Route::any('usuario/citas', [App\Http\Controllers\Certification\QuoteController::class, 'formLog']);
-Route::any('usuario/citas/{day}', [App\Http\Controllers\Certification\QuoteController::class, 'formResponse']);
+Route::any('usuario/citas/standard/{id}', [App\Http\Controllers\Certification\QuoteController::class, 'formLog']);
+Route::any('usuario/citas/standard/{standard}/{day}', [App\Http\Controllers\Certification\QuoteController::class, 'formResponse']);
 
 Route::any('usuario/citas/agendar/cita', [App\Http\Controllers\Certification\QuoteController::class, 'storeLog']);
 
@@ -197,6 +199,7 @@ Route::any('usuario/preguntas', [App\Http\Controllers\User\ProfileController::cl
 Route::any('usuario/diagnostico/guardar', [App\Http\Controllers\User\ProfileController::class, 'diagnostico']);
 
 Route::any('usuario/certificaciones/{name}', [App\Http\Controllers\User\CertificationController::class, 'index']);
+Route::any('usuario/certificaciones/{name}/{id}', [App\Http\Controllers\User\CertificationController::class, 'show']);
 
 
 Route::any('usuario/capacitaciones/{id}', [App\Http\Controllers\User\CapacitationController::class, 'index']);

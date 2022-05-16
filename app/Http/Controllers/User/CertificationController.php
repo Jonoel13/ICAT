@@ -43,4 +43,20 @@ class CertificationController extends Controller
     }
 
 
+    public function show(Request $request, $name, $id)
+    {
+
+        $certification = Certification::find($id);
+        $today =date("Y-m-d");
+        $quotes = DB::table('quotes')->where('quote_user_curp', $certification->curp)
+            ->where('quote_user_curp', $certification->curp)
+            ->where('quote_date','>=', $today)
+            ->join('dates', 'quotes.quote_date_id', '=', 'dates.id')
+            ->select('quotes.*', 'dates.date_place', 'dates.date_standar')
+            ->get();
+
+        return view('user.certifications.show',['certification' => $certification, 'quotes' => $quotes]);
+    }
+
+
 }

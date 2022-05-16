@@ -47,9 +47,8 @@
       </div>
 
       <div class="form-group col-md-6">
-        <label for="quote_date"><strong>Consultar fecha {{$day}}:</strong></label>
-        <input type="date" class="form-control" id="quote_date" name="quote_date" placeholder="" required="" value="{{$day}}">
-        <!-- span>Fechas disponibles del 2 al 6 de Agosto.</span-->
+        <!--label for="quote_date"><strong>Consultar fecha {{$day}}:</strong></label>
+        <input type="date" class="form-control" id="quote_date" name="quote_date" placeholder="" required="" value="{{$day}}"-->
         <span class="alert-danger">{{$errors->first('quote_date')}}</span>
           
           @if($quotes =='Sin disponibilidad')
@@ -90,17 +89,18 @@
       </div>
       <div class=" col-md-6">
         <div class="row">
-            <div class="col-md-2">
+            <!--div class="col-md-2">
               <a  href="" id="dateLink" class="search btn btn-scs" style="color:#FFF !important;">Consultar</a>
-            </div>
+            </div-->
             <div class="col-md-10">
               <table class="table ml-3">
                 <tr>
                   <th>Fechas disponibles</th>
                 </tr>
+
                  @foreach($dates as $date)
                 <tr>
-                    <td><a href="{{url('usuario/citas')}}/{{$date}}" class="text-success text-b">{{date("d-m-Y ", strtotime($date)) }}</a></td>
+                    <td><a href="{{url('usuario/citas/standard')}}/{{$standard}}/{{$date}}" class="text-success text-b">{{date("d-m-Y ", strtotime($date)) }}</a></td>
                 </tr>
                 @endforeach
               </table>
@@ -219,14 +219,11 @@
         $('#quote_date').change(function() {
                 $('#dateLink').attr('href', '');
                 var date = $('#quote_date').val();
-                var url      = window.location.origin+'/sii/usuario/citas/'+date;
+                var standard = '<?php echo $standard;?>';
+                var url      = window.location.origin+'/usuario/citas/standard/'+standard+'/'+date;
                 $('#dateLink').attr('href', url);
             });
     });
 </script>
-<script type="text/javascript">
-  $(document).ready( function () {
-    $('#horarios').DataTable();
-} );
-</script>
+
 @endsection

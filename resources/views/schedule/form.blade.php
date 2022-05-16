@@ -14,7 +14,12 @@
 
       <div class="form-group col-md-4">
         <label for="date_standar"><strong>Estándar:</strong></label>
-        <input type="text" class="form-control" id="date_standar" name="date_standar" placeholder="" required="required" value="EC1331" readonly>
+        <select class="form-control" id="date_standar" name="date_standar" required="required" >
+          <option value="">Seleccionar</option>
+          @foreach($standards as $standard)
+          <option value="{{$standard->name}}">{{$standard->name}}</option>
+          @endforeach
+        </select>
         <span class="alert-danger">{{$errors->first('date_standar')}}</span>
       </div>
       <div class="form-group col-md-4">

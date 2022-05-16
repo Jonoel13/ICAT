@@ -2,14 +2,19 @@
 namespace App\Http;
 
 use App\Models\Standard;
+use App\Models\Date;
+use App\Models\Quote;
+
 
 
 class Helpers
 {
-    public static function shout(string $string)
-    {
-        return strtoupper($string);
-    }
+
+    /**
+    *********************************************************************
+    ** Helpers Standar Model
+    *********************************************************************
+    */
 
     public static function standarImage(string $data)
     {
@@ -38,5 +43,31 @@ class Helpers
 
         return $standard->cert_material;
     }
+
+
+
+    /**
+    *********************************************************************
+    ** Helpers Standar Model
+    *********************************************************************
+    */
+
+    public static function dateStandard($data)
+    {
+        $date = Date::where('id', $data)->first();
+
+        return $date->date_standar;
+    }
+
+    public static function dateMaterial($data)
+    {
+        $date = Date::where('id', $data)->first();
+
+        $standard = Standard::where('name', $date->date_standar)->first();
+
+        return $standard->cert_material;
+    }
+
+
 
 }

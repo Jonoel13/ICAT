@@ -22,6 +22,8 @@
                     <a href="{{ url('usuario/preguntas') }}" class="list-group-item list-group-item-action">Preguntas frecuentes</a>
                 @endif
                 @if(Auth::user()->id_rol == 2)
+                    <a href="{{ url('admin/estandar/lista') }}" class="list-group-item list-group-item-action">Estándares/Cursos</a>
+                    <a href="{{ url('admin/groups/lista') }}" class="list-group-item list-group-item-action">Grupos</a>
                     <a href="{{ url('documentos') }}" class="list-group-item list-group-item-action">Documentos recibidos</a>
                     <a href="{{ url('agenda') }}" class="list-group-item list-group-item-action">Agenda</a>
                     <a href="{{ url('citas/lista') }}" class="list-group-item list-group-item-action">Citas</a>
