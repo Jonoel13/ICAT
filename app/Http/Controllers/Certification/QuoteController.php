@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Mail;
 
 use DB;
 use File;
-use App\Http\Helper;
 use App\Models\Date;
 use App\Models\Quote;
 use App\Models\Profile;
@@ -284,10 +283,11 @@ class QuoteController extends Controller
                 $to_email = $request->quote_user_email;
                 $date = date('d-m-Y', strtotime($quote->quote_date));
 
-                $material = Helper::standarMaterial($certification->estandar);
+
+                $standard = Standard::where('name', $certification->estandar)->first();
                 
 
-                $data = array( 'name' => $request->quote_user_name, 'date' => $date, 'hour' => $quote->quote_hour, 'material' => $material);
+                $data = array( 'name' => $request->quote_user_name, 'date' => $date, 'hour' => $quote->quote_hour, 'material' => $standard->cert_material);
 
 
                 Mail::send('emails.quote', $data, function($message) use ($to_name, $to_email) {
