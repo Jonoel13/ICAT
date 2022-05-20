@@ -37,6 +37,7 @@ Hola <span class="text-b">{{ $name }}</span>,
             </ul>
             <p>
             <span class="text-red text-b mt-4 sub-title-info">Deberás de acudir con el siguiente equipo:</span>
+            <br>
             
                 <span>{{ $material }}</span>
             </p>

@@ -204,6 +204,7 @@ class EnrollController extends Controller
             $certification = new Certification;
             $certification->curp = strtoupper($request->enrol_user_curp);
             $certification->estandar = $request->enrol_course_id;
+            $certification->grupo = $request->enrol_group_id;
             $certification->sector = 'Transporte';
             $certification->estatus = "Candidato";
             $certification->calificacion = "0";

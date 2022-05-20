@@ -149,17 +149,19 @@
                   <hr class="my-4">
                   <table class="table table-striped">
                     @foreach($quotes as $quote)
-                    <tr>
-                      <td>{{date('d-m-Y', strtotime($quote->quote_date))}} {{$quote->quote_hour}} hrs</td>
-                      <td>
-                        @if($quote->date_place == 'UC-GAM')
-                        <a href="https://goo.gl/maps/3DAUw9qEcrYaowCc9" target="_blank">
-                          {{$quote->date_place}}
-                        </a>
+                        @if($certification->estandar == Helper::dateStandard($quote->quote_date_id) )
+                            <tr>
+                              <td>{{date('d-m-Y', strtotime($quote->quote_date))}} {{$quote->quote_hour}} hrs</td>
+                              <td>
+                                @if($quote->date_place == 'UC-GAM')
+                                <a href="https://goo.gl/maps/3DAUw9qEcrYaowCc9" target="_blank">
+                                  {{$quote->date_place}}
+                                </a>
+                                @endif
+                              </td>
+                              <td><a href="{{url('citas/consulta')}}/{{$quote->quote_access}}" class="btn btn-success btn-sm" target="_blank">Imprimir</a></td>
+                            </tr>
                         @endif
-                      </td>
-                      <td><a href="{{url('citas/consulta')}}/{{$quote->quote_access}}" class="btn btn-success btn-sm" target="_blank">Imprimir</a></td>
-                    </tr>
                     @endforeach
                   </table>
                 </div>

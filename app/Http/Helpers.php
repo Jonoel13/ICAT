@@ -4,7 +4,7 @@ namespace App\Http;
 use App\Models\Standard;
 use App\Models\Date;
 use App\Models\Quote;
-
+use App\Models\Profile;
 
 
 class Helpers
@@ -66,6 +66,14 @@ class Helpers
         $standard = Standard::where('name', $date->date_standar)->first();
 
         return $standard->cert_material;
+    }
+
+
+    public static function profileCheck($data)
+    {
+        $profile = Profile::where('user_curp', $data)->first();
+
+        return $profile->user_check_ok;
     }
 
 
