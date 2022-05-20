@@ -395,6 +395,7 @@ class EnrollController extends Controller
 
             $certification = new Certification;
             $certification->curp = strtoupper($request->enrol_user_curp);
+            $certification->grupo = '0001';
             $certification->estandar = $standard->name;
             $certification->sector = $standard->sector;
             $certification->estatus = "Candidato";
@@ -418,18 +419,17 @@ class EnrollController extends Controller
             return redirect('login')->with('message', 'Registro exitoso');
 /*
 
-            $to_name = $request->enrol_user_nombre;
-            $to_email = $request->enrol_user_email;
+            $to_name = $profile->user_nombre;
+            $to_email = $profile->user_email;
 
-            $data = array( 'name' => $request->enrol_user_nombre, 'user' => $request->enrol_user_email, 'password' => $password);
+            $data = array( 'name' => $profile->user_nombre, 'user_check_curp' => $profile->user_check_curp, 'user_check_id' => $profile->user_check_id, 'user_check_foto' => $profile->user_check_foto, 'details' => $request->details);
 
-            Mail::send('emails.password', $data, function($message) use ($to_name, $to_email) {
+
+            Mail::send('emails.diagnostico', $data, function($message) use ($to_name, $to_email) {
                 $message->to($to_email, $to_name)
-                ->subject('Datos de acceso');
+                ->subject('Evaluación diagnóstica');
                 $message->from('icat@cdmx.gob.mx','Icat CDMX');
             });
-
-            return redirect('login')->with('message', 'El usuario y contraseña para ingresar se te envió por correo electrónico');
 */
 
         }
@@ -506,18 +506,19 @@ class EnrollController extends Controller
 
         } else {
 
-            if(User::where('email', '=', $request->enrol_user_email)->exists()):
+            if(User::where('name', '=', $request->enrol_user_curp)->exists()):
                 /*
                 ---------------------------------------------------------------
                     Registro existente
                 ---------------------------------------------------------------
                 */
 
-                return redirect('registro/buscar/usuario')->with('message', 'Esta dirección de correo ya se encuentra registrada: '. $request->enrol_user_email);
-
-            elseif(User::where('name', '=', $request->enrol_user_curp)->exists()):
-
                 return redirect('registro/buscar/usuario')->with('message', 'La siguiente CURP ya se encuentra registrada: ' . $request->enrol_user_curp);
+
+
+            elseif(User::where('email', '=', $request->enrol_user_email)->exists()):
+
+                return redirect('registro/buscar/usuario')->with('message', 'Esta dirección de correo ya se encuentra registrada: '. $request->enrol_user_email);
 
             else:
 
