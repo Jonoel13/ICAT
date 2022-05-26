@@ -67,10 +67,11 @@ class GroupsController extends Controller
             'group_name' => 'required',
             'group_shortname' => 'required',
             'group_level' => 'required',
+            'group_price' => 'required',
             'group_mode' => 'required',
             'group_hours' => 'required',
-            'group_date_init' => 'required',
-            'group_date_end' => 'required',
+            #'group_date_init' => 'required',
+            #'group_date_end' => 'required',
             'group_min_grade' => 'required',
             'group_min_asistencia' => 'required',
             'group_capacity' => 'required',
@@ -88,10 +89,11 @@ class GroupsController extends Controller
             'group_name.required' =>'Este campo es requerido',
             'group_shortname.required' =>'Este campo es requerido',
             'group_level.required' =>'Este campo es requerido',
+            'group_price.required' =>'Este campo es requerido',
             'group_mode.required' =>'Este campo es requerido',
             'group_hours.required' =>'Este campo es requerido',
-            'group_date_init.required' =>'Este campo es requerido',
-            'group_date_end.required' =>'Este campo es requerido',
+            #'group_date_init.required' =>'Este campo es requerido',
+            #'group_date_end.required' =>'Este campo es requerido',
             'group_min_grade.required' =>'Este campo es requerido',
             'group_min_asistencia.required' =>'Este campo es requerido',
             'group_capacity.required' =>'Este campo es requerido',
@@ -123,18 +125,43 @@ class GroupsController extends Controller
             $group->group_shortname = $request->group_shortname;
             $group->group_mode = $request->group_mode;
             $group->group_level = $request->group_level;
+            $group->group_price = $request->group_price;
             $group->group_hours = $request->group_hours;
-            $group->group_date_init = $request->group_date_init;
-            $group->group_date_end = $request->group_date_end;
+
+            $group->group_type = $request->group_type;
+
+
+            if($request->group_type == 'Rango'):
+
+                if($group->group_date_init):
+                    $group->group_date_init = $request->group_date_init;
+                else:
+                    $group->group_date_init = date("Y-m-d");
+                endif;
+
+                if($group->group_date_end):
+                    $group->group_date_end = $request->group_date_end;
+                else:
+                    $group->group_date_end = date("Y-m-d");
+                endif;
+
+            else:
+                $group->group_date_init = date("Y-m-d");
+                $group->group_date_end = date("Y-m-d");
+            endif;
+
             $group->group_min_grade = $request->group_min_grade;
             $group->group_min_asistencia = $request->group_min_asistencia;
             $group->group_capacity = $request->group_capacity;
             $group->group_documentation = $request->group_documentation;
-            $group->id_allience = $request->id_allience;
             $group->group_link = 'N/A';
             $group->id_list_activities = 'N/A';
             $group->group_private = $request->group_private;
             $group->group_status = 'Abierto';
+
+
+
+
             $group->save();
 
             return redirect('admin/groups/lista')->with('message', 'Registro exitoso');
@@ -148,8 +175,9 @@ class GroupsController extends Controller
         $group = Group::findOrFail($id);
         $standards = Standard::orderBy('updated_at', 'desc')->get();
         $instructors = Instructor::orderBy('updated_at', 'desc')->get();
+        $alliences = Allience::orderBy('updated_at', 'desc')->get();
 
-        return view('standard.groups.edit', ['group' => $group, 'standards' => $standards, 'instructors' => $instructors]);
+        return view('standard.groups.edit', ['group' => $group, 'standards' => $standards, 'instructors' => $instructors, 'alliences' => $alliences]);
     }
 
     public function update(Request $request, $id)
@@ -157,13 +185,14 @@ class GroupsController extends Controller
 
         $group = Group::find($id);
         $group->id_standard = $request->id_standard;
-        $group->id_convenio = $request->id_convenio;
+        $group->id_allience = $request->id_allience;
         $group->id_place = $request->id_place;
         $group->id_instructor = $request->id_instructor;
         $group->group_name = $request->group_name;
         $group->group_shortname = $request->group_shortname;
         $group->group_mode = $request->group_mode;
         $group->group_level = $request->group_level;
+        $group->group_price = $request->group_price;
         $group->group_hours = $request->group_hours;
         $group->group_date_init = $request->group_date_init;
         $group->group_date_end = $request->group_date_end;
@@ -171,7 +200,6 @@ class GroupsController extends Controller
         $group->group_min_asistencia = $request->group_min_asistencia;
         $group->group_capacity = $request->group_capacity;
         $group->group_documentation = $request->group_documentation;
-        $group->id_alliance = 'N/A';
         $group->group_link = 'N/A';
         $group->id_list_activities = 'N/A';
         $group->save();

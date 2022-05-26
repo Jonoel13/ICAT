@@ -95,9 +95,7 @@
 
             <span class="text-red text-b mt-4 sub-title-info">Deberás de acudir con el siguiente equipo:</span>
             <br>
-            <span>
-              {!! Helper::dateMaterial($quote-> quote_date_id) !!}
-            </span>
+            <pre class="text-gray">{!! Helper::dateMaterial($quote-> quote_date_id) !!}</pre>
           </p>
           <p class="footer-q">
             <span class="text-b text-green">¡Te esperamos!</span>

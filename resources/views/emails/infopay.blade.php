@@ -6,11 +6,11 @@ Para generar tu cita <strong>es necesario que realices tu pago y subas tu compro
 <h4 class="text-b">DEPÓSITO EN EFECTIVO (EN SUCURSAL BANCARIA)</h4>
 
 <ul>
-	<li><span class="text-b">MONTO</span> $460.00 MXN</li>
+	<li><span class="text-b">MONTO</span> {{ $price }}.00 MXN</li>
 	<li><span class="text-b">BANCO:</span> BANORTE (Banco Mercantil del Norte S.A.)</li>
 	<li><span class="text-b">NÚMERO DE CUENTA:</span> 0276630925</li>
 	<li><span class="text-b">NOMBRE DEL BENEFICIARIO:</span> Instituto de Capacitación para el Trabajo de la Ciudad de México </li>
-	<li><span class="text-b">CONCEPTO DE PAGO:</span> EC1331 Certificación</li>
+	<li><span class="text-b">CONCEPTO DE PAGO:</span> {{$standard}} Certificación</li>
 </ul>
 <p class="note">
 	<span class="text-b">Nota:</span>
@@ -19,13 +19,13 @@ Para generar tu cita <strong>es necesario que realices tu pago y subas tu compro
 
 <h4 class="text-b">TRANSFERENCIA ELECTRÓNICA (BANCA EN LÍNEA O| BANCA MÓVIL)</h4>
 <ul>
-	<li><span class="text-b">MONTO</span> $460.00 MXN</li>
+	<li><span class="text-b">MONTO</span> {{ $price }}.00 MXN</li>
 	<li><span class="text-b">BANCO:</span> BANORTE (Banco Mercantil del Norte S.A.)</li>
 	<li><span class="text-b">CLABE:</span> 072 180 00276630925 0</li>
 	<li><span class="text-b">NOMBRE DEL BENEFICIARIO:</span> Instituto de Capacitación para el Trabajo de la Ciudad de México</li>
 	<li><span class="text-b">RFC:</span> ICT140421FL3</li>
 	<li><span class="text-b">SUCURSAL:</span> 0706 VICTORIA MÉXICO</li>
-	<li><span class="text-b">CONCEPTO DE PAGO:</span> EC1331 Certificación</li>
+	<li><span class="text-b">CONCEPTO DE PAGO:</span> {{$standard}} Certificación</li>
 </ul>
 <p class="note">
 	<span class="text-b">Nota:</span>

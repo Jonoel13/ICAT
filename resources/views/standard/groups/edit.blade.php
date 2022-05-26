@@ -10,7 +10,7 @@
       <div class="form-group col-md-12">
         <label for="id_standard"><strong>Nombre del estándar:</strong></label>
         <select class="form-control" id="id_standard" name="id_standard">
-            <option>Selecionar</option>
+            <option value="">Selecionar</option>
             @foreach($standards as $standard)
             <option {{ $standard->id == $group->id_standard ? 'selected' : '' }} value="{{$standard->id}}">{{$standard->name}}</option>
             @endforeach
@@ -32,24 +32,28 @@
       </div>
 
       <div class="form-group col-md-12">
-        <label for="id_convenio"><strong>Convenio:</strong></label>
-        <select class="form-control" id="id_convenio" name="id_convenio">
-            <option>Selecionar</option>
+        <label for="id_allience"><strong>Convenio:</strong></label>
+        <select class="form-control" id="id_allience" name="id_allience">
+            <option value="">Selecionar</option>
+            @foreach($alliences as $allience)
+            <option {{ $allience->id == $group->id_allience ? 'selected' : '' }} value="{{$allience->id}}">{{$allience->alianza_proyecto}}</option>
+            @endforeach
             <option value="N/A">N/A</option>
         </select>
-        <span class="alert-danger">{{$errors->first('id_convenio')}}</span>
+        <span class="alert-danger">{{$errors->first('id_allience')}}</span>
       </div>
 
       <div class="form-group col-md-12">
         <label for="id_instructor"><strong>Instructor:</strong></label>
-        <select class="form-control" id="id_instructor" name="id_instructor">
+        <!--select class="form-control" id="id_instructor" name="id_instructor">
             <option value="">Seleccionar</option>
             @foreach($instructors as $instructor)
                 <option {{ $instructor->id == $group->id_instructor ? 'selected' : '' }} value="{{$instructor->id}}" >
                   {{$instructor->instructor_name}} {{$instructor->instructor_app}} {{$instructor->instructor_app}}
                 </option>
             @endforeach
-        </select>
+        </select-->
+        <input type="text" class="form-control" id="id_instructor" name="id_instructor"  value="{{ $group->id_instructor }}">
         <span class="alert-danger">{{$errors->first('id_instructor')}}</span>
       </div>
 
@@ -62,9 +66,9 @@
       <div class="form-group col-md-4">
         <label for="group_mode"><strong>Modalidad:</strong></label>
         <select class="form-control" id="group_mode" name="group_mode">
-            <option>Selecionar</option>
-            <option value="Presencial">Presencial</option>
-            <option value="A distancia">A distancia</option>
+            <option value="">Selecionar</option>
+            <option {{ $group->group_mode == 'Presencial' ? 'selected' : '' }} value="Presencial">Presencial</option>
+            <option {{ $group->group_mode == 'A distancia' ? 'selected' : '' }} value="A distancia">A distancia</option>
         </select>
         <span class="alert-danger">{{$errors->first('group_mode')}}</span>
       </div>
@@ -73,6 +77,24 @@
         <label for="group_level"><strong>Nivel:</strong></label>
         <input type="number" class="form-control" id="group_level" name="group_level"  value="{{ $group->group_level }}" min="0">
         <span class="alert-danger">{{$errors->first('group_level')}}</span>
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="group_price"><strong>Costo:</strong></label>
+        <input type="number" class="form-control" id="group_price" name="group_price"  value="
+        " min="0">
+        <span class="alert-danger">{{$errors->first('group_price')}}</span>
+      </div>
+
+
+      <div class="form-group col-md-4">
+        <label for="group_type"><strong>Formato de período de publicación:</strong></label>
+        <select class="form-control" id="group_type" name="group_type">
+            <option value="">Selecionar</option>
+            <option value="Fijo">Fijo</option>
+            <option value="Rango">Fecha de inicio - Fecha de termino</option>
+        </select>
+        <span class="alert-danger">{{$errors->first('group_mode')}}</span>
       </div>
 
       <div class="form-group col-md-6">
@@ -121,6 +143,7 @@
       </div>
 
     </div>
+    <hr>
 
     <a href="{{url('admin/groups/lista')}}" type="button" class="btn btn-default">Cancelar</a>
     <button type="submit" class="btn btn-primary" onclick="this.disabled=true; this.value='Enviando, espere ...'; this.form.submit();">Aceptar</button>

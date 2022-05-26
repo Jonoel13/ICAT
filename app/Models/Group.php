@@ -21,6 +21,7 @@ class Group extends Model
         'group_mode',
         'group_level',
         'group_hours',
+        'group_type',
         'group_date_init',
         'group_date_end',
         'group_min_grade',

@@ -82,7 +82,7 @@
       <div class="form-group col-md-4">
         <label for="group_mode"><strong>Modalidad:</strong></label>
         <select class="form-control" id="group_mode" name="group_mode">
-            <option>Selecionar</option>
+            <option value="">Selecionar</option>
             <option value="Presencial">Presencial</option>
             <option value="A distancia">A distancia</option>
         </select>
@@ -95,13 +95,29 @@
         <span class="alert-danger">{{$errors->first('group_level')}}</span>
       </div>
 
-      <div class="form-group col-md-6">
+      <div class="form-group col-md-4">
+        <label for="group_price"><strong>Costo:</strong></label>
+        <input type="number" class="form-control" id="group_price" name="group_price"  value="{{ old('group_price') }}" min="0">
+        <span class="alert-danger">{{$errors->first('group_price')}}</span>
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="group_type"><strong>Formato de período de publicación:</strong></label>
+        <select class="form-control" id="group_type" name="group_type">
+            <option value="">Selecionar</option>
+            <option value="Fijo">Fijo</option>
+            <option value="Rango">Fecha de inicio - Fecha de termino</option>
+        </select>
+        <span class="alert-danger">{{$errors->first('group_mode')}}</span>
+      </div>
+
+      <div class="form-group col-md-6 rango" >
         <label for="group_date_init"><strong>Fecha de inicio:</strong></label>
         <input type="date" class="form-control" id="group_date_init" name="group_date_init" value="{{ old('group_date_init') }}">
         <span class="alert-danger">{{$errors->first('group_date_init')}}</span>
       </div>
 
-      <div class="form-group col-md-6">
+      <div class="form-group col-md-6 rango" >
         <label for="group_date_end"><strong>Fecha de termino:</strong></label>
         <input type="date" class="form-control" id="group_date_end" name="group_date_end"  value="{{ old('group_date_end') }}">
         <span class="alert-danger">{{$errors->first('group_date_end')}}</span>
@@ -147,8 +163,6 @@
         </select>
         <span class="alert-danger">{{$errors->first('group_private')}}</span>
       </div>
-
-
     </div>
 
     <a href="{{url('admin/estandar/lista')}}" type="button" class="btn btn-default">Cancelar</a>
@@ -162,4 +176,21 @@
     font-weight: 800;
   }
 </style>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+
+        $('.rango').hide();
+
+        $('#group_type').change(function() {
+                if($('#group_type').val() == 'Rango'){
+                  $('.rango').show();
+                }else{
+                  $('.rango').hide();
+                }
+            });
+    });
+</script>
+
+
 @endsection

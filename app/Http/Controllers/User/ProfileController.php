@@ -17,6 +17,7 @@ use App\Models\Enroll;
 use App\Models\Profile;
 use App\Models\Quote;
 use App\Models\Certification;
+use App\Models\Group;
 use Illuminate\Support\Str;
 
 
@@ -307,14 +308,17 @@ class ProfileController extends Controller
 
             $certification = Certification::findOrFail($id);
             $certification->diagnostico_status = 'Realizado';
-            $certification->save();
 
             $profile = Profile::where('user_curp', $certification->curp)->first();
+
+            $grupo = Group::where('group_name', $certification->grupo)->first();
 
             $to_name = $profile->user_nombre;
             $to_email = $profile->user_email;
 
-            $data = array( 'name' => $profile->user_nombre);
+            $data = array( 'name' => $profile->user_nombre, 'price' => $grupo->group_price, 'standard' => $certification->estandar);
+
+            $certification->save();
 
             Mail::send('emails.infopay', $data, function($message) use ($to_name, $to_email) {
                 $message->to($to_email, $to_name)

@@ -27,11 +27,40 @@
 
       <div class="form-group col-md-12">
         <label for="sector"><strong>Sector:</strong></label>
-        <select class="form-control" id="type" name="sector" value="{{ old('sector') }}" required>
-            <option value="">Seleccionar</option>
-            <option value="Sector 1">Sector 1</option>
-            <option value="Sector 2">Sector 2</option>
-            <option value="Sector 3">sector 3</option>
+        <select id="sector" class="form-control" name="sector" >
+
+          <option value="">Seleccionar</option>
+          <option {{ old('sector') == 'Indefinido' ? 'selected' : '' }} value="Indefinido">Indefinido</option>
+          <option {{ old('sector') == 'Tecnologías de la Información' ? 'selected' : '' }} value="Tecnologías de la Información">Tecnologías de la Información</option>
+          <option {{ old('sector') == 'Servicios Profesionales y Técnicos' ? 'selected' : '' }} value="Servicios Profesionales y Técnicos">Servicios Profesionales y Técnicos</option>
+          <option {{ old('sector') == 'Agrícola y Pecuario' ? 'selected' : '' }} value="Agrícola y Pecuario">Agrícola y Pecuario</option>
+          <option {{ old('sector') == 'Financiero' ? 'selected' : '' }} value="Financiero">Financiero</option>
+          <option {{ old('sector') == 'Transporte' ? 'selected' : '' }} value="Transporte">Transporte</option>
+          <option {{ old('sector') == 'Deportivo' ? 'selected' : '' }} value="Deportivo">Deportivo</option>
+          <option {{ old('sector') == 'Laboral' ? 'selected' : '' }} value="Laboral">Laboral</option>
+          <option {{ old('sector') == 'Sociedades Cooperativas' ? 'selected' : '' }} value="Sociedades Cooperativas">Sociedades Cooperativas</option>
+          <option {{ old('sector') == 'Construcción' ? 'selected' : '' }} value="Construcción">Construcción</option>
+          <option {{ old('sector') == 'Turismo' ? 'selected' : '' }} value="Turismo">Turismo</option>
+          <option {{ old('sector') == 'Comercio' ? 'selected' : '' }} value="Comercio">Comercio</option>
+          <option {{ old('sector') == 'Logística' ? 'selected' : '' }} value="Logística">Logística</option>
+          <option {{ old('sector') == 'Energía Eléctrica'? 'selected' : '' }} value="Energía Eléctrica">Energía Eléctrica</option>
+          <option {{ old('sector') == 'Automotriz' ? 'selected' : '' }} value="Automotriz">Automotriz</option>
+          <option {{ old('sector') == 'Procesamiento de Alimentos' ? 'selected' : '' }} value="Procesamiento de Alimentos">Procesamiento de Alimentos</option>
+          <option {{ old('sector') == 'Telecomunicaciones' ? 'selected' : '' }} value="Telecomunicaciones">Telecomunicaciones</option>
+          <option {{ old('sector') == 'Administración Pública' ? 'selected' : '' }} value="Administración Pública">Administración Pública</option>
+          <option {{ old('sector') == 'Educación y Formación de Personas' ? 'selected' : '' }} value="Educación y Formación de Personas">Educación y Formación de Personas</option>
+          <option {{ old('sector') == 'Social' ? 'selected' : '' }} value="Social">Social</option>
+          <option {{ old('sector') == 'Funciones del Sistema Nacional de Competencias' ? 'selected' : '' }} value="Funciones del Sistema Nacional de Competencias">Funciones del Sistema Nacional de Competencias</option>
+          <option {{ old('sector') == 'Agua' ? 'selected' : '' }} value="Agua">Agua</option>
+          <option {{ old('sector') == 'Seguridad Pública' ? 'selected' : '' }} value="Seguridad Pública">Seguridad Pública</option>
+          <option {{ old('sector') == 'Petróleo y Gas' ? 'selected' : '' }} value="Petróleo y Gas">Petróleo y Gas</option>
+          <option {{ old('sector') == 'Cultural' ? 'selected' : '' }} value="Cultural">Cultural</option>
+          <option {{ old('sector') == 'Minería' ? 'selected' : '' }} value="Minería">Minería</option>
+          <option {{ old('sector') == 'Comercio Exterior' ? 'selected' : '' }} value="Comercio Exterior">Comercio Exterior</option>
+          <option {{ old('sector') == 'Maquilas y Manufactura' ? 'selected' : '' }} value="Maquilas y Manufactura">Maquilas y Manufactura</option>
+          <option {{ old('sector') == 'Químico' ? 'selected' : '' }} value="Químico">Químico</option>
+          <option {{ old('sector') == 'Prendas de Vestir, Textil, Cuero y Calzado' ? 'selected' : '' }} value="Prendas de Vestir, Textil, Cuero y Calzado">Prendas de Vestir, Textil, Cuero y Calzado</option>
+          <option {{ old('sector') == 'Seguridad Nacional' ? 'selected' : '' }} value="Seguridad Nacional">Seguridad Nacional</option>
         </select>
         <span class="alert-danger">{{$errors->first('sector')}}</span>
       </div>
@@ -39,7 +68,7 @@
       <div class="form-group col-md-12">
         <label for="type"><strong>Tipo:</strong></label>
         <select class="form-control" id="type" name="type" value="{{ old('type') }}">
-            <option>Seleccionar</option>
+            <option value="">Seleccionar</option>
             <option value="Curso y Certificación">Curso y Certificación</option>
             <option value="Certificación">Certificación</option>
             <option value="Curso sin estándar">Curso sin estándar</option>

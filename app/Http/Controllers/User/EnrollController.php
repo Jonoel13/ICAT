@@ -387,7 +387,7 @@ class EnrollController extends Controller
 
 
             $enroll = new Enroll;
-            $enroll->enrol_course_id = $standard->id;
+            $enroll->enrol_course_id = $standard->name;
             $enroll->enrol_course_type = "Certificación";
             $enroll->enrol_user_curp = strtoupper($request->enrol_user_curp);
             $enroll->enrol_user_diagnostico = "Pendiente";
@@ -395,7 +395,7 @@ class EnrollController extends Controller
 
             $certification = new Certification;
             $certification->curp = strtoupper($request->enrol_user_curp);
-            $certification->grupo = '0001';
+            $certification->grupo = $request->enrol_group_id;
             $certification->estandar = $standard->name;
             $certification->sector = $standard->sector;
             $certification->estatus = "Candidato";
@@ -598,6 +598,10 @@ class EnrollController extends Controller
 
                 $standard = Standard::where('name', $request->enrol_course_id)->first();
                 $group = Group::where('group_name', $request->enrol_group_id)->first();
+
+                if($standard->name == 'EC1331'):
+                    $request->enrol_group_id = 'EC1331-0001';
+                endif;
 
 
 

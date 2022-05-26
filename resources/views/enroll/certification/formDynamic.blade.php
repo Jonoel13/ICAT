@@ -24,7 +24,7 @@
         <input type="text" id="enrol_course_id" class="form-control" name="enrol_course_id" required="required" value="{{$standard->name}}" readonly>
         <span class="alert-danger">{{$errors->first('enrol_course_id')}}</span>
       </div>
-      <input type="hidden" id="enrol_group_id" class="form-control" name="enrol_group_id" required="required" value="0001" readonly>
+      <input type="hidden" id="enrol_group_id" class="form-control" name="enrol_group_id" required="required" value="0002" readonly>
     </div>
 
 

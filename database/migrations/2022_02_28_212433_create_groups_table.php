@@ -23,9 +23,11 @@ class CreateGroupsTable extends Migration
             $table->string('group_service_type');
             $table->string('group_name');
             $table->string('group_level');
+            $table->string('group_price');
             $table->string('group_shortname');
             $table->string('group_mode');
             $table->string('group_hours');
+            $table->string('group_type');
             $table->date('group_date_init');
             $table->date('group_date_end');
             $table->string('group_min_grade');
