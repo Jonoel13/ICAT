@@ -40,8 +40,8 @@
       <table class="table table-striped table-bordered">
           <thead>
               <tr>
-                  <th scope="col" class="">Estándar</th>
-                  <th scope="col">Descripción</th>
+                  <th scope="col" class=""># Estándar</th>
+                  <th scope="col">Nombre de estándar</th>
                   <th scope="col">Enlace del CONOCER</th>
                   <th scope="col">Editar</th>
               </tr>
@@ -50,7 +50,7 @@
               @foreach($standards as $standard)
               <tr>
                   <td>{{$standard->name}}</td>
-                  <td>{{$standard->description}}</td>
+                  <td>{{$standard->shortname}}</td>
                   <td>{{$standard->link}}</td>
                   <td><a href="{{url('admin/estandar/edit')}}/{{$standard->id}}">Editar</a></td>
               </tr>

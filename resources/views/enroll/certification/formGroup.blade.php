@@ -21,15 +21,16 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="enrol_course_id">Nombre de estandar:</label>
-        <select id="enrol_course_id" class="form-control" name="enrol_course_id" required="required">
-
-          <option value="">Seleccionar</option>
-          @foreach($standards as $standard)
-            <option value="{{$standard->name}}">{{$standard->name}}</option>
-          @endforeach
-
-        </select>
+        <input type="text" id="enrol_course_id" class="form-control" name="enrol_course_id" required="required" value="{{$standard->name}}" readonly>
+        <span class="alert-danger">{{$errors->first('enrol_course_id')}}</span>
       </div>
+
+      <div class="form-group col-md-6">
+        <label for="enrol_group_id">ID de grupo:</label>
+        <input type="text" id="enrol_group_id" class="form-control" name="enrol_group_id" required="required" value="{{$group->group_name}}" readonly>
+        <span class="alert-danger">{{$errors->first('enrol_group_id')}}</span>
+      </div>
+
     </div>
 
     <br>
@@ -468,14 +469,14 @@
   }
 </style>
 <script type="text/javascript">
-/*
+
   $('.btnt').show();
   $('.btnf').hide();
   function validarInput(input) {
         var curp = input.value.toUpperCase(),
             resultado = document.getElementById("resultado"),
               valido = "No válido";
-              
+
           if (curpValida(curp)) {
             valido = "Válido";
               resultado.classList.add("ok");
@@ -486,17 +487,17 @@
               $('.btnt').hide();
               $('.btnf').show();
           }
-              
+
           resultado.innerText = "CURP: " + curp + "\nFormato: " + valido;
       }
 
       function curpValida(curp) {
         var re = /^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0\d|1[0-2])(?:[0-2]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$/,
             validado = curp.match(re);
-        
+
           if (!validado)  //Coincide con el formato general?
             return false;
-          
+
           //Validar que coincida el dígito verificador
           function digitoVerificador(curp17) {
               //Fuente https://consultas.curp.gob.mx/CurpSP/
@@ -510,13 +511,11 @@
                   return 0;
               return lngDigito;
           }
-          if (validado[2] != digitoVerificador(validado[1])) 
+          if (validado[2] != digitoVerificador(validado[1]))
             return false;
-              
+
         return true; //Validado
       }
-
-      */
 </script>
 
 @endsection

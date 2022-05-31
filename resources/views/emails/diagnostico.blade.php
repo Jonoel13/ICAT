@@ -2,7 +2,7 @@ Hola <strong>{{ $name }}</strong>,
 <p>
 Con la finalidad de que cuentes con los elementos necesarios para obtener tu certificación, <strong>te invitamos a realizar una evaluación diagnóstica</strong> en la que podrás medir el grado de dominio de los conocimientos que se consideran necesarios para llevar a cabo de manera exitosa tu proceso de evaluación.
 <br><br>
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSegHzFH_DmYFbrG8t4bebt0nrrK-24vhO7DwQRBX9AthIj0lw/viewform?usp=sf_link" target="_blank">Realizar evaluación diagnóstica</a>
+<a href="https://sii.icatadistancia.cdmx.gob.mx/login" target="_blank">Iniciar sesión y realizar evaluación diagnóstica</a>
 <br><br>
 Mucho éxito en tu próximo proceso de evaluación.
 

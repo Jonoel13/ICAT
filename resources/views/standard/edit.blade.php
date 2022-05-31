@@ -24,7 +24,7 @@
             <input type="file" class="form-control" id="image" name="image"  value="">
             <span class="alert-danger">{{$errors->first('image')}}</span>
         </div>
-    </div>
+      </div>
 
       <div class="form-group col-md-12">
         <label for="name"><strong>Nombre del estándar:</strong></label>
@@ -37,6 +37,47 @@
         <input type="text" class="form-control" id="shortname" name="shortname" value="{{ $standard->shortname }}">
         <span class="alert-danger">{{$errors->first('shortname')}}</span>
       </div>
+
+      <div class="form-group col-md-12">
+        <label for="sector"><strong>Sector:</strong></label>
+        <select id="sector" class="form-control" name="sector" required="required">
+
+          <option value="">Seleccionar</option>
+          <option {{ $standard->sector == 'Indefinido' ? 'selected' : '' }} value="Indefinido">Indefinido</option>
+          <option {{ $standard->sector == 'Tecnologías de la Información' ? 'selected' : '' }} value="Tecnologías de la Información">Tecnologías de la Información</option>
+          <option {{ $standard->sector == 'Servicios Profesionales y Técnicos' ? 'selected' : '' }} value="Servicios Profesionales y Técnicos">Servicios Profesionales y Técnicos</option>
+          <option {{ $standard->sector == 'Agrícola y Pecuario' ? 'selected' : '' }} value="Agrícola y Pecuario">Agrícola y Pecuario</option>
+          <option {{ $standard->sector == 'Financiero' ? 'selected' : '' }} value="Financiero">Financiero</option>
+          <option {{ $standard->sector == 'Transporte' ? 'selected' : '' }} value="Transporte">Transporte</option>
+          <option {{ $standard->sector == 'Deportivo' ? 'selected' : '' }} value="Deportivo">Deportivo</option>
+          <option {{ $standard->sector == 'Laboral' ? 'selected' : '' }} value="Laboral">Laboral</option>
+          <option {{ $standard->sector == 'Sociedades Cooperativas' ? 'selected' : '' }} value="Sociedades Cooperativas">Sociedades Cooperativas</option>
+          <option {{ $standard->sector == 'Construcción' ? 'selected' : '' }} value="Construcción">Construcción</option>
+          <option {{ $standard->sector == 'Turismo' ? 'selected' : '' }} value="Turismo">Turismo</option>
+          <option {{ $standard->sector == 'Comercio' ? 'selected' : '' }} value="Comercio">Comercio</option>
+          <option {{ $standard->sector == 'Logística' ? 'selected' : '' }} value="Logística">Logística</option>
+          <option {{ $standard->sector == 'Energía Eléctrica' ? 'selected' : '' }} value="Energía Eléctrica">Energía Eléctrica</option>
+          <option {{ $standard->sector == 'Automotriz' ? 'selected' : '' }} value="Automotriz">Automotriz</option>
+          <option {{ $standard->sector == 'Procesamiento de Alimentos' ? 'selected' : '' }} value="Procesamiento de Alimentos">Procesamiento de Alimentos</option>
+          <option {{ $standard->sector == 'Telecomunicaciones' ? 'selected' : '' }} value="Telecomunicaciones">Telecomunicaciones</option>
+          <option {{ $standard->sector == 'Administración Pública' ? 'selected' : '' }} value="Administración Pública">Administración Pública</option>
+          <option {{ $standard->sector == 'Educación y Formación de Personas' ? 'selected' : '' }} value="Educación y Formación de Personas">Educación y Formación de Personas</option>
+          <option {{ $standard->sector == 'Social' ? 'selected' : '' }} value="Social">Social</option>
+          <option {{ $standard->sector == 'Funciones del Sistema Nacional de Competencias' ? 'selected' : '' }} value="Funciones del Sistema Nacional de Competencias">Funciones del Sistema Nacional de Competencias</option>
+          <option {{ $standard->sector == 'Agua' ? 'selected' : '' }} value="Agua">Agua</option>
+          <option {{ $standard->sector == 'Seguridad Pública' ? 'selected' : '' }} value="Seguridad Pública">Seguridad Pública</option>
+          <option {{ $standard->sector == 'Petróleo y Gas' ? 'selected' : '' }} value="Petróleo y Gas">Petróleo y Gas</option>
+          <option {{ $standard->sector == 'Cultural' ? 'selected' : '' }} value="Cultural">Cultural</option>
+          <option {{ $standard->sector == 'Minería' ? 'selected' : '' }} value="Minería">Minería</option>
+          <option {{ $standard->sector == 'Comercio Exterior' ? 'selected' : '' }} value="Comercio Exterior">Comercio Exterior</option>
+          <option {{ $standard->sector == 'Maquilas y Manufactura' ? 'selected' : '' }} value="Maquilas y Manufactura">Maquilas y Manufactura</option>
+          <option {{ $standard->sector == 'Químico' ? 'selected' : '' }} value="Químico">Químico</option>
+          <option {{ $standard->sector == 'Prendas de Vestir, Textil, Cuero y Calzado' ? 'selected' : '' }} value="Prendas de Vestir, Textil, Cuero y Calzado">Prendas de Vestir, Textil, Cuero y Calzado</option>
+          <option {{ $standard->sector == 'Seguridad Nacional' ? 'selected' : '' }} value="Seguridad Nacional">Seguridad Nacional</option>
+        </select>
+        <span class="alert-danger">{{$errors->first('sector')}}</span>
+      </div>
+
 
       <div class="form-group col-md-12">
         <label for="type"><strong>Tipo:</strong></label>
@@ -53,6 +94,12 @@
         <label for="description"><strong>Descripción:</strong></label>
         <textarea type="text" class="form-control" id="description" name="description">{{ $standard->description }}</textarea>
         <span class="alert-danger">{{$errors->first('description')}}</span>
+      </div>
+
+      <div class="form-group col-md-12">
+        <label for="diagnostico"><strong>Enlace de examen diagnóstico:</strong></label>
+        <input type="text" class="form-control" id="diagnostico" name="diagnostico"  value="{{ $standard->diagnostico }}">
+        <span class="alert-danger">{{$errors->first('diagnostico')}}</span>
       </div>
 
       <div class="form-group col-md-6">
