@@ -320,8 +320,8 @@ class QuoteController extends Controller
             ->where('n_intento', '1')->first();
                     
         $certification->n_intento = '0';
-
         $certification->save();
+
         $date->save();
         $quote->delete();
 

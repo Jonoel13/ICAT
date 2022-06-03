@@ -257,7 +257,9 @@ class EnrollController extends Controller
         
         $certification = Certification::find($id);
 
-        $data = array( 'name' => $profile->user_nombre, 'app' => $profile->user_app, 'apm' => $profile->user_apm, 'curp' => $curp, 'certify' => $id, 'date' => $certification->fecha);
+        $group = Group::where('group_name', $certification->grupo)->first();
+
+        $data = array( 'name' => $profile->user_nombre, 'app' => $profile->user_app, 'apm' => $profile->user_apm, 'curp' => $curp, 'certify' => $id, 'date' => $certification->fecha, 'course' => $group->group_shortname);
 
         if($certification->estatus == 'Competente'){
             return view('enroll.certification.constancia', ['data' => $data]);
@@ -392,10 +394,11 @@ class EnrollController extends Controller
             $enroll->enrol_user_curp = strtoupper($request->enrol_user_curp);
             $enroll->enrol_user_diagnostico = "Pendiente";
             $enroll->enrol_user_certificado = "Pendiente";
+            $enroll->enrol_group = "000001";
 
             $certification = new Certification;
             $certification->curp = strtoupper($request->enrol_user_curp);
-            $certification->grupo = $request->enrol_group_id;
+            $certification->grupo = '000001';
             $certification->estandar = $standard->name;
             $certification->sector = $standard->sector;
             $certification->estatus = "Candidato";
@@ -408,7 +411,7 @@ class EnrollController extends Controller
             $certification->link_documentacion = 'N/A';
             $certification->pago = 'Pendiente';
             $certification->diagnostico_status = 'Pendiente';
-            $certification->diagnostico = 'https://docs.google.com/forms/d/e/1FAIpQLSegHzFH_DmYFbrG8t4bebt0nrrK-24vhO7DwQRBX9AthIj0lw/viewform?usp=sf_link';
+            $certification->diagnostico = $standard->diagnostico;
 
 
 
