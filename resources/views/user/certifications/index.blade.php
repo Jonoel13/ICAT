@@ -8,7 +8,7 @@
 			<div class="card mb-3 col-md-8" >
 			  <div class="row no-gutters">
 			    <div class="col-md-4 pt-3">
-			      <img class="img-responsive" src="{{ asset ('storage/standard')}}/{!! Helper::standarImage($certification->estandar) !!}" width="300px">
+			      <img class="img-responsive col-md-12" src="{{ asset ('storage/standard')}}/{!! Helper::standarImage($certification->estandar) !!}">
 			    </div>
 			    <div class="col-md-6">
 			      <div class="card-body">

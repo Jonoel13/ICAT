@@ -81,8 +81,7 @@
 
       <div class="form-group col-md-4">
         <label for="group_price"><strong>Costo:</strong></label>
-        <input type="number" class="form-control" id="group_price" name="group_price"  value="{{ $group->group_price }}
-        " min="0">
+        <input type="number" class="form-control" id="group_price" name="group_price"  value="{{ $group->group_price }}" min="0">
         <span class="alert-danger">{{$errors->first('group_price')}}</span>
       </div>
 
