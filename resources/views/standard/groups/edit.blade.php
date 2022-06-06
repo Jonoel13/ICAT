@@ -81,7 +81,7 @@
 
       <div class="form-group col-md-4">
         <label for="group_price"><strong>Costo:</strong></label>
-        <input type="number" class="form-control" id="group_price" name="group_price"  value="
+        <input type="number" class="form-control" id="group_price" name="group_price"  value="{{ $group->group_price }}
         " min="0">
         <span class="alert-danger">{{$errors->first('group_price')}}</span>
       </div>
@@ -91,10 +91,10 @@
         <label for="group_type"><strong>Formato de período de publicación:</strong></label>
         <select class="form-control" id="group_type" name="group_type">
             <option value="">Selecionar</option>
-            <option value="Fijo">Fijo</option>
-            <option value="Rango">Fecha de inicio - Fecha de termino</option>
+            <option {{ $group->group_type == 'Fijo' ? 'selected' : '' }} value="Fijo">Presencial</option>
+            <option {{ $group->group_type == 'Rango' ? 'selected' : '' }} value="Fecha de inicio - Fecha de termino">A distancia</option>
         </select>
-        <span class="alert-danger">{{$errors->first('group_mode')}}</span>
+        <span class="alert-danger">{{$errors->first('group_type')}}</span>
       </div>
 
       <div class="form-group col-md-6">
