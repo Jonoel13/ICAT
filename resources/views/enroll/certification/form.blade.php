@@ -26,6 +26,8 @@
         </select>
       </div-->
       <input type="hidden" name="enrol_course_id" value="EC1331">
+      <input type="hidden" name="enrol_group_id" value="000001" >
+
     </div>
 
     <br>

@@ -267,7 +267,7 @@
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
-  
+
 
     <nav class="header-nav ms-auto">
       @guest
@@ -437,7 +437,7 @@
                 <span class="d-none d-md-block  ps-2">{{ Auth::user()->name }}</span>
               </a><!-- End Profile Iamge Icon -->
 
-           
+
             </li>
             <li>
                   <a class="d-none d-md-block  ps-2" href="{{ route('logout') }}"
@@ -465,9 +465,15 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       @if(Auth::user()->id_rol == 1)
+
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('home') }}">
               <i class="bi bi-columns-gap"></i><span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  href="{{ url('admin/alianzas') }}">
+              <i class="bi bi-columns-gap"></i><span>Alianzas</span>
             </a>
           </li>
           <li class="nav-item">

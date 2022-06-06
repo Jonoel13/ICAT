@@ -12,7 +12,7 @@
       </div>
       <div class="mt-4">
           <p class="text-center text-certify ">
-            Por haber concluido satisfactoriamente el proceso de evaluación con fines a la certificación de competencia laboral en el estándar <span class="text-green">“EC1331 Conducción del vehículo motocicleta para su uso en la vialidad, nivel básico”</span>, iniciando así, la gestión para la expedición del Certificado de competencia laboral expedido por el Consejo Nacional de Normalización y Certificación de <br>Competencias Laborales (CONOCER).
+            Por haber concluido satisfactoriamente el proceso de evaluación con fines a la certificación de competencia laboral en el estándar <span class="text-green">“{{$data['course']}} ”</span>, iniciando así, la gestión para la expedición del Certificado de competencia laboral expedido por el Consejo Nacional de Normalización y Certificación de <br>Competencias Laborales (CONOCER).
         </p>
       </div>  
       <div class="mt-5">

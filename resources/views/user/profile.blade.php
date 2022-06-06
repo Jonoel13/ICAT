@@ -190,7 +190,7 @@
                 <table class="table">
                     <tr>
                       <td>
-                          <a class="text-success" href="https://docs.google.com/forms/d/e/1FAIpQLSegHzFH_DmYFbrG8t4bebt0nrrK-24vhO7DwQRBX9AthIj0lw/viewform?usp=sf_link" target="_blank" style="font-weight: 600;">Hacer prueba</a>
+                          <a class="text-success diagnostico" href="{!! Helper::standarDiagnostico($certification->estandar) !!}" target="_blank" style="font-weight: 600;">Hacer prueba</a>
                       </td>
                       <td>
                           {{$certification->estandar}}
@@ -202,8 +202,8 @@
                   <ul class="list-group">
                       <li class="list-group-item">
                         <div class="custom-control custom-switch">
-                          <input type="checkbox" class="custom-control-input" id="diagnostico_status" name="diagnostico_status">
-                          <label class="custom-control-label" for="diagnostico_status">Realizada</label><span class="alert-danger"> {{$errors->first('diagnostico_status')}}</span>
+                          <input type="checkbox" class="" id="diagnostico_status" name="diagnostico_status">
+                          <label class="" for="">Realizada</label><span class="alert-danger"> {{$errors->first('diagnostico_status')}}</span>
                       </li>
                       <li class="list-group-item">
                           <div class="">
@@ -288,7 +288,7 @@
                                   {{$certification->estandar}}
                               </td>
                               <td>
-                                <a href="{{ url('usuario/citas') }}" class="btn btn-success btn-sm"
+                                <a href="{{ url('usuario/citas/standard') }}/{{$certification->estandar}}" class="btn btn-success btn-sm"
                                 title="Agendar cita para realizar el proceso de evaluación de forma presencial" 
                                 >Agendar cita</a>
                               </td>
@@ -477,4 +477,5 @@
     @endif
 
 </div>
+
 @endsection

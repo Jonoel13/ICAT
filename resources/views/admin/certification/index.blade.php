@@ -11,10 +11,10 @@
 </style>
 <div class="row nv">
 <div class="container">
-  <h1>Lista estándares</h1>
+  <h1>Lista de Certificaciones</h1>
   <nav>
     <ol class="breadcrumb">
-      <li class="breadcrumb-item active"><a href="#">Lista estándares</a></li>
+      <li class="breadcrumb-item active"><a href="#">Lista certificaciones</a></li>
     </ol>
   </nav>
 </div>

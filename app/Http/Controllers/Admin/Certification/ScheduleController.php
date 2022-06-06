@@ -13,6 +13,7 @@ use File;
 use Validator;
 use App\Models\Quote;
 use App\Models\Date;
+use App\Models\Standard;
 use Illuminate\Support\Str;
 
 
@@ -131,7 +132,8 @@ class ScheduleController extends Controller
 
     public function form()
     {
-        return view('schedule.form');
+        $standards = Standard::orderBy('id', 'desc')->get();
+        return view('schedule.form', ['standards' => $standards]);
     }
 
     public function find(Request $request, $id)
