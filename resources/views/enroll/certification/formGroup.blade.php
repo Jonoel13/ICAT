@@ -20,14 +20,14 @@
     <hr>
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="enrol_course_id">Nombre de estandar:</label>
-        <input type="text" id="enrol_course_id" class="form-control" name="enrol_course_id" required="required" value="{{$standard->name}}" readonly>
+        <!--label for="enrol_course_id">Nombre de estandar:</label-->
+        <input type="hidden" id="enrol_course_id" class="form-control" name="enrol_course_id" required="required" value="{{$standard->name}}" readonly>
         <span class="alert-danger">{{$errors->first('enrol_course_id')}}</span>
       </div>
 
       <div class="form-group col-md-6">
-        <label for="enrol_group_id">ID de grupo:</label>
-        <input type="text" id="enrol_group_id" class="form-control" name="enrol_group_id" required="required" value="{{$group->group_name}}" readonly>
+        <!--label for="enrol_group_id">ID de grupo:</label-->
+        <input type="hidden" id="enrol_group_id" class="form-control" name="enrol_group_id" required="required" value="{{$group->group_name}}" readonly>
         <span class="alert-danger">{{$errors->first('enrol_group_id')}}</span>
       </div>
 
