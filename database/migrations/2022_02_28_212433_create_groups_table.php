@@ -16,16 +16,18 @@ class CreateGroupsTable extends Migration
         Schema::create('groups', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('id_standard');
-            $table->string('id_convenio');
-            $table->string('id_alliance');
+            $table->string('id_allience');
             $table->string('id_place');
             $table->string('id_list_activities');
             $table->string('id_instructor');
+            $table->string('group_service_type');
             $table->string('group_name');
             $table->string('group_level');
+            $table->string('group_price');
             $table->string('group_shortname');
             $table->string('group_mode');
             $table->string('group_hours');
+            $table->string('group_type');
             $table->date('group_date_init');
             $table->date('group_date_end');
             $table->string('group_min_grade');
