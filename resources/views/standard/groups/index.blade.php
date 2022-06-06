@@ -42,8 +42,8 @@
                 <thead>
                     <tr>
                         <th scope="col" class="">Grupo</th>
-                        <th scope="col">Fecha de inicio</th>
-                        <th scope="col">Fecha de termino</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Costo</th>
                         <th scope="col">Editar</th>
                     </tr>
                 </thead>
@@ -51,8 +51,8 @@
                     @foreach($groups as $group)
                     <tr>
                         <td>{{$group->group_name}}</dt>
-                        <td>{{$group->group_date_init}}</td>
-                        <td>{{$group->group_date_end}}</td>
+                        <td>{{$group->group_shortname}}</td>
+                        <td>{{$group->group_price}}</td>
                         <td><a href="{{url('admin/groups/edit')}}/{{$group->id}}"><span class="text-success"><i class="fa fa-edit"></i> Editar</span></a></td>
                     </tr>
                     @endforeach
