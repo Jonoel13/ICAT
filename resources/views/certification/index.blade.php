@@ -34,7 +34,7 @@
             <td><span class="{{$certification->estatus}}">{{$certification->estatus}}</span></td>
             <td>{{$certification->calificacion}}</td>
             <td>{{$certification->fecha}}</td>
-            <td><a href="{{url('certificaciones')}}/{{$certification->curp}}"><i class="fa fa-edit"></i> Calificar </a></td>
+            <td><a href="{{url('certificaciones')}}/{{$certification->id}}"><i class="fa fa-edit"></i> Calificar </a></td>
         </tr>
         @endforeach
 

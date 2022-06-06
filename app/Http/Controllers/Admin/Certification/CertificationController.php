@@ -43,10 +43,10 @@ class CertificationController extends Controller
 
     }
 
-    public function edit(Request $request, $curp)
+    public function edit(Request $request, $id)
     {
 
-        $certification = Certification::where('estandar', 'EC1331')->where('curp', $curp)->first();
+        $certification = Certification::find($id);
 
         return view('certification.edit', ['certification' => $certification]);
 

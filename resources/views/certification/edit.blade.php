@@ -31,7 +31,7 @@
             </div>
             <div class="form-group col-md-4">
                 <label for="fecha"><strong>Fecha de evaluación:</strong></label>
-                <input type="date" class="form-control" id="fecha" name="fecha"  value="{{ $certification->fecha }}" >
+                <input type="date" class="form-control" id="fecha" name="fecha"  value="{{ $certification->fecha }}" required>
                 <span class="alert-danger">{{$errors->first('fecha')}}</span>
             </div>
 

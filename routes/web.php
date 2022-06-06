@@ -123,7 +123,7 @@ Route::any('admin/alianzas/search/filter', [App\Http\Controllers\Admin\Allience\
 |--------------------------------------------------------------------------
 */
 Route::get('certificaciones', [App\Http\Controllers\Admin\Certification\CertificationController::class, 'index']);
-Route::get('certificaciones/{curp}', [App\Http\Controllers\Admin\Certification\CertificationController::class, 'edit']);
+Route::get('certificaciones/{id}', [App\Http\Controllers\Admin\Certification\CertificationController::class, 'edit']);
 Route::any('certificaciones/edit/{curp}', [App\Http\Controllers\Admin\Certification\CertificationController::class, 'update']);
 
 
