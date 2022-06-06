@@ -384,9 +384,17 @@ class EnrollController extends Controller
 
         } else {
 
-
             $standard = Standard::where('name', $request->enrol_course_name)->first();
 
+            $data = Certification::where('curp', strtoupper($request->enrol_user_curp))
+                ->where('estandar', $request->enrol_course_name)
+                ->where('estatus', 'Candidato')
+                ->exists();
+
+            if($data):
+
+                return redirect('/login')->with('message', 'Actualmente tienes un proceso en curso en la certificación de este estándar');
+            else:
 
             $enroll = new Enroll;
             $enroll->enrol_course_id = $standard->name;
@@ -419,7 +427,7 @@ class EnrollController extends Controller
             $certification->save();
             $enroll->save();
 
-            return redirect('login')->with('message', 'Registro exitoso');
+            
 /*
 
             $to_name = $profile->user_nombre;
@@ -434,6 +442,8 @@ class EnrollController extends Controller
                 $message->from('icat@cdmx.gob.mx','Icat CDMX');
             });
 */
+                return redirect('login')->with('message', 'Registro exitoso');
+            endif;
 
         }
     }
