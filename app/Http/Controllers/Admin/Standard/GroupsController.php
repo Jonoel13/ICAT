@@ -211,8 +211,10 @@ class GroupsController extends Controller
 
     public function delete(Request $request, $id)
     {
-        $standard = Quote::find($id);
-        $standard->delete();
+        $group = Group::find($id);
+        $group->delete();
+
+        return redirect('admin/groups/lista')->with('message', 'Registro actualizado');
     }
 
     public function registro(Request $request)

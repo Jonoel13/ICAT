@@ -148,7 +148,15 @@
     <button type="submit" class="btn btn-primary" onclick="this.disabled=true; this.value='Enviando, espere ...'; this.form.submit();">Aceptar</button>
   </form>
 </div>
-
+@if(Auth::user()->id_rol == 1)
+<hr>
+<div>
+  <form method="POST" action="{{url('admin/groups/delete')}}/{{$group->id}}" autocomplete="off" enctype="multipart/form-data">
+    {{csrf_field() }}
+      <button type="submit" class="btn btn-danger" onclick="this.disabled=true; this.value='Enviando, espere ...'; this.form.submit();">Eliminar</button>
+  </form>
+</div>
+@endif
 
 <style type="text/css">
   label{

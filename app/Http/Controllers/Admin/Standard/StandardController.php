@@ -178,6 +178,7 @@ class StandardController extends Controller
     {
         $standard = Standard::find($id);
         $standard->delete();
+        return redirect('admin/estandar/lista')->with('message', 'Registro exitoso');
     }
 
     public function registro(Request $request)

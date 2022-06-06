@@ -137,6 +137,16 @@
     <a href="{{url('admin/estandar/lista')}}" type="button" class="btn btn-default">Cancelar</a>
     <button type="submit" class="btn btn-primary" onclick="this.disabled=true; this.value='Enviando, espere ...'; this.form.submit();">Aceptar</button>
   </form>
+@if(Auth::user()->id_rol == 1)
+  <hr>
+<div>
+  <form method="POST" action="{{url('admin/estandar/delete')}}/{{$standard->id}}" autocomplete="off" enctype="multipart/form-data">
+    {{csrf_field() }}
+      <button type="submit" class="btn btn-danger" onclick="this.disabled=true; this.value='Enviando, espere ...'; this.form.submit();">Eliminar</button>
+  </form>
+</div>
+@endif
+
 </div>
 
 @endsection
