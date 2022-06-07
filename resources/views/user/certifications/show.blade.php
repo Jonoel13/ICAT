@@ -191,7 +191,7 @@
                 </table>
                 <table class="table">
                     <tr>
-                      <td><a href="{{url('public/file/certify')}}/{{$certification->documento}}" target="_blank">Descargar certificado</a></td>
+                      <td><a href="{{asset('storage/certify/'. $certification->documento)}}" target="_blank">Descargar certificado</a></td>
                     </tr>
                 </table>
 

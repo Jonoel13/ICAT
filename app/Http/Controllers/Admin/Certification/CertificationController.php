@@ -37,7 +37,7 @@ class CertificationController extends Controller
      */
     public function index()
     {
-        $certifications = Certification::where('fecha', '!=', '08-07-2021')->orderBy('updated_at', 'desc')->paginate(20);
+        $certifications = Certification::where('estandar', 'EC1331')->where('fecha', '!=', '08-07-2021')->orderBy('updated_at', 'desc')->paginate(20);
 
       return view('certification.index', ['certifications' => $certifications]);
 
@@ -181,13 +181,20 @@ class CertificationController extends Controller
 
         $certification = Certification::findOrFail($id);
 
-        if($request->hasFile("documento")){
-                $file=$request->file("documento");
-                $nombre = "certify_".$certification->curp.time().".".$file->guessExtension();
-                $ruta = public_path("file/certify/".$nombre);
-                copy($file, $ruta);
-                $certification->documento = $nombre;
-            }
+
+        if($request->hasFile('documento')){
+
+            if($certification->documento != 'Pendiente'):
+                Storage::disk('public')->delete('certify/'.$certification->documento);
+            endif;
+
+            $name = "certify_".$certification->curp.time().".".$request->file('documento')->extension();
+            $path = $request->documento->storeAs('/public/certify', $name);
+            $certification->documento = $name;
+
+        }else{
+            $standard->image = 'N/A';
+        }
 
 
         $certification->save();

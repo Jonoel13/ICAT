@@ -41,7 +41,7 @@
       background: #FFFFFF;
     }
     .btn-outline-success{
-      color: #ffffff !important;
+      color: #691C32 !important;
       margin-right: 5px;
     }
     .sidebar-nav .nav-link{
@@ -508,7 +508,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('certificaciones') }}">
-              <i class="bi bi-bookmark-check"></i><span>Certificaciones</span>
+              <i class="bi bi-bookmark-check"></i><span>Certificaciones EC1331</span>
             </a>
           </li>
           <li class="nav-item">
@@ -565,7 +565,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="{{ url('certificaciones') }}">
-              <i class="bi bi-bookmark-check"></i><span>Certificaciones</span>
+              <i class="bi bi-bookmark-check"></i><span>Certificaciones EC1331</span>
             </a>
           </li>
           <li class="nav-item">

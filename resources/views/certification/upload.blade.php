@@ -19,7 +19,7 @@
                     @if($certification->documento == 'Pendiente')
                     <td>{{$certification->documento}}</td>
                     @else
-                    <td><a href="{{url('public/file/certify')}}/{{$certification->documento}}" target="_blank">Descargar documento</a></td>
+                    <td><a href="{{asset('storage/certify/'. $certification->documento)}}" target="_blank">Descargar documento</a></td>
                     @endif
                 </tr>
             </tbody>
