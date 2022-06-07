@@ -17,6 +17,7 @@
           <th>CURP</th>
           <th>Correo Electrónico</th>
           <th></th>
+          <th></th>
       </tr>
   </thead>
   <tbody>
