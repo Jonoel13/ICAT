@@ -21,7 +21,7 @@
     <div class="col-6 col-md-6">
         <a class="btn btn-success" href="{{url('admin/estandar/from')}}">Agregar</a>
     </div>
-    <div class="col-6 col-md-6">
+    <!--div class="col-6 col-md-6">
         
         <div class="input-group">
             <input type="text" name="standard" id="standard">
@@ -33,11 +33,11 @@
             </div>
         </div>
         
-    </div>
+    </div-->
 </div>
 <div class="row ">
   <div class="col-md-12">
-      <table class="table table-striped table-bordered">
+      <table id="standars" class="table table-striped table-bordered">
           <thead>
               <tr>
                   <th scope="col" class=""># Estándar</th>
@@ -57,11 +57,16 @@
               @endforeach
           </tbody>
       </table>
-      <nav aria-label=" navigation ">
-      {!! $standards->render() !!}
-      </nav>
+
   </div>
 
 </div>
+
+<script type="text/javascript">
+  const dataTable = new simpleDatatables.DataTable("#standars", {
+  searchable: true,
+  fixedHeight: true,
+  })
+</script>
 
 @endsection

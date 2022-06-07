@@ -85,6 +85,13 @@ Route::any('admin/groups/update/{id}', [App\Http\Controllers\Admin\Standard\Grou
 Route::any('admin/groups/delete/{id}', [App\Http\Controllers\Admin\Standard\GroupsController::class, 'delete']);
 /*
 |--------------------------------------------------------------------------
+| Routes Enrolments Controller
+|--------------------------------------------------------------------------
+*/
+
+Route::any('admin/groups/enrolments/{id}', [App\Http\Controllers\Admin\Enroll\EnrolmentsController::class, 'enrolments']);
+/*
+|--------------------------------------------------------------------------
 | Routes Instructors Controller
 |--------------------------------------------------------------------------
 */

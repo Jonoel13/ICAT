@@ -5,6 +5,7 @@ use App\Models\Standard;
 use App\Models\Date;
 use App\Models\Quote;
 use App\Models\Profile;
+use App\Models\Enroll;
 
 
 class Helpers
@@ -35,6 +36,13 @@ class Helpers
         $standard = Standard::where('name', $data)->first();
 
         return $standard->description;
+    }
+
+    public static function standarName($data)
+    {
+        $standard = Standard::find($data);
+
+        return $standard->name;
     }
 
     public static function standarMaterial($data)
@@ -74,6 +82,13 @@ class Helpers
         $profile = Profile::where('user_curp', $data)->first();
 
         return $profile->user_check_ok;
+    }
+
+    public static function groupEnrolments($data)
+    {
+        $result = Enroll::where('enrol_group', $data)->count();
+
+        return $result;
     }
 
 
