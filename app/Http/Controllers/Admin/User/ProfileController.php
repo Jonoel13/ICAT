@@ -112,12 +112,14 @@ class ProfileController extends Controller
         return redirect()->back()->with('message', 'Registro Eliminado');
     }
 
-    public function delete(Request $request, $id)
+    public function deleteUser(Request $request, $id)
     {
         $user = User::find($id);
-        $profile = Profile::where('user_curp', $user->name)->delete();
+        //$profile = Profile::where('user_curp', $user->name)->delete();
 
         $user->delete();
+
+        return redirect()->back()->with('message', 'Registro Eliminado');
     }
 
 

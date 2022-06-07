@@ -656,10 +656,13 @@ class EnrollController extends Controller
                 $user->email = $request->enrol_user_email;
                 $user->password = bcrypt($password);
 
-                $user->save();
                 $certification->save();
                 $enroll->save();
+                $user->save();
                 $profile->save();
+
+
+
 
                 $to_name = $request->enrol_user_nombre;
                 $to_email = $request->enrol_user_email;

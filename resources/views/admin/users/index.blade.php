@@ -25,6 +25,7 @@
         <td>{{$user->name}}</td>
         <td>{{$user->email}}</td>
         <td><a class="btn btn-success" href="{{url('usuarios')}}/{{$user->id}}">Cambiar contraseña</a></td>
+        <td><a class="btn btn-success" href="{{url('admin/usuarios/eliminar')}}/{{$user->id}}">Eliminar</a></td>
       </tr>
       @endforeach
   </tbody>
