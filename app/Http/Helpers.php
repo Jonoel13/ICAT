@@ -6,6 +6,7 @@ use App\Models\Date;
 use App\Models\Quote;
 use App\Models\Profile;
 use App\Models\Enroll;
+use App\Models\Certification;
 
 
 class Helpers
@@ -84,9 +85,11 @@ class Helpers
         return $profile->user_check_ok;
     }
 
-    public static function groupEnrolments($data)
+    public static function groupEnrolments($standard, $id)
     {
-        $result = Enroll::where('enrol_group', $data)->count();
+        $data = Standard::find($standard);
+
+        $result = Certification::where('estandar', $data->name)->where('grupo', $id)->count();
 
         return $result;
     }

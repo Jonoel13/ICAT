@@ -60,7 +60,7 @@
                         <td>{!! Helper::standarName($group->id_standard) !!}</td>
                         <td>{{$group->group_shortname}}</td>
                         <td>{{$group->group_price}}</td>
-                        <td class="count col-1">{!! Helper::groupEnrolments($group->group_name) !!}</td>
+                        <td class="count col-2">{!! Helper::groupEnrolments($group->id_standard, $group->group_name) !!}</td>
                         <td><a href="{{url('admin/groups/edit')}}/{{$group->id}}"><span class="text-success"><i class="fa fa-edit"></i> Editar</span></a></td>
                     </tr>
                     @endforeach
