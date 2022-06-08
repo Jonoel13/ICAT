@@ -14,6 +14,8 @@ use Validator;
 use App\Models\Enroll;
 use App\Models\Certification;
 use App\Models\Profile;
+use App\Models\Standard;
+use App\Models\Group;
 use Illuminate\Support\Str;
 
 
@@ -69,7 +71,11 @@ class CertificationController extends Controller
         $certification->estatus = $request->estatus;
         $certification->calificacion = $request->calificacion;
         $certification->fecha  = $request->fecha;
+
+
+
         $certification->save();
+
 
         $profile = Profile::where('user_curp', $certification->curp)->first();
 
@@ -94,8 +100,15 @@ class CertificationController extends Controller
                 $message->from('icat@cdmx.gob.mx','Icat CDMX');
             });
         }
+
+
+        $standard = Standard::where('name', $certification->estandar)->first();
+        $group = Group::where('id_standard', $standard->id)->where('group_name', $certification->grupo)->first();
+        $url = '/admin/groups/enrolments/'.$group->id;
+
+
         
-        return redirect('certificaciones')->with('message', 'Registro Actualizado');
+        return redirect($url)->with('message', 'Registro Actualizado');
     }
 
 

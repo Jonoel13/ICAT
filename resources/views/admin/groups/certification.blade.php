@@ -53,7 +53,7 @@
                   <td>{{$enrolment->estandar}}</td>
                   <td>{{$enrolment->grupo}}</td>
                   <td>Certificación</td>
-                  <td>{{$enrolment->estatus}}</td>
+                  <td><span class="{{$enrolment->estatus}}">{{$enrolment->estatus}}</span></td>
                   <td><a href="{{url('certificaciones')}}/{{$enrolment->id}}" class="btn btn-sm btn-success"><i class="bi bi-pen"></i> Evaluar</a></td>
               </tr>
               @endforeach
