@@ -27,7 +27,7 @@
 
       <div class="form-group col-md-12">
         <label for="group_name"><strong>Id del grupo:</strong></label>
-        <input type="text" class="form-control" id="group_name" name="group_name" value="{{ old('group_name') }}">
+        <input type="text" class="form-control" id="group_name" name="group_name" value="{{ old('group_name') }}" placeholder="Una vez asignado este id no podrá modificarse">
         <span class="alert-danger">{{$errors->first('group_name')}}</span>
       </div>
 

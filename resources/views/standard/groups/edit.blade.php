@@ -2,7 +2,15 @@
 @section('content')
 
 <div class="row mb-5">
-  <h2>Actualizar grupo</h2>
+  <div class="row">
+      <h1>Actualizar grupo</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{{url('admin/groups/lista')}}">Lista Grupos</a></li>
+          <li class="breadcrumb-item active">Actualizar grupo</li>
+        </ol>
+      </nav>
+    </div>
   <form method="POST" action="{{url('admin/groups/update')}}/{{$group->id}}" autocomplete="off" enctype="multipart/form-data">
     {{csrf_field() }}
      <div class="form-row">
@@ -21,7 +29,11 @@
 
       <div class="form-group col-md-12">
         <label for="group_name"><strong>Id del grupo:</strong></label>
+        @if(Auth::user()->id_rol == 1)
         <input type="text" class="form-control" id="group_name" name="group_name" value="{{ $group->group_name }}">
+        @else
+        <input type="text" class="form-control" id="group_name" name="group_name" value="{{ $group->group_name }}" readonly>
+        @endif
         <span class="alert-danger">{{$errors->first('group_name')}}</span>
       </div>
 

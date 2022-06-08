@@ -15,7 +15,7 @@
   <nav>
     <ol class="breadcrumb">
       <li class="breadcrumb-item "><a href="{{url('admin/groups/lista')}}">Grupos </a></li>
-      <li class="breadcrumb-item active"><a href="#">Lista de personas matriculadas </a></li>
+      <li class="breadcrumb-item active">Lista de personas matriculadas</li>
     </ol>
   </nav>
 </div>
