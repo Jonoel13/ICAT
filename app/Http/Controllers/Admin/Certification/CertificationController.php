@@ -43,6 +43,15 @@ class CertificationController extends Controller
 
     }
 
+    public function filter(Request $request)
+    {
+
+        $certifications = Certification::where('estandar', $request->standard)->where('curp', $request->curp)->orderBy('updated_at', 'desc')->paginate(20);
+
+        return view('certification.index', ['certifications' => $certifications]);
+
+    }
+
     public function edit(Request $request, $id)
     {
 

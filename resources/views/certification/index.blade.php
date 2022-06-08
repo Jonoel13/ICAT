@@ -3,15 +3,22 @@
 <div class="row nv">
     
     <div class="offset-8 col-md-4 mb-3">
-        
-        <div class="input-group">
-            <input type="text" name="curp" id="curp" placeholder="Buscar por CURP" >
-            <div class="input-group-append">
-                <a href="" id="curpLink" class="btn btn-outline-success btn-success" >Buscar</a>
+
+        <form method="POST" action="{{url('certificaciones/search/filter')}}" autocomplete="off" enctype="multipart/form-data">
+            {{csrf_field() }}
+
+            <div class="input-group">
+                <input type="text" name="curp" id="curp" placeholder="Buscar por CURP" required>
+                <input type="hidden" name="standard" id="standard" value="EC1331">
+
+                <div class="input-group-append">
+                    <button id="curpLink" class="btn btn-outline-success btn-success" >Buscar</button>
+                    <a href="{{url('certificaciones')}}" class="btn btn-outline-success btn-success" >Todos</a>
+                </div>
+
             </div>
-           
-        </div>
-        
+        </form>
+
     </div>
 </div>
 <div class="col-md-12">

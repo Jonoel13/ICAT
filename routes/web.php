@@ -131,8 +131,9 @@ Route::any('admin/alianzas/search/filter', [App\Http\Controllers\Admin\Allience\
 |--------------------------------------------------------------------------
 */
 Route::get('certificaciones', [App\Http\Controllers\Admin\Certification\CertificationController::class, 'index']);
-Route::get('certificaciones/{id}', [App\Http\Controllers\Admin\Certification\CertificationController::class, 'edit']);
-Route::any('certificaciones/edit/{curp}', [App\Http\Controllers\Admin\Certification\CertificationController::class, 'update']);
+Route::any('certificaciones/search/filter', [App\Http\Controllers\Admin\Certification\CertificationController::class, 'filter']);
+Route::any('certificaciones/{id}', [App\Http\Controllers\Admin\Certification\CertificationController::class, 'edit']);
+Route::any('certificaciones/edit/{id}', [App\Http\Controllers\Admin\Certification\CertificationController::class, 'update']);
 
 
 Route::get('certificados', [App\Http\Controllers\Admin\Certification\CertificationController::class, 'certifylist']);
