@@ -49,7 +49,7 @@ class EnrolmentsController extends Controller
 
             $enrolments = Certification::where('estandar',$standard->name)
                 ->where('grupo',$group->group_name)
-                ->orderBy('curp', 'desc')->get();
+                ->orderBy('updated_at', 'desc')->get();
 
             return view('admin.groups.certification', ['enrolments'=>$enrolments]);
 
