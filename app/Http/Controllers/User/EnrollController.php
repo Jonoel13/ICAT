@@ -427,13 +427,15 @@ class EnrollController extends Controller
             $certification->save();
             $enroll->save();
 
-            
-/*
+            $curp = strtoupper($request->enrol_user_curp);
+
+            $profile = Profile::where('user_curp', $curp)->first();
+
 
             $to_name = $profile->user_nombre;
             $to_email = $profile->user_email;
 
-            $data = array( 'name' => $profile->user_nombre, 'user_check_curp' => $profile->user_check_curp, 'user_check_id' => $profile->user_check_id, 'user_check_foto' => $profile->user_check_foto, 'details' => $request->details);
+            $data = array( 'name' => $profile->user_nombre);
 
 
             Mail::send('emails.diagnostico', $data, function($message) use ($to_name, $to_email) {
@@ -441,7 +443,9 @@ class EnrollController extends Controller
                 ->subject('Evaluación diagnóstica');
                 $message->from('icat@cdmx.gob.mx','Icat CDMX');
             });
-*/
+
+
+
                 return redirect('login')->with('message', 'Registro exitoso');
             endif;
 
