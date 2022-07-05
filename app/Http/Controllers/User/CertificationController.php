@@ -11,6 +11,8 @@ use DB;
 use File;
 use Validator;
 use App\Models\Certification;
+use App\Models\Standard;
+use App\Models\Group;
 use Illuminate\Support\Str;
 use App\Http\Helper;
 
@@ -56,6 +58,20 @@ class CertificationController extends Controller
             ->get();
 
         return view('user.certifications.show',['certification' => $certification, 'quotes' => $quotes]);
+    }
+
+
+    public function catalogo(Request $request)
+    {
+
+
+        $standards = Standard::orderBy('updated_at')->get();
+        $groups = Group::where('group_name','000001')
+            ->where('group_private','Público')
+            ->orderBy('updated_at')
+            ->get();
+
+        return view('user.certifications.catalogo',['groups' => $groups]);
     }
 
 

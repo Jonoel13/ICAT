@@ -158,8 +158,8 @@
         <label for="group_private"><strong>Grupo Privado:</strong></label>
         <select class="form-control" id="group_private" name="group_private">
             <option value="">Selecionar</option>
-            <option value="Presencial">Privado</option>
-            <option value="A distancia">Público</option>
+            <option value="Privado">Privado</option>
+            <option value="Público">Público</option>
         </select>
         <span class="alert-danger">{{$errors->first('group_private')}}</span>
       </div>

@@ -20,6 +20,7 @@
                     <a href="{{ url('citas/lista') }}" class="list-group-item list-group-item-action">Citas</a>
                     <a href="{{ url('usuario/perfil') }}/{{Auth::user()->name}}" class="list-group-item list-group-item-action">Perfil </a>
                     <a href="{{ url('usuario/preguntas') }}" class="list-group-item list-group-item-action">Preguntas frecuentes</a>
+                    <a href="{{ url('usuario/catalogo/certificaciones') }}" class="list-group-item list-group-item-action">Catálogo de certificaciones</a>
                 @endif
                 @if(Auth::user()->id_rol == 2)
                     <a href="{{ url('admin/estandar/lista') }}" class="list-group-item list-group-item-action">Estándares/Cursos</a>

@@ -213,6 +213,10 @@ Route::any('usuario/certificaciones/{name}/{id}', [App\Http\Controllers\User\Cer
 
 Route::any('usuario/capacitaciones/{id}', [App\Http\Controllers\User\CapacitationController::class, 'index']);
 
+Route::any('usuario/catalogo/certificaciones', [App\Http\Controllers\User\CertificationController::class, 'catalogo']);
+
+
+
 
 /*
 |--------------------------------------------------------------------------

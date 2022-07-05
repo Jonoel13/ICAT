@@ -25,6 +25,20 @@ class Helpers
         return $standard->image;
     }
 
+    public static function standarImageId(string $data)
+    {
+        $standard = Standard::find($data);
+
+        return $standard->image;
+    }
+
+    public static function standarDescriptionId(string $data)
+    {
+        $standard = Standard::find($data);
+
+        return $standard->description;
+    }
+
     public static function standarDiagnostico($data)
     {
         $standard = Standard::where('name', $data)->first();
