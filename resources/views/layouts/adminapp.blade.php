@@ -549,6 +549,16 @@
       @endif
       @if(Auth::user()->id_rol == 2)
           <li class="nav-item">
+            <a class="nav-link"  href="{{ url('admin/estandar/lista') }}">
+              <i class="bi bi-bookmarks"></i><span>Estándares/Cursos</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  href="{{ url('admin/groups/lista') }}">
+              <i class="bi bi-diagram-3"></i><span>Grupos</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link"  href="{{ url('documentos') }}">
               <i class="bi bi-folder-check"></i><span>Documentos recibidos</span>
             </a>

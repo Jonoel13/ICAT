@@ -3,14 +3,14 @@
 
 <div class="row mb-5">
   <div class="row">
-      <h1>Actualizar grupo</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{url('admin/groups/lista')}}">Lista Grupos</a></li>
-          <li class="breadcrumb-item active">Actualizar grupo</li>
-        </ol>
-      </nav>
-    </div>
+    <h1>Actualizar grupo</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{url('admin/groups/lista')}}">Lista Grupos</a></li>
+        <li class="breadcrumb-item active">Actualizar grupo</li>
+      </ol>
+    </nav>
+  </div>
   <form method="POST" action="{{url('admin/groups/update')}}/{{$group->id}}" autocomplete="off" enctype="multipart/form-data">
     {{csrf_field() }}
      <div class="form-row">
