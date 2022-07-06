@@ -46,9 +46,9 @@
   position: absolute;
   right: 10%;
   bottom: -30%;
-  width: 300px;
-  height: 540px;
-  background-color: #333;
+  width: 450px;
+  height: 440px;
+  background-image: url('http://drive.google.com/uc?export=view&id=1wtF_eXsPPiHBcY_0jjQgoi7ST6SGeRPh');
   border-radius: 21px;
   -webkit-transform: rotate(30deg);
   transform: rotate(30deg);
@@ -61,7 +61,7 @@
   bottom: 10%;
   left: 10px;
   content: "";
-  background-color: rgba(255, 255, 255, .1);
+  background-image: url('http://drive.google.com/uc?export=view&id=1wtF_eXsPPiHBcY_0jjQgoi7ST6SGeRPh');
   border-radius: 5px;
 }
 
@@ -74,50 +74,16 @@
 }
 
 
-/*
- * Extra utilities
- */
-
-.flex-equal > * {
-  -ms-flex: 1;
-  flex: 1;
-}
-@media (min-width: 768px) {
-  .flex-md-equal > * {
-    -ms-flex: 1;
-    flex: 1;
-  }
-}
-
 .overflow-hidden { overflow: hidden; }
 
-
-.jumbotron {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  margin-bottom: 0;
-  background-color: #fff;
-}
-@media (min-width: 768px) {
-  .jumbotron {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.jumbotron p:last-child {
-  margin-bottom: 0;
-}
-
-.jumbotron h1 {
-  font-weight: 300;
-}
-
-.jumbotron .container {
-  max-width: 40rem;
-}
 </style>
-
        
 <!--nav class="site-header sticky-top py-1">
   <div class="container d-flex flex-column flex-md-row justify-content-between">
@@ -145,8 +111,8 @@
 </div>
 
 
-<div class="album py-5 bg-light">
-    <div class="container">
+<div class="album py-5 bg-light p-5">
+    <div class="">
 
       <div class="row">
       	@foreach($groups as $group)
@@ -154,23 +120,26 @@
           <div class="card mb-4 shadow-sm">
             <!--svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg-->
             <img class="img-responsive" src="{{ asset('storage/standard')}}/{!! Helper::standarImageId($group->id_standard) !!}">
-
             <div class="card-body">
               <p class="card-text">
-              	<h4>{{$group->group_shortname}}</h4>
-              	{!! Helper::standarDescriptionId($group->id_standard) !!}
+                <a class="text-success" href="{{url('usuario/catalogo/certificacion/')}}/{{$group->id}}">
+              	<h5><strong>{{$group->group_shortname}}</strong></h5>
+                </a>
+                <div class="line-clamp">
+                  {!! Helper::standarDescriptionId($group->id_standard) !!}
+                </div>
               </p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <a href="#" class="btn btn-sm btn-outline-secondary">Información de estándar</a>
                 </div>
-                <small class="text-muted">9 mins</small>
+                <span class="text-muted"><a class="btn btn-sm btn-success" href="{{url('usuario/catalogo/certificacion/')}}/{{$group->id}}">Incribirse</a></span>
               </div>
             </div>
           </div>
         </div>
         @endforeach
-
+        
       </div>
     </div>
   </div>
@@ -182,17 +151,13 @@
   <div class="row">
     <div class="col-12 col-md">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24" focusable="false"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
-      <small class="d-block mb-3 text-muted">&copy; 2017-2021</small>
+      <small class="d-block mb-3 text-muted"></small>
     </div>
     <div class="col-6 col-md">
-      <h5>Features</h5>
+      <h5>Capacitación</h5>
       <ul class="list-unstyled text-small">
-        <li><a class="text-muted" href="#">Cool stuff</a></li>
-        <li><a class="text-muted" href="#">Random feature</a></li>
-        <li><a class="text-muted" href="#">Team feature</a></li>
-        <li><a class="text-muted" href="#">Stuff for developers</a></li>
-        <li><a class="text-muted" href="#">Another one</a></li>
-        <li><a class="text-muted" href="#">Last time</a></li>
+        <li><a class="text-muted" href="https://icatadistancia.cdmx.gob.mx/course/index.php?categoryid=2" target="_blank">Cursos en línea</a></li>
+        <li><a class="text-muted" href="https://icatadistancia.cdmx.gob.mx/course/index.php?categoryid=3" target="_blank">Cursos en directo</a></li>
       </ul>
     </div>
     <div class="col-6 col-md">

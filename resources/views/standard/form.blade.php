@@ -69,9 +69,9 @@
         <label for="type"><strong>Tipo:</strong></label>
         <select class="form-control" id="type" name="type" value="{{ old('type') }}">
             <option value="">Seleccionar</option>
-            <option value="Curso y Certificación">Curso y Certificación</option>
-            <option value="Certificación">Certificación</option>
-            <option value="Curso sin estándar">Curso sin estándar</option>
+            <option {{ old('type') == 'Curso y Certificación' ? 'selected' : '' }} value="Curso y Certificación">Curso y Certificación</option>
+            <option {{ old('type') == 'Certificación' ? 'selected' : '' }} value="Certificación">Certificación</option>
+            <option {{ old('type') == 'Curso sin estándar' ? 'selected' : '' }} value="Curso sin estándar">Curso sin estándar</option>
         </select>
         <span class="alert-danger">{{$errors->first('type')}}</span>
       </div>
@@ -131,6 +131,7 @@
       </div>
 
     </div>
+    <hr>
     
     <a href="{{url('admin/estandar/lista')}}" type="button" class="btn btn-default">Cancelar</a>
     <button type="submit" class="btn btn-primary" onclick="this.disabled=true; this.value='Enviando, espere ...'; this.form.submit();">Aceptar</button>

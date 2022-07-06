@@ -50,7 +50,7 @@
             @foreach($alliences as $allience)
             <option {{ $allience->id == $group->id_allience ? 'selected' : '' }} value="{{$allience->id}}">{{$allience->alianza_proyecto}}</option>
             @endforeach
-            <option value="N/A">N/A</option>
+            <option {{ $group->id_allience == 'N/A' ? 'selected' : '' }} value="N/A">N/A</option>
         </select>
         <span class="alert-danger">{{$errors->first('id_allience')}}</span>
       </div>
@@ -151,6 +151,16 @@
         <label for="group_documentation"><strong>Enlace de la documentación:</strong></label>
         <input type="text" class="form-control" id="group_documentation" name="group_documentation" value="{{ $group->group_documentation }}">
         <span class="alert-danger">{{$errors->first('group_documentation')}}</span>
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="group_private"><strong>Grupo Privado:</strong></label>
+        <select class="form-control" id="group_private" name="group_private">
+            <option value="">Selecionar</option>
+            <option {{ $group->group_private == 'Privado' ? 'selected' : '' }} value="Privado">Privado</option>
+            <option {{ $group->group_private == 'Público' ? 'selected' : '' }} value="Público">Público</option>
+        </select>
+        <span class="alert-danger">{{$errors->first('group_private')}}</span>
       </div>
 
     </div>

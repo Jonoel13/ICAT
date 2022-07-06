@@ -10,9 +10,11 @@ use Illuminate\Http\RedirectResponse;
 use DB;
 use File;
 use Validator;
+use Auth;
 use App\Models\Certification;
 use App\Models\Standard;
 use App\Models\Group;
+use App\Models\Profile;
 use Illuminate\Support\Str;
 use App\Http\Helper;
 
@@ -72,6 +74,21 @@ class CertificationController extends Controller
             ->get();
 
         return view('user.certifications.catalogo',['groups' => $groups]);
+    }
+
+
+    public function enrolment(Request $request, $id)
+    {
+
+        $curp = Auth::user()->name;
+
+        $profile = Profile::where('user_curp', $curp)->first();
+
+        $group = Group::find($id);
+
+        return view('enroll.certification.enrolFast', ['profile' => $profile, 'group' => $group]);
+
+
     }
 
 

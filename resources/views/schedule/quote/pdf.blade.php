@@ -58,7 +58,7 @@
           <hr class="line">
           <h4 class="sub-title-q">Datos Cita</h4>
           <p class="text-gray">
-            <span class="text-b text-gray">Estandar: </span>{!! Helper::dateStandard($quote-> quote_date_id) !!}<br>
+            <span class="text-b text-gray">Estandar: </span>{!! Helper::dateStandard($quote->quote_date_id) !!}<br>
             <span class="text-b text-gray">Horario: </span>{{$date->date_hour}} hrs<br>
             <span class="text-b text-gray">Fecha: </span>{{date('d-m-Y', strtotime($date->date_date))}}<br>
             <span class="text-b text-gray">Sede: </span>Cuauhtémoc 30, La Pastora, Gustavo A. Madero, 07290 Ciudad de México, CDMX
@@ -86,7 +86,7 @@
                 <a href="https://drive.google.com/file/d/19EDbgfD1R_BWE6MqC8lm1Y5p9wHgnTa_/view?usp=sharing" target="_blank">(descargar e imprimir)</a>
               </li>
               <li><span class="text-b">Plan de Evaluación</span>
-                <a  href="https://drive.google.com/file/d/15Dil-LdYmB9By3Z8V63PoQe6W9QsR2Ur/view?usp=sharing" target="_blank">(descargar e imprimir)</a>
+                <a  href="{!! Helper::datePlanEv($quote->quote_date_id) !!}" target="_blank">(descargar e imprimir)</a>
               </li>
               <li><span class="text-b">Anexo 3. Hoja de inspección</span>
                 <a href="https://drive.google.com/file/d/1hWPo4-NPfwemuWQpdPFqlM-YDTsDm4RT/view?usp=sharing" target="_blank">(descargar e imprimir)</a>

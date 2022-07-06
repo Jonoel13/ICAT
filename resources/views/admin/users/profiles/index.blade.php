@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
   <div class="col-sm-8">
-    <h4>Perfiles</h4>
+    <h4>Perfiles de usuarios</h4>
   </div>
 
 </div>

@@ -18,7 +18,7 @@
         <select class="form-control" id="id_standard" name="id_standard">
             <option value="">Selecionar</option>
             @foreach($standards as $standard)
-            <option value="{{$standard->id}}">{{$standard->name}}</option>
+            <option {{ old('id_standard') == $standard->id ? 'selected' : '' }} value="{{$standard->id}}">{{$standard->name}}</option>
             @endforeach
 
         </select>
@@ -42,9 +42,9 @@
         <select class="form-control" id="id_allience" name="id_allience">
             <option value="">Selecionar</option>
             @foreach($alliences as $allience)
-            <option value="{{$allience->id}}">{{$allience->alianza_proyecto}}</option>
+            <option {{ old('id_allience') == $allience->id ? 'selected' : '' }} value="{{$allience->id}}">{{$allience->alianza_proyecto}}</option>
             @endforeach
-            <option value="N/A">N/A</option>
+            <option {{ old('id_allience') == 'N/A' ? 'selected' : '' }} value="N/A">N/A</option>
 
         </select>
         <span class="alert-danger">{{$errors->first('id_allience')}}</span>
@@ -53,8 +53,8 @@
         <label for="group_service_type"><strong>Servicio:</strong></label>
         <select class="form-control" id="group_service_type" name="group_service_type">
             <option value="">Selecionar</option>
-            <option value="1">Capacitación</option>
-            <option value="2">Certificación</option>
+            <option {{ old('group_service_type') == '1' ? 'selected' : '' }} value="1">Capacitación</option>
+            <option {{ old('group_service_type') == '2' ? 'selected' : '' }} value="2">Certificación</option>
         </select>
         <span class="alert-danger">{{$errors->first('group_service_type')}}</span>
       </div>
@@ -65,9 +65,9 @@
         <select class="form-control" id="id_instructor" name="id_instructor" value="{{ old('id_instructor') }}">
             <option value="">Seleccionar</option>
             @foreach($instructors as $instructor)
-                <option value="{{$instructor->id}}">{{$instructor->instructor_name}} {{$instructor->instructor_app}} {{$instructor->instructor_app}}</option>
+                <option {{ old('id_instructor') == $instructor->id ? 'selected' : '' }} value="{{$instructor->id}}">{{$instructor->instructor_name}} {{$instructor->instructor_app}} {{$instructor->instructor_app}}</option>
             @endforeach
-            <option value="N/A">N/A</option>
+            <option {{ old('id_instructor') == 'N/A' ? 'selected' : '' }} value="N/A">N/A</option>
         </select>
 
         <span class="alert-danger">{{$errors->first('id_instructor')}}</span>
@@ -83,8 +83,8 @@
         <label for="group_mode"><strong>Modalidad:</strong></label>
         <select class="form-control" id="group_mode" name="group_mode">
             <option value="">Selecionar</option>
-            <option value="Presencial">Presencial</option>
-            <option value="A distancia">A distancia</option>
+            <option {{ old('group_mode') == 'Presencial' ? 'selected' : '' }} value="Presencial">Presencial</option>
+            <option {{ old('group_mode') == 'A distancia' ? 'selected' : '' }} value="A distancia">A distancia</option>
         </select>
         <span class="alert-danger">{{$errors->first('group_mode')}}</span>
       </div>
@@ -105,8 +105,8 @@
         <label for="group_type"><strong>Formato de período de publicación:</strong></label>
         <select class="form-control" id="group_type" name="group_type">
             <option value="">Selecionar</option>
-            <option value="Fijo">Fijo</option>
-            <option value="Rango">Fecha de inicio - Fecha de termino</option>
+            <option {{ old('group_type') == 'Fijo' ? 'selected' : '' }} value="Fijo">Fijo</option>
+            <option {{ old('group_type') == 'Rango' ? 'selected' : '' }} value="Rango">Fecha de inicio - Fecha de termino</option>
         </select>
         <span class="alert-danger">{{$errors->first('group_mode')}}</span>
       </div>
@@ -158,12 +158,13 @@
         <label for="group_private"><strong>Grupo Privado:</strong></label>
         <select class="form-control" id="group_private" name="group_private">
             <option value="">Selecionar</option>
-            <option value="Privado">Privado</option>
-            <option value="Público">Público</option>
+            <option {{ old('group_private') == 'Privado' ? 'selected' : '' }} value="Privado">Privado</option>
+            <option {{ old('group_private') == 'Público' ? 'selected' : '' }} value="Público">Público</option>
         </select>
         <span class="alert-danger">{{$errors->first('group_private')}}</span>
       </div>
     </div>
+    <hr>
 
     <a href="{{url('admin/estandar/lista')}}" type="button" class="btn btn-default">Cancelar</a>
     <button type="submit" class="btn btn-primary" onclick="this.disabled=true; this.value='Enviando, espere ...'; this.form.submit();">Aceptar</button>

@@ -91,6 +91,15 @@ class Helpers
         return $standard->cert_material;
     }
 
+    public static function datePlanEv($data)
+    {
+        $date = Date::where('id', $data)->first();
+
+        $standard = Standard::where('name', $date->date_standar)->first();
+
+        return $standard->documentation;
+    }
+
 
     public static function profileCheck($data)
     {

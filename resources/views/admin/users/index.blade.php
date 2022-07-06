@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
   <div class="col-sm-8">
-    <h4>Citas</h4>
+    <h4>Usuarios</h4>
   </div>
   <div class="col-sm-4">
     <a href="{{url('citas')}}" class="btn btn-success pull-right" target="_blank">Nueva cita</a>
