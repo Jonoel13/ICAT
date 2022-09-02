@@ -15,10 +15,14 @@ class Standard extends Model
         'description',
         'type',
         'image',
+        'sector',
+        'diagnostico',
         'cert_place',
         'cert_material',
         'cert_grade',
         'documentation',
+        'p_evaluation',
+        'deliverables',
         'link',
     ];
 }
