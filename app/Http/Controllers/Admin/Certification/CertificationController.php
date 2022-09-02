@@ -133,7 +133,7 @@ class CertificationController extends Controller
 
     public function indexEnroll()
     {
-        $enrolls = Enroll::orderBy('id', 'desc')->paginate(25);
+        $enrolls = Certification::orderBy('id', 'desc')->paginate(25);
 
         return view('enroll.certification.index', ['enrolls' => $enrolls]);
 
