@@ -48,6 +48,7 @@
                         <th scope="col" class="">Grupo</th>
                         <th scope="col" >Estándar</th>
                         <th scope="col">Nombre</th>
+                        <th scope="col">Formulario de inscripción</th>
                         <th scope="col">Costo</th>
                         <th scope="col">Matriculaciones</th>
                         <th scope="col">Editar</th>
@@ -59,6 +60,10 @@
                         <td><a href="{{ url('admin/groups/enrolments/')}}/{{$group->id }}">{{$group->group_name}}</a></dd>
                         <td>{!! Helper::standarName($group->id_standard) !!}</td>
                         <td>{{$group->group_shortname}}</td>
+                        <td>
+                          <a href="{{ url('/registro/estandar')}}/{!! Helper::standarName($group->id_standard) !!}/grupo/{{$group->group_name}}" target="_blank">Enlace de inscripción</a>
+                          
+                        </td>
                         <td>{{$group->group_price}}</td>
                         <td class="count col-2">{!! Helper::groupEnrolments($group->id_standard, $group->group_name) !!}</td>
                         <td><a href="{{url('admin/groups/edit')}}/{{$group->id}}"><span class="text-success"><i class="fa fa-edit"></i> Editar</span></a></td>

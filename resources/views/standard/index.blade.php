@@ -51,7 +51,7 @@
               <tr>
                   <td>{{$standard->name}}</td>
                   <td>{{$standard->shortname}}</td>
-                  <td>{{$standard->link}}</td>
+                  <td><a href="{{ url('/registro/estandar')}}/{{$standard->name}}/grupo/000001" target="_blank">{{ url('/registro/estandar')}}/{{$standard->name}}/grupo/000001</a></td>
                   <td><a href="{{url('admin/estandar/edit')}}/{{$standard->id}}">Editar</a></td>
               </tr>
               @endforeach
