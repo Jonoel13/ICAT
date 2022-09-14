@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="container">
-  <h1>Estándar de competencias</h1>
+  <h1>Actualizar Estándar de competencias</h1>
   <nav>
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{{ url('admin/estandar/lista') }}">Lista estándares</a></li>
