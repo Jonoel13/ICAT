@@ -78,7 +78,7 @@
 
       <div class="form-group col-md-12">
         <label for="description"><strong>Descripción:</strong></label>
-        <textarea type="text" class="form-control" id="description" name="description" value="{{ old('description') }}"></textarea>
+        <textarea type="text" class="form-control" id="description" name="description">{{ old('description') }}</textarea>
         <span class="alert-danger">{{$errors->first('description')}}</span>
       </div>
 
@@ -114,19 +114,19 @@
 
       <div class="form-group col-md-6">
         <label for="p_evaluation"><strong>Plan de evaluación:</strong></label>
-        <input type="text" class="form-control" id="p_evaluation" name="p_evaluation" value="{{ old('p_evaluation') }}">
+        <input type="text" class="form-control" id="p_evaluation" name="p_evaluation" value="{{ old('p_evaluation') }}" placeholder="Enlace del documento">
         <span class="alert-danger">{{$errors->first('p_evaluation')}}</span>
       </div>
 
       <div class="form-group col-md-12">
         <label for="cert_material"><strong>Material requerido para evaluación:</strong></label>
-        <textarea type="text" class="form-control" id="cert_material" name="cert_material" value="{{ old('cert_material') }}"></textarea>
+        <textarea type="text" class="form-control" id="cert_material" name="cert_material">{{ old('cert_material') }}</textarea>
         <span class="alert-danger">{{$errors->first('cert_material')}}</span>
       </div>
 
       <div class="form-group col-md-12">
         <label for="deliverables"><strong>Lista de entregables:</strong></label>
-        <textarea type="text" class="form-control" id="deliverables" name="deliverables" value="{{ old('deliverables') }}"></textarea>
+        <textarea type="text" class="form-control" id="deliverables" name="deliverables">{{ old('deliverables') }}</textarea>
         <span class="alert-danger">{{$errors->first('deliverables')}}</span>
       </div>
 

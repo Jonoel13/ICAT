@@ -107,6 +107,8 @@ class StandardController extends Controller
             $standard->cert_grade = $request->cert_grade;
             $standard->documentation = $request->documentation;
             $standard->link = $request->link;
+            $standard->deliverables = $request->deliverables;
+            $standard->p_evaluation = $request->p_evaluation;
 
 
             if($request->hasFile('image')){
@@ -147,6 +149,8 @@ class StandardController extends Controller
         $standard->cert_grade = $request->cert_grade;
         $standard->documentation = $request->documentation;
         $standard->link = $request->link;
+        $standard->deliverables = $request->deliverables;
+        $standard->p_evaluation = $request->p_evaluation;
 
 
         if($request->hasFile('image')){

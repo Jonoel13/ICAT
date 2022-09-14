@@ -127,6 +127,18 @@
       </div>
 
       <div class="form-group col-md-6">
+        <label for="p_evaluation"><strong>Plan de evaluación:</strong></label>
+        <input type="text" class="form-control" id="p_evaluation" name="p_evaluation" value="{{ $standard->p_evaluation }}">
+        <span class="alert-danger">{{$errors->first('p_evaluation')}}</span>
+      </div>
+
+      <div class="form-group col-md-12">
+        <label for="deliverables"><strong>Lista de entregables:</strong></label>
+        <textarea type="text" class="form-control" id="deliverables" name="deliverables">{{ $standard->deliverables }}</textarea>
+        <span class="alert-danger">{{$errors->first('deliverables')}}</span>
+      </div>
+
+      <div class="form-group col-md-6">
         <label for="link"><strong>Enlace de información completa del estadar:</strong></label>
         <input type="text" class="form-control" id="link" name="link" value="{{ $standard->link }}">
         <span class="alert-danger">{{$errors->first('link')}}</span>
