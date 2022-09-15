@@ -100,6 +100,15 @@ class Helpers
         return $standard->documentation;
     }
 
+    public static function dateDeliverables($data)
+    {
+        $date = Date::where('id', $data)->first();
+
+        $standard = Standard::where('name', $date->date_standar)->first();
+
+        return $standard->deliverables;
+    }
+
 
     public static function profileCheck($data)
     {

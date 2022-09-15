@@ -93,6 +93,12 @@
               </li>
             </ul>
 
+
+            <span class="text-red text-b mt-4 sub-title-info">Lista de entregables:</span>
+            <br>
+            <pre class="text-gray">{!! Helper::dateDeliverables($quote-> quote_date_id) !!}</pre>
+
+
             <span class="text-red text-b mt-4 sub-title-info">Deberás de acudir con el siguiente equipo:</span>
             <br>
             <pre class="text-gray">{!! Helper::dateMaterial($quote-> quote_date_id) !!}</pre>

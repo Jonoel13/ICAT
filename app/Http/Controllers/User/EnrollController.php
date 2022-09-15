@@ -301,7 +301,13 @@ class EnrollController extends Controller
             $profile = Profile::where('user_curp', $request->enrol_user_curp)->first();
             $standards = Standard::orderBy('name', 'desc')->get();
 
-            return view('enroll.certification.enrollByCurp', ['profile' => $profile, 'standards' => $standards]);
+            if($profile):
+                return view('enroll.certification.enrollByCurp', ['profile' => $profile, 'standards' => $standards]);
+            else:
+                return redirect()->back()->with('message', 'Registro no existente');
+            endif;
+
+            
         }
     }
 
@@ -330,7 +336,12 @@ class EnrollController extends Controller
             $profile = Profile::where('user_email', $request->enrol_user_email)->first();
             $standards = Standard::orderBy('name', 'desc')->get();
 
-            return view('enroll.certification.enrollByCurp', ['profile' => $profile, 'standards' => $standards]);
+
+            if($profile):
+                return view('enroll.certification.enrollByCurp', ['profile' => $profile, 'standards' => $standards]);
+            else:
+                return redirect()->back()->with('message', 'Registro no existente');
+            endif;
 
         }
     }

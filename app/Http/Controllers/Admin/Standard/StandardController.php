@@ -65,6 +65,8 @@ class StandardController extends Controller
             'cert_material' => 'required',
             'cert_grade' => 'required',
             'documentation' => 'required',
+            'deliverables' => 'required',
+            'p_evaluation' => 'required',
             'link' => 'required',
         );
 
@@ -79,7 +81,8 @@ class StandardController extends Controller
             'cert_place.required' =>'Este campo es requerido',
             'cert_material.required' =>'Este campo es requerido',
             'cert_grade.required' =>'Este campo es requerido',
-            'documentation.required' =>'Este campo es requerido',
+            'deliverables.required' =>'Este campo es requerido',
+            'p_evaluation.required' =>'Este campo es requerido',
             'link.required' =>'Este campo es requerido',
         );
 
