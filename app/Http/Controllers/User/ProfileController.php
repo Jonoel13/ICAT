@@ -47,7 +47,7 @@ class ProfileController extends Controller
             $profile = Profile::where('user_curp', $curp)
                 ->first();
 
-            $certifications = Certification::where('curp', $profile->user_curp)->orderBy('created_at', 'asc')
+            $certifications = Certification::where('curp', $profile->user_curp)->orderBy('created_at', 'desc')
                 ->get();
 
 
