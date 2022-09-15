@@ -100,7 +100,7 @@
 
                  @foreach($dates as $date)
                 <tr>
-                    <td><a href="{{url('usuario/citas/standard')}}/{{$standard}}/{{$date}}" class="text-success text-b">{{date("d-m-Y ", strtotime($date)) }}</a></td>
+                    <td><a href="{{url('usuario/citas/standard')}}/{{$standard}}/{{$date}}/service/{{$service}}" class="text-success text-b">{{date("d-m-Y ", strtotime($date)) }}</a></td>
                 </tr>
                 @endforeach
               </table>
@@ -128,6 +128,8 @@
     </div>
     <br>
     <hr>
+
+    <input type="hidden" name="service_id" value="{{$service}}">
 
     <a href="{{ url('usuario/perfil') }}/{{Auth::user()->name}}" type="button" class="btn btn-default btn-lg">Cancelar</a>
     <button type="submit" class="btn btn-lg btn-success" onclick="this.disabled=true; this.value='Enviando, espere ...'; this.form.submit();">Aceptar</button>
@@ -220,7 +222,9 @@
                 $('#dateLink').attr('href', '');
                 var date = $('#quote_date').val();
                 var standard = '<?php echo $standard;?>';
-                var url      = window.location.origin+'/usuario/citas/standard/'+standard+'/'+date;
+                var id = <?php echo $service;?>;
+
+                var url      = window.location.origin+'/usuario/citas/standard/'+standard+'/'+date+'/service/'+id;
                 $('#dateLink').attr('href', url);
             });
     });

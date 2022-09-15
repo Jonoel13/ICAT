@@ -137,7 +137,7 @@ class QuoteController extends Controller
         }
     }
 
-    public function formLog(Request $request, $id)
+    public function formLog(Request $request, $id, $name)
     {
 
         $profile = Profile::where('user_curp', Auth::user()->name)
@@ -146,12 +146,13 @@ class QuoteController extends Controller
         $today =date("Y-m-d");
         $result = Date::where('date_status', 'Disponible')
             ->where('date_date','>=', $today)
-            ->where('date_standar', $id)
+            ->where('date_standar', $name)
             ->orderBy('date_date', 'asc')
             ->get();
         
         $dates = [];
-        $standard = $id;
+        $standard = $name;
+        $service = $id;
 
         $count = 0;
         foreach($result as $date){
@@ -165,10 +166,10 @@ class QuoteController extends Controller
             }
         }
 
-        return view('schedule.quote.request', ['dates' => $dates, 'profile' => $profile, 'standard' => $standard]);
+        return view('schedule.quote.request', ['dates' => $dates, 'profile' => $profile, 'standard' => $standard, 'service' => $service]);
     }
 
-    public function formResponse(Request $request, $standard, $day)
+    public function formResponse(Request $request, $standard, $day, $id)
     {
 
         $profile = Profile::where('user_curp', Auth::user()->name)
@@ -207,9 +208,10 @@ class QuoteController extends Controller
         }
 
         $day = $day;
+        $service = $id;
 
 
-        return view('schedule.quote.response', ['dates' => $dates, 'profile' => $profile, 'quotes' => $quotes, 'day' =>$day, 'standard' => $standard]);
+        return view('schedule.quote.response', ['dates' => $dates, 'profile' => $profile, 'quotes' => $quotes, 'day' =>$day, 'standard' => $standard, 'service' => $service]);
     }
 
     public function storeLog(Request $request)
@@ -264,15 +266,12 @@ class QuoteController extends Controller
                 $date->date_status = 'No disponible';
                 $quote->quote_date = $date->date_date;
                 $quote->quote_hour = $date->date_hour;
+                $quote->service_id = $request->service_id;
 
                 $url = 'citas/consulta/'.$access;
 
 
-
-                $certification = Certification::where('curp', $request->quote_user_curp)
-                    ->where('estandar', $date->date_standar)
-                    ->where('n_intento', '0')->first();
-                    
+                $certification = Certification::find($request->service_id);
                 $certification->n_intento = '1';
 
                 $certification->save();

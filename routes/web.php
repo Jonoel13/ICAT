@@ -180,8 +180,8 @@ Route::any('fechas', [App\Http\Controllers\Certification\QuoteController::class,
 Route::any('fechas/id', [App\Http\Controllers\Certification\QuoteController::class, 'datesById']);
 
 
-Route::any('usuario/citas/standard/{id}', [App\Http\Controllers\Certification\QuoteController::class, 'formLog']);
-Route::any('usuario/citas/standard/{standard}/{day}', [App\Http\Controllers\Certification\QuoteController::class, 'formResponse']);
+Route::any('usuario/citas/service/{id}/standard/{name}', [App\Http\Controllers\Certification\QuoteController::class, 'formLog']);
+Route::any('usuario/citas/standard/{standard}/{day}/service/{id}', [App\Http\Controllers\Certification\QuoteController::class, 'formResponse']);
 
 Route::any('usuario/citas/agendar/cita', [App\Http\Controllers\Certification\QuoteController::class, 'storeLog']);
 
@@ -190,7 +190,6 @@ Route::any('api/documentacion', [App\Http\Controllers\Api\ApiCertificationContro
 Route::any('api/curp/{curp}', [App\Http\Controllers\Api\ApiCertificationController::class, 'getByCurp']);
 Route::any('api/certificaciones', [App\Http\Controllers\Api\ApiCertificationController::class, 'getAll']);
 Route::any('api/perfiles/{sector}', [App\Http\Controllers\Api\ApiCertificationController::class, 'getAll']);
-
 
 
 /*

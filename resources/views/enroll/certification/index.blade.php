@@ -28,8 +28,7 @@
             <td>{{$enroll->curp}}</td>
             <td>{{$enroll->diagnostico_status}}</td>
             <td>{{$enroll->pago}}</td>
-            <td>---</td>
-            
+            <td></td>
         </tr>
         @endforeach
         {!! $enrolls->render() !!}
