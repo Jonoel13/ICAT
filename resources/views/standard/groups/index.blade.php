@@ -44,7 +44,6 @@
             <table id="groups" class="table table-striped table-bordered">
                 <thead>
                     <tr>
-
                         <th scope="col" class="">Grupo</th>
                         <th scope="col" >Estándar</th>
                         <th scope="col">Nombre</th>
@@ -61,8 +60,7 @@
                         <td>{!! Helper::standarName($group->id_standard) !!}</td>
                         <td>{{$group->group_shortname}}</td>
                         <td>
-                          <a href="{{ url('/registro/estandar')}}/{!! Helper::standarName($group->id_standard) !!}/grupo/{{$group->group_name}}" target="_blank">Enlace de inscripción</a>
-                          
+                          <a href="{{ url('/registro/estandar')}}/{!! Helper::standarName($group->id_standard) !!}/grupo/{{$group->group_name}}" target="_blank">Enlace de inscripción</a>                          
                         </td>
                         <td>{{$group->group_price}}</td>
                         <td class="count col-2">{!! Helper::groupEnrolments($group->id_standard, $group->group_name) !!}</td>
