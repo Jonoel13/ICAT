@@ -97,7 +97,7 @@ class Helpers
 
         $standard = Standard::where('name', $date->date_standar)->first();
 
-        return $standard->documentation;
+        return $standard->p_evaluation;
     }
 
     public static function dateDeliverables($data)

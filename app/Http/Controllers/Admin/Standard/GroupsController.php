@@ -113,13 +113,11 @@ class GroupsController extends Controller
         } else {
 
 
-
-
             $group = new Group;
 
             $group->id_standard = $request->id_standard;
             $group->id_allience = $request->id_allience;
-            $group->id_place = $request->id_place;
+            $group->id_place = "UC-GAM";
             $group->id_instructor = $request->id_instructor;
             $group->group_service_type = $request->group_service_type;
             $group->group_name = $request->group_name;
