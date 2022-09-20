@@ -126,6 +126,28 @@ class Helpers
         return $result;
     }
 
+    /**
+    *********************************************************************
+    ** Helpers Quote Model
+    *********************************************************************
+    */
+
+    public static function quoteQrId($data)
+    {
+        $data = Quote::where('service_id', $data)->first();
+
+        $result = 'No agendada';
+
+        if($data):
+            $result = $data->quote_access;
+
+        endif;
+
+
+        return $result;
+    }
+
+
 
 
 }

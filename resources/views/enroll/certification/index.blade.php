@@ -1,10 +1,10 @@
-@extends('base')
+@extends('layouts.adminapp')
 @section('content')
 <div class="row">
 
 </div>
 <div class="col-md-12">
- <table class="table table-striped">
+ <table id="enrolls" class="table table-striped">
     <thead>
         <tr>
             <th>Estatus</th>
@@ -28,12 +28,24 @@
             <td>{{$enroll->curp}}</td>
             <td>{{$enroll->diagnostico_status}}</td>
             <td>{{$enroll->pago}}</td>
-            <td></td>
+            <td>
+                @if( Helper::quoteQrId($enroll->id) == "No agendada")
+                    <span>No agendada</span>
+                @else
+                    <a href="{{url('citas/consulta')}}/{!! Helper::quoteQrId($enroll->id) !!}" target="_blank">Imprimir</a>
+                @endif
+            </td>
         </tr>
         @endforeach
-        {!! $enrolls->render() !!}
     </tbody>
  </table>
 
 </div>
+
+<script type="text/javascript">
+  const dataTable = new simpleDatatables.DataTable("#enrolls", {
+  searchable: true,
+  fixedHeight: true,
+  })
+</script>
 @endsection

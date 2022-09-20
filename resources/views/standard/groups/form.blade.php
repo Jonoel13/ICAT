@@ -150,7 +150,7 @@
 
       <div class="form-group col-md-12">
         <label for="group_documentation"><strong>Enlace de la documentación:</strong></label>
-        <input type="text" class="form-control" id="group_documentation" name="group_documentation" value="{{ old('group_documentation') }}">
+        <input type="text" class="form-control" id="group_documentation" name="group_documentation" value="{{ old('group_documentation') }}" placeholder="Enlace con los documentos necesarios para el usuario relacionados con el estándar">
         <span class="alert-danger">{{$errors->first('group_documentation')}}</span>
       </div>
 
