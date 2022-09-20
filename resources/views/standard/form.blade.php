@@ -78,13 +78,13 @@
 
       <div class="form-group col-md-12">
         <label for="description"><strong>Descripción:</strong></label>
-        <textarea type="text" class="form-control" id="description" name="description">{{ old('description') }}</textarea>
+        <textarea type="text" class="form-control" id="description" name="description" placeholder="Descripción u objetivo del estándar de competencia">{{ old('description') }}</textarea>
         <span class="alert-danger">{{$errors->first('description')}}</span>
       </div>
 
       <div class="form-group col-md-12">
         <label for="diagnostico"><strong>Enlace de examen diagnóstico:</strong></label>
-        <input type="text" class="form-control" id="diagnostico" name="diagnostico"  value="{{ old('diagnostico') }}">
+        <input type="text" class="form-control" id="diagnostico" name="diagnostico"  value="{{ old('diagnostico') }}" placeholder="Enlace del formulario del examen diagnóstico">
         <span class="alert-danger">{{$errors->first('diagnostico')}}</span>
       </div>
 
@@ -96,19 +96,19 @@
 
       <div class="form-group col-md-6">
         <label for="cert_place"><strong>Sede de evaluación:</strong></label>
-        <input type="text" class="form-control" id="cert_place" name="cert_place" value="{{ old('cert_place') }}">
+        <input type="text" class="form-control" id="cert_place" name="cert_place" value="UC-GAM" readonly>
         <span class="alert-danger">{{$errors->first('cert_place')}}</span>
       </div>
 
       <div class="form-group col-md-6">
         <label for="link"><strong>Enlace de información completa del estadar:</strong></label>
-        <input type="text" class="form-control" id="link" name="link" value="{{ old('link') }}">
+        <input type="text" class="form-control" id="link" name="link" value="{{ old('link') }}" placeholder="Enlace del CONOCER con la información del estandar">
         <span class="alert-danger">{{$errors->first('link')}}</span>
       </div>
 
       <div class="form-group col-md-6">
         <label for="documentation"><strong>Documentación del estadar:</strong></label>
-        <input type="text" class="form-control" id="documentation" name="documentation" value="{{ old('documentation') }}">
+        <input type="text" class="form-control" id="documentation" name="documentation" value="{{ old('documentation') }}" placeholder="Enlace con los documentos necesarios para el usuario relacionados con el estándar">
         <span class="alert-danger">{{$errors->first('documentation')}}</span>
       </div>
 
@@ -120,7 +120,7 @@
 
       <div class="form-group col-md-12">
         <label for="cert_material"><strong>Material requerido para evaluación:</strong></label>
-        <textarea type="text" class="form-control" id="cert_material" name="cert_material">{{ old('cert_material') }}</textarea>
+        <textarea type="text" class="form-control" id="cert_material" name="cert_material" placeholder="Material que el usuario debe presentar en la evaluación del estándar">{{ old('cert_material') }}</textarea>
         <span class="alert-danger">{{$errors->first('cert_material')}}</span>
       </div>
 
@@ -132,7 +132,7 @@
 
       <div class="form-group col-md-6">
         <label for="cert_grade"><strong>Requisitos de acreditación mínima:</strong></label>
-        <input type="text" class="form-control" id="cert_grade" name="cert_grade" value="{{ old('cert_grade') }}">
+        <input type="text" class="form-control" id="cert_grade" name="cert_grade" value="{{ old('cert_grade') }}" placeholder="Calificación mínima para resultado competente">
         <span class="alert-danger">{{$errors->first('cert_grade')}}</span>
       </div>
 

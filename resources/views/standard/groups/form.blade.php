@@ -33,7 +33,7 @@
 
       <div class="form-group col-md-12">
         <label for="group_shortname"><strong>Nombre publico del grupo:</strong></label>
-        <input type="text" class="form-control" id="group_shortname" name="group_shortname"  value="{{ old('group_shortname') }}" >
+        <input type="text" class="form-control" id="group_shortname" name="group_shortname"  value="{{ old('group_shortname') }}" placeholder="Nombre usado al momento de generar la constancia">
         <span class="alert-danger">{{$errors->first('group_shortname')}}</span>
       </div>
 
@@ -75,7 +75,7 @@
 
       <div class="form-group col-md-4">
         <label for="id_place"><strong>Sede:</strong></label>
-        <input type="text" class="form-control" id="id_place" name="id_place"  value="{{ old('id_place') }}" min="0">
+        <input type="text" class="form-control" id="id_place" name="id_place" value="UC-GAM" readonly>
         <span class="alert-danger">{{$errors->first('id_place')}}</span>
       </div>
 
@@ -125,13 +125,13 @@
 
       <div class="form-group col-md-6">
         <label for="group_hours"><strong>Horas:</strong></label>
-        <input type="number" class="form-control" id="group_hours" name="group_hours"  value="{{ old('group_hours') }}" min="0">
+        <input type="number" class="form-control" id="group_hours" name="group_hours"  value="{{ old('group_hours') }}" min="0" placeholder="Si este dato no aplica colocar el valor en 0">
         <span class="alert-danger">{{$errors->first('group_hours')}}</span>
       </div>
 
       <div class="form-group col-md-6">
         <label for="group_capacity"><strong>Capacidad máxima:</strong></label>
-        <input type="number" class="form-control" id="group_capacity" name="group_capacity"  value="{{ old('group_capacity') }}" min="0">
+        <input type="number" class="form-control" id="group_capacity" name="group_capacity"  value="{{ old('group_capacity') }}" min="0" placeholder="Si este dato no aplica colocar el valor en 0" >
         <span class="alert-danger">{{$errors->first('group_capacity')}}</span>
       </div>
 
@@ -144,7 +144,7 @@
 
       <div class="form-group col-md-6">
         <label for="group_min_asistencia"><strong>Asistencia mínima:</strong></label>
-        <input type="number" class="form-control" id="group_min_asistencia" name="group_min_asistencia" value="{{ old('group_min_asistencia') }}">
+        <input type="number" class="form-control" id="group_min_asistencia" name="group_min_asistencia" value="{{ old('group_min_asistencia') }}" placeholder="Si este dato no aplica colocar el valor en 0">
         <span class="alert-danger">{{$errors->first('group_min_asistencia')}}</span>
       </div>
 
