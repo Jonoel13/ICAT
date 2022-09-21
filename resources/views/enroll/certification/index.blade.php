@@ -10,7 +10,6 @@
             <th>Estatus</th>
             <th>Estándar</th>
             <th>Grupo</th>
-            <th>Nombre</th>
             <th>Curp</th>
             <th>Diagnóstico</th>
             <th>Pago</th>
@@ -24,8 +23,9 @@
             <td>{{$enroll->estatus}}</td>
             <td>{{$enroll->estandar}}</td>
             <td>{{$enroll->grupo}}</td>
-            <td><a href="{{url('candidatos/edit')}}/{{$enroll->id}}">candidato</a></td>
-            <td>{{$enroll->curp}}</td>
+            <td>
+                <a href="{{url('usuario/perfil')}}/{{$enroll->curp}}" target="_blank"><pan>{{$enroll->curp}}</span></a>
+            </td>
             <td>{{$enroll->diagnostico_status}}</td>
             <td>{{$enroll->pago}}</td>
             <td>
