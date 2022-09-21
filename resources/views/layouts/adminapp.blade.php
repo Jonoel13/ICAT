@@ -559,6 +559,11 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link"  href="{{ url('candidatos') }}">
+              <i class="bi bi-person-bounding-box"></i><span>Candidatos</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link"  href="{{ url('documentos') }}">
               <i class="bi bi-folder-check"></i><span>Documentos recibidos</span>
             </a>

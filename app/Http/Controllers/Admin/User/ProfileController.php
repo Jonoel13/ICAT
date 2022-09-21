@@ -36,12 +36,67 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+
+    /*----------Users acounts----------------------------------------------------------*/
     public function index()
     {
         $users = User::all();
 
         return view('admin.users.index',['users' => $users]);
     }
+
+
+
+    public function new()
+    {
+        return view('admin.users.form');
+    }
+
+    public function store(Request $request)
+    {
+        $rules = array(
+            'user_name' => 'required',
+            'user_email' => 'required',
+            'user_id_rol' => 'required',
+
+        );
+
+        $messages = array(
+            'user_name.required' =>'Este campo es requerido',
+            'user_email.required' =>'Este campo es requerido',
+            'user_id_rol.required' =>'Este campo es requerido',
+        );
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withInput()
+                ->withErrors($validator)
+                ->with('message-error', 'Completar campos requeridos');
+
+        } else {
+
+        $user = new User;
+        $user->name = $request->user_name;
+        $user->email = $request->user_email;
+        $user->id_rol = $request->user_id_rol;
+        $user->password = bcrypt($request->user_password);
+
+        $user->save();
+
+        }
+
+        return redirect('usuario')->with('message', 'Registro Exitoso');
+    }
+
+
+    /*----------Users Profiles----------------------------------------------------------*/
+
+
+
+    
 
     public function Profiles()
     {

@@ -58,6 +58,13 @@ Route::any('usuarios/password/{id}', [App\Http\Controllers\Admin\User\ProfileCon
 Route::any('admin/usuarios/perfiles/', [App\Http\Controllers\Admin\User\ProfileController::class, 'profiles']);
 Route::any('admin/usuarios/perfiles/eliminar/{id}', [App\Http\Controllers\Admin\User\ProfileController::class, 'deleteProfile']);
 Route::any('admin/usuarios/eliminar/{id}', [App\Http\Controllers\Admin\User\ProfileController::class, 'deleteUser']);
+
+Route::any('admin/usuarios/nuevo', [App\Http\Controllers\Admin\User\ProfileController::class, 'new']);
+Route::any('admin/usuarios/guardar', [App\Http\Controllers\Admin\User\ProfileController::class, 'store']);
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Routes Standard Controller
