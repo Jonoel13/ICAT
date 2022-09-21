@@ -148,6 +148,20 @@ class Helpers
     }
 
 
+    /**
+    *********************************************************************
+    ** Helpers Quote Model
+    *********************************************************************
+    */
+
+    public static function cetificationStatusCount($standard, $status)
+    {
+        $result = Certification::where('estandar', $standard)->where('estatus', $status)->count();
+
+        return $result;
+    }
+
+
 
 
 }
