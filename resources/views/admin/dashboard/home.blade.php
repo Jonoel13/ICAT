@@ -2,7 +2,7 @@
 @section('content')
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
 <div class="row">
-    <div class="col-lg-6">
+    <!--div class="col-lg-6">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Servicios</h5>
@@ -10,7 +10,7 @@
 
         </div>
       </div>
-    </div>
+    </div -->
     <div class="col-lg-6">
         <table class="table table-striped table-bordered">
             <thead>

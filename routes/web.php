@@ -211,6 +211,7 @@ Route::any('usuario/actualizar/{id}', [App\Http\Controllers\User\ProfileControll
 Route::any('usuario/preguntas', [App\Http\Controllers\User\ProfileController::class, 'info']);
 
 
+
 Route::any('usuario/diagnostico/guardar', [App\Http\Controllers\User\ProfileController::class, 'diagnostico']);
 
 Route::any('usuario/certificaciones/{name}', [App\Http\Controllers\User\CertificationController::class, 'index']);
@@ -218,9 +219,8 @@ Route::any('usuario/certificaciones/{name}/{id}', [App\Http\Controllers\User\Cer
 
 
 Route::any('usuario/capacitaciones/{id}', [App\Http\Controllers\User\CapacitationController::class, 'index']);
-Route::any('usuario/catalogo/certificaciones', [App\Http\Controllers\User\CertificationController::class, 'catalogo']);
-Route::any('usuario/catalogo/certificacion/{id}', [App\Http\Controllers\User\CertificationController::class, 'enrolment']);
-
+Route::any('usuario/catalogo/certificaciones', [App\Http\Controllers\Admin\Standard\CatalogueController::class, 'catalogueCertification']);
+Route::any('usuario/catalogo/certificacion/{id}', [App\Http\Controllers\User\CertificationController::class, 'showCertification']);
 
 
 

@@ -546,6 +546,11 @@
               <i class="bi bi-question-circle"></i><span>Preguntas frecuentes</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link"  href="{{ url('/usuario/catalogo/certificaciones') }}">
+              <i class="bi bi-columns-gap"></i><span>Oferta de certificación</span>
+            </a>
+          </li>
       @endif
       @if(Auth::user()->id_rol == 2)
           <li class="nav-item">
