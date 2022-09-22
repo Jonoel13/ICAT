@@ -218,9 +218,11 @@ Route::any('usuario/certificaciones/{name}', [App\Http\Controllers\User\Certific
 Route::any('usuario/certificaciones/{name}/{id}', [App\Http\Controllers\User\CertificationController::class, 'show']);
 
 
-Route::any('usuario/capacitaciones/{id}', [App\Http\Controllers\User\CapacitationController::class, 'index']);
-Route::any('usuario/catalogo/certificaciones', [App\Http\Controllers\Admin\Standard\CatalogueController::class, 'catalogueCertification']);
-Route::any('usuario/catalogo/certificacion/{id}', [App\Http\Controllers\User\CertificationController::class, 'showCertification']);
+Route::any('capacitaciones/{id}', [App\Http\Controllers\User\CapacitationController::class, 'index']);
+Route::any('catalogo/certificaciones', [App\Http\Controllers\Admin\Standard\CatalogueController::class, 'catalogueCertification']);
+Route::any('catalogo/certificacion/{id}', [App\Http\Controllers\User\CertificationController::class, 'showCertification']);
+
+Route::any('catalogo/certificacion/buscar/curso', [App\Http\Controllers\Admin\Standard\CatalogueController::class, 'filter']);
 
 
 

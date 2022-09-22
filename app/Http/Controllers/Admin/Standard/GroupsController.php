@@ -201,6 +201,7 @@ class GroupsController extends Controller
         $group->group_documentation = $request->group_documentation;
         $group->group_link = 'N/A';
         $group->id_list_activities = 'N/A';
+        $group->group_private = $request->group_private;
         $group->save();
 
 

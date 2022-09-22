@@ -77,10 +77,19 @@
 .overflow-hidden { overflow: hidden; }
 
 .line-clamp {
+  height: 70px;
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+.btn-outline-success{
+    color: #691C32 !important;
+    border-color: #691C32 !important;
+}
+.btn-outline-success:hover{
+    background-color: #691C32 !important;
+    color: #ffffff !important;
 }
 
 </style>
@@ -110,24 +119,32 @@
   <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
 </div>
 
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand">Certificaciones</a>
+  <form class="form-inline" method="POST" action="{{url('catalogo/certificacion/buscar/curso')}}" autocomplete="off" enctype="multipart/form-data">
+    {{csrf_field() }}
+    <input name="filter" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+  </form>
+</nav>
 
-<div class="album py-5 bg-light p-5">
+
+<div class="album py-5 bg-light p-5 mt-3">
     <div class="">
 
       <div class="row">
       	@foreach($groups as $group)
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <!--svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg-->
+        <div class="col-md-3">
+          <div class="card mb-3 shadow-sm">
             <img class="img-responsive" src="{{ asset('storage/standard')}}/{!! Helper::standarImageId($group->id_standard) !!}">
             <div class="card-body">
               <p class="card-text">
                 <a class="text-success" href="{{url('usuario/catalogo/certificacion/')}}/{{$group->id}}">
-              	<h5><strong>{{$group->group_shortname}}</strong></h5>
+              	<h5 class="line-clamp"><strong>{{$group->group_shortname}} </strong></h5>
                 </a>
-                <div class="line-clamp">
+                <!--div class="line-clamp">
                   {!! Helper::standarDescriptionId($group->id_standard) !!}
-                </div>
+                </div-->
               </p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">

@@ -37,13 +37,19 @@ class CatalogueController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+   
+
+    public function filter(Request $request)
     {
-        $groups = Group::orderBy('updated_at', 'desc')->paginate(20);
+        $groups = Group::where('group_name','000001')
+            ->where('group_shortname', 'like', '%' . $request->filter . '%')
+            ->where('group_private','Público')
+            ->orderBy('group_shortname', 'asc')
+            ->get();
 
-        return view('standard.groups.index', ['groups' => $groups]);
-
+        return view('standard.catalogue.index', ['groups' => $groups]);
     }
+
 
     public function catalogueCertification(Request $request)
     {
@@ -51,7 +57,7 @@ class CatalogueController extends Controller
         $standards = Standard::orderBy('updated_at')->get();
         $groups = Group::where('group_name','000001')
             ->where('group_private','Público')
-            ->orderBy('updated_at')
+            ->orderBy('group_shortname', 'asc')
             ->get();
 
         return view('standard.catalogue.index',['groups' => $groups]);
@@ -63,6 +69,6 @@ class CatalogueController extends Controller
 
         $standard = Standard::find();
 
-        return view('user.certifications.catalogo',['standard' => $standard]);
+        return view('standard.catalogue.show',['standard' => $standard]);
     }
 }

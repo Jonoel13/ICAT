@@ -547,7 +547,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"  href="{{ url('/usuario/catalogo/certificaciones') }}">
+            <a class="nav-link"  href="{{ url('catalogo/certificaciones') }}">
               <i class="bi bi-columns-gap"></i><span>Oferta de certificación</span>
             </a>
           </li>
