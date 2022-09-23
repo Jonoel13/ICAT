@@ -80,7 +80,7 @@
   <div class="row">
     <nav>
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a class="text-success" href="{{ url('catalogo/certificaciones') }}">Oferte de certificaciones</a></li>
+        <li class="breadcrumb-item"><a class="text-success" href="{{ url('catalogo/certificaciones') }}">Oferta de certificaciones</a></li>
         <li class="breadcrumb-item active">{{$group->group_shortname}}</li>
       </ol>
     </nav>

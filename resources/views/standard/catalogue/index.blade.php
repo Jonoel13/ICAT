@@ -91,6 +91,11 @@
     background-color: #691C32 !important;
     color: #ffffff !important;
 }
+.navbar-brand {
+  color: #691C32 !important;
+  font-weight: 700;
+  font-size: 30px;
+}
 
 </style>
        
