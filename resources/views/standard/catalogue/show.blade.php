@@ -42,7 +42,7 @@
   .standard-fields{
     background: #f6f6f6;
     width: 97%;
-    padding: 20px ;
+    padding: 30px ;
   }
   .standard-description{
     margin-bottom: 40px;
@@ -99,56 +99,52 @@
             {!! Helper::standarDescriptionId($group->id_standard) !!}
         </div>
         <div class="">
-            
+            @if (Route::has('login'))
 
-          @if (Route::has('login'))
+                @auth
+                <div class="standard-btn text-center">
+                    <h3>Opciones de inscripción</h3>
+                    <a class="btn btn-success" href="{{$group->group_documentation}}" target="_blank">Documentación del estándar </a>
+                    <a type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+                      Inscribirme
+                    </a>
+                </div>
+                    
 
-                  @auth
-                  <div class="standard-btn text-center">
-                      <h3>Opciones de inscripción</h3>
-                      <a class="btn btn-success" href="{{$group->group_documentation}}" target="_blank">Documentación del estándar </a>
-                      <a type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
-                        Inscribirme
-                      </a>
-                  </div>
-                      
-
-                  <!-- Modal -->
-                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">comprobar datos</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          Confirmo mi incripcion al proceso del certificacion del estandard: <span class="standard">{!! Helper::standarName($group->id_standard) !!}</span>
-                        </div>
-                        <form method="POST" action="{{url('registro/rapido')}}" autocomplete="off" enctype="multipart/form-data">
-                          {{csrf_field() }}
-                          <div class="modal-footer">
-
-                            <input type="text" id="enrol_user_curp" name="enrol_user_curp" value="{{ Auth::user()->name }}">
-                            <input type="text" id="enrol_user_email" name="enrol_user_email" value="{{ Auth::user()->email }}">
-                            <input type="text" id="enrol_course_name" name="enrol_course_name" value="{!! Helper::standarName($group->id_standard) !!}">
-
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-
-                            <button type="submit" class="btn btn-success btn-lg btnt" onclick="this.disabled=true; this.value='Enviando, espere ...'; this.form.submit();">Confirmar</button>
-                          </div>
-                        </form>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">comprobar datos</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
                       </div>
+                      <div class="modal-body">
+                        Confirmo mi incripcion al proceso del certificacion del estandard: <span class="standard">{!! Helper::standarName($group->id_standard) !!}</span>
+                      </div>
+                      <form method="POST" action="{{url('registro/rapido')}}" autocomplete="off" enctype="multipart/form-data">
+                        {{csrf_field() }}
+                        <div class="modal-footer">
+
+                          <input type="hidden" id="enrol_user_curp" name="enrol_user_curp" value="{{ Auth::user()->name }}">
+                          <input type="hidden" id="enrol_user_email" name="enrol_user_email" value="{{ Auth::user()->email }}">
+                          <input type="hidden" id="enrol_course_name" name="enrol_course_name" value="{!! Helper::standarName($group->id_standard) !!}">
+
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+                          <button type="submit" class="btn btn-success  btnt" onclick="this.disabled=true; this.value='Enviando, espere ...'; this.form.submit();">Confirmar</button>
+                        </div>
+                      </form>
                     </div>
                   </div>
+                </div>
 
-                  @else
-                      <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Iniciar sesión para Inscribirme</a>
-                  @endauth
-          @endif
-
-          
+                @else
+                    <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Iniciar sesión para Inscribirme</a>
+                @endauth
+            @endif
         </div>
 
     </div>
@@ -158,16 +154,16 @@
 
           <ul class="list-group list-group-flush">
               <li class="list-group-item">
-                  Costo de evaluación: ${{$group->group_price}}.00
+                  <span class="text-b">Costo de evaluación:</span> ${{$group->group_price}}.00
               </li>
               <li class="list-group-item">
-                  Costo de emisión de ceretificado: $200.00
+                  <span class="text-b">Costo de emisión de ceretificado:</span> $200.00
               </li>
               <li class="list-group-item">
-                  Calificación minima: {{$group->group_min_grade}}%
+                  <span class="text-b">Calificación minima:</span> {{$group->group_min_grade}}%
               </li>
               <li class="list-group-item">
-                  Horas que puede tardad la evaluación: {{$group->group_hours}}
+                  <span class="text-b">Horas que puede tardad la evaluación:</span> {{$group->group_hours}}
               </li>
           </ul>
 
