@@ -313,7 +313,12 @@
 
                 <div class="row">
                     @yield('menu')
-                    <div class="col-md-10">
+                    @if (Route::has('login'))
+                        @auth
+                        <div class="col-md-10">
+                        @else
+                        @endauth
+                    @endif
                         <div>
                             <h5 class="text-notify">{{ Session::get('message') }}</h5>
                             <h5 class="text-danger">{{ Session::get('messageNo') }}</h5>
