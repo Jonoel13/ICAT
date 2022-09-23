@@ -54,7 +54,7 @@ class StandardController extends Controller
     {
 
         $rules = array(
-            'name' => 'required',
+            'name' => 'required|unique:standards,name',
             'shortname' => 'required',
             'sector' => 'required',
             'description' => 'required',
@@ -72,6 +72,7 @@ class StandardController extends Controller
 
         $messages = array(
             'name.required' =>'Este campo es requerido',
+            'name.unique' =>'Este nombre de id ya se encuentra registrado',
             'shortname.required' =>'Este campo es requerido',
             'sector.required' =>'Este campo es requerido',
             'description.required' =>'Este campo es requerido',

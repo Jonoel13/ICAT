@@ -94,20 +94,6 @@
 
 </style>
        
-<!--nav class="site-header sticky-top py-1">
-  <div class="container d-flex flex-column flex-md-row justify-content-between">
-    <a class="py-2" href="#" aria-label="Product">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img" viewBox="0 0 24 24" focusable="false"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
-    </a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Tour</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Product</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Features</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Enterprise</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Pricing</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Cart</a>
-  </div>
-</nav-->
 
 <div class="position-relative overflow-hidden  p-md-5 mb-3 text-center bg-light">
   <div class="col-md-5 p-lg-5 mx-auto my-5">
@@ -128,7 +114,6 @@
   </form>
 </nav>
 
-
 <div class="album py-5 bg-light p-5 mt-3">
     <div class="">
 
@@ -139,19 +124,16 @@
             <img class="img-responsive" src="{{ asset('storage/standard')}}/{!! Helper::standarImageId($group->id_standard) !!}">
             <div class="card-body">
               <p class="card-text">
-                <a class="text-success" href="{{url('usuario/catalogo/certificacion/')}}/{{$group->id}}">
+                <a class="text-success" href="{{url('catalogo/certificacion/')}}/{{$group->id}}">
               	<h5 class="line-clamp"><strong>{{$group->group_shortname}} </strong></h5>
                 </a>
-                <!--div class="line-clamp">
-                  {!! Helper::standarDescriptionId($group->id_standard) !!}
-                </div-->
               </p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a href="#" class="btn btn-sm btn-outline-secondary">Información de estándar</a>
+                  <a href="{{url('catalogo/certificacion/')}}/{{$group->id}}" class="btn btn-sm btn-outline-secondary">Perfil CONOCER</a>
                 </div>
-                <span class="text-muted"><a class="btn btn-sm btn-success" href="{{url('usuario/catalogo/certificacion/')}}/{{$group->id}}">Incribirse</a></span>
-              </div>
+                <span class="text-muted"><a class="btn btn-sm btn-success" href="{{url('catalogo/certificacion/')}}/{{$group->id}}">Información de estándar</a></span>
+              </div> 
             </div>
           </div>
         </div>
@@ -160,8 +142,6 @@
       </div>
     </div>
   </div>
-
-
 
 
 <footer class="container py-5">

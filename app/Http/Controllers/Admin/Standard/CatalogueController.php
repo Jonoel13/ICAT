@@ -64,11 +64,11 @@ class CatalogueController extends Controller
     }
 
 
-    public function showCertification(Request $request)
+    public function showCertification(Request $request, $id)
     {
 
-        $standard = Standard::find();
+        $group = Group::find($id);
 
-        return view('standard.catalogue.show',['standard' => $standard]);
+        return view('standard.catalogue.show',['group' => $group]);
     }
 }
