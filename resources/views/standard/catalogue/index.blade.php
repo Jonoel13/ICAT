@@ -98,99 +98,98 @@
 }
 
 </style>
-       
+<div class="">
 
-<div class="position-relative overflow-hidden  p-md-5 mb-3 text-center bg-light">
-  <div class="col-md-5 p-lg-5 mx-auto my-5">
-    <h1 class="display-4 font-weight-normal">Punny headline</h1>
-    <p class="lead font-weight-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
-    <a class="btn btn-outline-secondary" href="#">Coming soon</a>
-  </div>
-  <div class="product-device shadow-sm d-none d-md-block"></div>
-  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-</div>
+    <div class="row">
+      <img class="img-responsive col-md-12" src="https://drive.google.com/uc?export=view&amp;id=1vhC8gZT13unnRK3IYmigTtEmlFjsZIUW">
+    </div>
 
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand">Certificaciones</a>
-  <form class="form-inline" method="POST" action="{{url('catalogo/certificacion/buscar/curso')}}" autocomplete="off" enctype="multipart/form-data">
-    {{csrf_field() }}
-    <input name="filter" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-  </form>
-</nav>
+    
 
-<div class="album py-5 bg-light p-5 mt-3">
-    <div class="">
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand">Certificaciones</a>
+      <form class="form-inline" method="POST" action="{{url('catalogo/certificacion/buscar/curso')}}" autocomplete="off" enctype="multipart/form-data">
+        {{csrf_field() }}
+        <input name="filter" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+      </form>
+    </nav>
 
-      <div class="row">
-      	@foreach($groups as $group)
-        <div class="col-md-3">
-          <div class="card mb-3 shadow-sm">
-            <img class="img-responsive" src="{{ asset('storage/standard')}}/{!! Helper::standarImageId($group->id_standard) !!}">
-            <div class="card-body">
-              <p class="card-text">
-                <a class="text-success" href="{{url('catalogo/certificacion/')}}/{{$group->id}}">
-              	<h5 class="line-clamp"><strong>{{$group->group_shortname}} </strong></h5>
-                </a>
-              </p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="{{url('catalogo/certificacion/')}}/{{$group->id}}" class="btn btn-sm btn-outline-secondary">Perfil CONOCER</a>
+    <div class="album py-5 bg-light p-5 mt-3">
+        <div class="">
+
+          <div class="row">
+            @foreach($groups as $group)
+            <div class="col-md-3">
+              <div class="card mb-3 shadow-sm">
+                <img class="img-responsive" src="{{ asset('storage/standard')}}/{!! Helper::standarImageId($group->id_standard) !!}">
+                <div class="card-body">
+                  <p class="card-text">
+                    <a class="text-success" href="{{url('catalogo/certificacion/')}}/{{$group->id}}">
+                    <h5 class="line-clamp"><strong>{{$group->group_shortname}} </strong></h5>
+                    </a>
+                  </p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="{{url('catalogo/certificacion/')}}/{{$group->id}}" class="btn btn-sm btn-outline-secondary">Perfil CONOCER</a>
+                    </div>
+                    <span class="text-muted"><a class="btn btn-sm btn-success" href="{{url('catalogo/certificacion/')}}/{{$group->id}}">Información de estándar</a></span>
+                  </div> 
                 </div>
-                <span class="text-muted"><a class="btn btn-sm btn-success" href="{{url('catalogo/certificacion/')}}/{{$group->id}}">Información de estándar</a></span>
-              </div> 
+              </div>
             </div>
+            @endforeach
+            
           </div>
         </div>
-        @endforeach
-        
       </div>
-    </div>
-  </div>
 
 
-<footer class="container py-5">
-  <div class="row">
-    <div class="col-12 col-md">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24" focusable="false"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
-      <small class="d-block mb-3 text-muted"></small>
-    </div>
-    <div class="col-6 col-md">
-      <h5>Capacitación</h5>
-      <ul class="list-unstyled text-small">
-        <li><a class="text-muted" href="https://icatadistancia.cdmx.gob.mx/course/index.php?categoryid=2" target="_blank">Cursos en línea</a></li>
-        <li><a class="text-muted" href="https://icatadistancia.cdmx.gob.mx/course/index.php?categoryid=3" target="_blank">Cursos en directo</a></li>
-      </ul>
-    </div>
-    <div class="col-6 col-md">
-      <h5>Resources</h5>
-      <ul class="list-unstyled text-small">
-        <li><a class="text-muted" href="#">Resource</a></li>
-        <li><a class="text-muted" href="#">Resource name</a></li>
-        <li><a class="text-muted" href="#">Another resource</a></li>
-        <li><a class="text-muted" href="#">Final resource</a></li>
-      </ul>
-    </div>
-    <div class="col-6 col-md">
-      <h5>Resources</h5>
-      <ul class="list-unstyled text-small">
-        <li><a class="text-muted" href="#">Business</a></li>
-        <li><a class="text-muted" href="#">Education</a></li>
-        <li><a class="text-muted" href="#">Government</a></li>
-        <li><a class="text-muted" href="#">Gaming</a></li>
-      </ul>
-    </div>
-    <div class="col-6 col-md">
-      <h5>About</h5>
-      <ul class="list-unstyled text-small">
-        <li><a class="text-muted" href="#">Team</a></li>
-        <li><a class="text-muted" href="#">Locations</a></li>
-        <li><a class="text-muted" href="#">Privacy</a></li>
-        <li><a class="text-muted" href="#">Terms</a></li>
-      </ul>
-    </div>
-  </div>
-</footer>
+    <footer class="container py-5">
+      <div class="row">
+        <div class="col-12 col-md">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24" focusable="false"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
+          <small class="d-block mb-3 text-muted"></small>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Capacitación</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="https://icatadistancia.cdmx.gob.mx/course/index.php?categoryid=2" target="_blank">Cursos en línea</a></li>
+            <li><a class="text-muted" href="https://icatadistancia.cdmx.gob.mx/course/index.php?categoryid=3" target="_blank">Cursos en directo</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Resource</a></li>
+            <li><a class="text-muted" href="#">Resource name</a></li>
+            <li><a class="text-muted" href="#">Another resource</a></li>
+            <li><a class="text-muted" href="#">Final resource</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Business</a></li>
+            <li><a class="text-muted" href="#">Education</a></li>
+            <li><a class="text-muted" href="#">Government</a></li>
+            <li><a class="text-muted" href="#">Gaming</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>About</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Team</a></li>
+            <li><a class="text-muted" href="#">Locations</a></li>
+            <li><a class="text-muted" href="#">Privacy</a></li>
+            <li><a class="text-muted" href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+</div>
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

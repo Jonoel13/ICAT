@@ -10,6 +10,9 @@ use App\Models\Certification;
 use App\Models\Standard;
 use App\Models\Image;
 
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\URL;
+
 class HomeController extends Controller
 {
     /**
@@ -36,7 +39,7 @@ class HomeController extends Controller
         $files = Image::orderBy('updated_at', 'desc')->get();
 
         if(Auth::user()->id_rol == 10):
-            return view('home');
+            return redirect('catalogo/certificaciones');
         else:
             return view('admin.dashboard.home', ['countCer' => $countCer, 'files' => $files, 'standards' => $standards]);
         endif;

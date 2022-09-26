@@ -632,11 +632,11 @@
     </ul>
 
   </aside><!-- End Sidebar-->
-
+  @if(Auth::user()->id_rol != 10)
   <main id="main" class="main">
       @yield('content')
   </main><!-- End #main -->
-
+  @endif
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">

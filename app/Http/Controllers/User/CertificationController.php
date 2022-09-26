@@ -41,7 +41,7 @@ class CertificationController extends Controller
     {
 
 
-        $certifications = Certification::where('curp', $name)->get();
+        $certifications = Certification::where('curp', $name)->orderBy('created_at', 'desc')->get();
 
         return view('user.certifications.index',['certifications' => $certifications]);
     }

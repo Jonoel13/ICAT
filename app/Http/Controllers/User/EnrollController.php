@@ -306,7 +306,6 @@ class EnrollController extends Controller
             else:
                 return redirect()->back()->with('message', 'Registro no existente');
             endif;
-
             
         }
     }
