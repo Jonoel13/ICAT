@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Storage;
 use DB;
 use File;
 use Validator;
+use Auth;
 use App\Models\User;
 use App\Models\Profile;
 use App\Models\Enroll;
@@ -455,8 +456,13 @@ class EnrollController extends Controller
             });
 
 
+                if(Auth::check()):
+                    $url = url('/usuario/certificaciones').'/'. Auth::user()->name;
+                    return redirect($url)->with('message', 'Registro exitoso');
+                else:
+                    return redirect('login')->with('message', 'Registro exitoso');
+                endif;
 
-                return redirect('login')->with('message', 'Registro exitoso');
             endif;
 
         }
