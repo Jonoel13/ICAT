@@ -32,6 +32,7 @@
                     <a href="{{ url('certificaciones') }}" class="list-group-item list-group-item-action">Certificaciones</a>
                     <a href="{{ url('certificados') }}" class="list-group-item list-group-item-action">Certificados pendientes</a>
                     <a href="{{ url('usuario/preguntas') }}" class="list-group-item list-group-item-action">Preguntas frecuentes</a>
+                    <a href="{{ url('catalogo/certificaciones') }}" class="list-group-item list-group-item-action">Oferta de certificaciones</a>
                 @endif
                 @if(Auth::user()->id_rol == 3)
                     <a href="{{ url('pagos') }}" class="list-group-item list-group-item-action">Pagos recibidos</a>
