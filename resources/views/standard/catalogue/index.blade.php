@@ -96,6 +96,9 @@
   font-weight: 700;
   font-size: 30px;
 }
+footer{
+  padding: 80px;
+}
 
 </style>
 <div class="">
@@ -146,46 +149,44 @@
       </div>
 
 
-    <footer class="container py-5">
+    <footer class=" py-5">
       <div class="row">
-        <div class="col-12 col-md">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24" focusable="false"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
-          <small class="d-block mb-3 text-muted"></small>
-        </div>
-        <div class="col-6 col-md">
+
+      <div class="col-md-3">
           <h5>Capacitación</h5>
           <ul class="list-unstyled text-small">
             <li><a class="text-muted" href="https://icatadistancia.cdmx.gob.mx/course/index.php?categoryid=2" target="_blank">Cursos en línea</a></li>
             <li><a class="text-muted" href="https://icatadistancia.cdmx.gob.mx/course/index.php?categoryid=3" target="_blank">Cursos en directo</a></li>
           </ul>
         </div>
-        <div class="col-6 col-md">
-          <h5>Resources</h5>
+        <div class="col-4 col-md">
+          <h5>ICAT CDMX</h5>
           <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="#">Resource</a></li>
-            <li><a class="text-muted" href="#">Resource name</a></li>
-            <li><a class="text-muted" href="#">Another resource</a></li>
-            <li><a class="text-muted" href="#">Final resource</a></li>
+            <li><a class="text-muted" href="https://icat.cdmx.gob.mx/" target="_blank">Instituto</a></li>
+            <li><a class="text-muted" href="https://icat.cdmx.gob.mx/instituto/directorio" target="_blank">Directorio</a></li>
+            <li><a class="text-muted" href="https://icat.cdmx.gob.mx/instituto/acerca-de" target="_blank">Acerca de</a></li>
           </ul>
         </div>
-        <div class="col-6 col-md">
-          <h5>Resources</h5>
+        <div class="col-md-3">
+          
+          <h5>Redes</h5>
           <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="#">Business</a></li>
-            <li><a class="text-muted" href="#">Education</a></li>
-            <li><a class="text-muted" href="#">Government</a></li>
-            <li><a class="text-muted" href="#">Gaming</a></li>
+            <li><a class="text-muted" href="https://twitter.com/icat_cdmx" target="_blank"><i class="bi bi-twitter"></i> Twitter</a></li>
+            <li><a class="text-muted" href="https://www.facebook.com/profile.php?id=100069157121461" target="_blank"><i class="bi bi-facebook"></i> Facebook</a></li>
           </ul>
+          
         </div>
-        <div class="col-6 col-md">
-          <h5>About</h5>
+
+        <div class="col-md-3">
+          <h5>Contacto</h5>
           <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="#">Team</a></li>
-            <li><a class="text-muted" href="#">Locations</a></li>
-            <li><a class="text-muted" href="#">Privacy</a></li>
-            <li><a class="text-muted" href="#">Terms</a></li>
+            
+            <li><span class="text-b">Teléfono: </span><a class="text-muted" href="#">55 5740 0237</a></li>
+            <li><span class="text-b">Correo electrónico: </span><a class="text-muted" href="mailto:ece.icatcdmx@gmail.com">ece.icatcdmx@gmail.com</a></li>
           </ul>
+
         </div>
+        
       </div>
     </footer>
 

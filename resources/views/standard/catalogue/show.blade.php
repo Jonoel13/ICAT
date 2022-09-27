@@ -58,7 +58,10 @@
   .standard-btn{
     padding-top: 40px;
   }
-
+  
+footer{
+  padding: 80px;
+}
   
 </style>
 <div class="">
@@ -183,6 +186,46 @@
   </div>
 
 </div>
+<footer class=" py-5">
+  <div class="row">
+
+  <div class="col-md-3">
+      <h5>Capacitación</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted" href="https://icatadistancia.cdmx.gob.mx/course/index.php?categoryid=2" target="_blank">Cursos en línea</a></li>
+        <li><a class="text-muted" href="https://icatadistancia.cdmx.gob.mx/course/index.php?categoryid=3" target="_blank">Cursos en directo</a></li>
+      </ul>
+    </div>
+    <div class="col-4 col-md">
+      <h5>ICAT CDMX</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted" href="https://icat.cdmx.gob.mx/" target="_blank">Instituto</a></li>
+        <li><a class="text-muted" href="https://icat.cdmx.gob.mx/instituto/directorio" target="_blank">Directorio</a></li>
+        <li><a class="text-muted" href="https://icat.cdmx.gob.mx/instituto/acerca-de" target="_blank">Acerca de</a></li>
+      </ul>
+    </div>
+    <div class="col-md-3">
+      
+      <h5>Redes</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted" href="https://twitter.com/icat_cdmx" target="_blank"><i class="bi bi-twitter"></i> Twitter</a></li>
+        <li><a class="text-muted" href="https://www.facebook.com/profile.php?id=100069157121461" target="_blank"><i class="bi bi-facebook"></i> Facebook</a></li>
+      </ul>
+      
+    </div>
+
+    <div class="col-md-3">
+      <h5>Contacto</h5>
+      <ul class="list-unstyled text-small">
+        
+        <li><span class="text-b">Teléfono: </span><a class="text-muted" href="#">55 5740 0237</a></li>
+        <li><span class="text-b">Correo electrónico: </span><a class="text-muted" href="mailto:ece.icatcdmx@gmail.com">ece.icatcdmx@gmail.com</a></li>
+      </ul>
+
+    </div>
+    
+  </div>
+</footer>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 @endsection
