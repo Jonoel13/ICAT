@@ -45,7 +45,7 @@ class CatalogueController extends Controller
             ->where('group_shortname', 'like', '%' . $request->filter . '%')
             ->where('group_private','Público')
             ->orderBy('group_shortname', 'asc')
-            ->paginate(12);
+            ->get();
 
         return view('standard.catalogue.index', ['groups' => $groups]);
     }
@@ -58,7 +58,7 @@ class CatalogueController extends Controller
         $groups = Group::where('group_name','000001')
             ->where('group_private','Público')
             ->orderBy('group_shortname', 'asc')
-            ->get();
+            ->paginate(12);
 
         return view('standard.catalogue.index',['groups' => $groups]);
     }

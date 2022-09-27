@@ -141,6 +141,7 @@
             @endforeach
             
           </div>
+          {!! $groups->render() !!}
         </div>
       </div>
 
