@@ -67,6 +67,13 @@ class Helpers
         return $standard->cert_material;
     }
 
+    public static function standarCONOCER($data)
+    {
+        $standard = Standard::find($data);
+
+        return $standard->link;
+    }
+
 
 
     /**
