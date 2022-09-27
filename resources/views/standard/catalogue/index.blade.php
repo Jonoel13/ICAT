@@ -131,7 +131,7 @@
                   </p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <a href="{!! Helper::standarCONOCER($group->id_standard) !!}" class="btn btn-sm btn-outline-secondary">Perfil CONOCER</a>
+                      <a href="{!! Helper::standarCONOCER($group->id_standard) !!}" class="btn btn-sm btn-outline-secondary" target="_blank">Perfil CONOCER</a>
                     </div>
                     <span class="text-muted"><a class="btn btn-sm btn-success" href="{{url('catalogo/certificacion/')}}/{{$group->id}}">Información de estándar</a></span>
                   </div> 
