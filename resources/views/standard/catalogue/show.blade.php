@@ -103,7 +103,7 @@ footer{
                 {!! Helper::standarDescriptionId($group->id_standard) !!}
             </div>
             <div class="pb-3">
-              <h5><a href="{!! Helper::standarDocumentation($group->id_standard) !!}" target="_blank"><span class="text-success">Más sobre el estándar: {!! Helper::standarName($group->id_standard) !!}</span></a></h5>
+              <h5><a class="text-muted" href="{!! Helper::standarDocumentation($group->id_standard) !!}" target="_blank"><span class="text-success">Más sobre el estándar: {!! Helper::standarName($group->id_standard) !!}</span></a></h5>
             </div>
             <div class="row">
               <img class="img-responsive col-md-12" src="https://drive.google.com/uc?export=view&amp;id=1kXGGZHRxIoQVtmABp2BvG_GxkO9XGAYN">
