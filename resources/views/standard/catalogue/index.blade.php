@@ -183,6 +183,12 @@ footer{
             
             <li><span class="text-b">Teléfono: </span><a class="text-muted" href="#">55 5740 0237</a></li>
             <li><span class="text-b">Correo electrónico: </span><a class="text-muted" href="mailto:ece.icatcdmx@gmail.com">ece.icatcdmx@gmail.com</a></li>
+            <li>
+              <span class="text-b">
+                Dirección: 
+              </span>
+              Calzada San Antonio Abad 32, Piso 2, Colonia Tránsito, Alcaldía Cuauhtémoc C.P. 06820, Ciudad de México
+            </li>
           </ul>
 
         </div>

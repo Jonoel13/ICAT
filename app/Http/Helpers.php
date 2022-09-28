@@ -74,6 +74,13 @@ class Helpers
         return $standard->link;
     }
 
+    public static function standarDocumentation($data)
+    {
+        $standard = Standard::find($data);
+
+        return $standard->documentation;
+    }
+
 
 
     /**

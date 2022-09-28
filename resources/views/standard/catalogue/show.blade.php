@@ -58,7 +58,7 @@
   .standard-btn{
     padding-top: 40px;
   }
-  
+
 footer{
   padding: 80px;
 }
@@ -101,6 +101,9 @@ footer{
 
             <div class="text-justify standard-description">
                 {!! Helper::standarDescriptionId($group->id_standard) !!}
+            </div>
+            <div class="pb-3">
+              <h5><a href="{!! Helper::standarDocumentation($group->id_standard) !!}" target="_blank"><span class="text-success">Más sobre el estándar: {!! Helper::standarName($group->id_standard) !!}</span></a></h5>
             </div>
             <div class="row">
               <img class="img-responsive col-md-12" src="https://drive.google.com/uc?export=view&amp;id=1kXGGZHRxIoQVtmABp2BvG_GxkO9XGAYN">
@@ -220,6 +223,12 @@ footer{
         
         <li><span class="text-b">Teléfono: </span><a class="text-muted" href="#">55 5740 0237</a></li>
         <li><span class="text-b">Correo electrónico: </span><a class="text-muted" href="mailto:ece.icatcdmx@gmail.com">ece.icatcdmx@gmail.com</a></li>
+        <li>
+          <span class="text-b">
+            Dirección: 
+          </span>
+          Calzada San Antonio Abad 32, Piso 2, Colonia Tránsito, Alcaldía Cuauhtémoc C.P. 06820, Ciudad de México
+        </li>
       </ul>
 
     </div>
