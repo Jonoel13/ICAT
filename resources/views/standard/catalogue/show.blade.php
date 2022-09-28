@@ -221,7 +221,6 @@ footer{
       <h5>Contacto</h5>
       <ul class="list-unstyled text-small">
         
-        <li><span class="text-b">Teléfono: </span><a class="text-muted" href="#">55 5740 0237</a></li>
         <li><span class="text-b">Correo electrónico: </span><a class="text-muted" href="mailto:ece.icatcdmx@gmail.com">ece.icatcdmx@gmail.com</a></li>
         <li>
           <span class="text-b">
