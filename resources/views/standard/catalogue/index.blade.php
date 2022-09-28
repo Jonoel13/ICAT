@@ -107,9 +107,6 @@ footer{
       <img class="img-responsive col-md-12" src="{{ asset('storage/banner')}}/{!! Helper::homeBanner(1) !!}">
     </div>
 
-
-    
-
     <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand">Certificaciones</a>
       <form class="form-inline" method="POST" action="{{url('catalogo/certificacion/buscar/curso')}}" autocomplete="off" enctype="multipart/form-data">
