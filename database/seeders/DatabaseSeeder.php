@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
+        /*
         DB::table('users')->insert([
             'id_rol' => 1,
             'name' => 'admin',
@@ -59,6 +60,12 @@ class DatabaseSeeder extends Seeder
             'name' => 'Admin GAM',
             'email' => 'gam@icatcdmx.mx',
             'password' => Hash::make('Ic4tGAM[dmx'),
+        ]);
+        */
+
+        DB::table('home_config')->insert([
+            'baner' => '1',
+            'location' => 'catalogue1',
         ]);
 
     }

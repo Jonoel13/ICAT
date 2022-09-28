@@ -43,7 +43,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-
 Auth::routes();
 
 Route::any('pruebas', [App\Http\Controllers\HomeController::class, 'test']);
@@ -62,8 +61,13 @@ Route::any('admin/usuarios/eliminar/{id}', [App\Http\Controllers\Admin\User\Prof
 Route::any('admin/usuarios/nuevo', [App\Http\Controllers\Admin\User\ProfileController::class, 'new']);
 Route::any('admin/usuarios/guardar', [App\Http\Controllers\Admin\User\ProfileController::class, 'store']);
 
-
-
+/*
+|--------------------------------------------------------------------------
+| Routes HomeBuilder Controller
+|--------------------------------------------------------------------------
+*/
+Route::any('admin/home/config', [App\Http\Controllers\Admin\Homepage\HomeBuilderController::class, 'homeConfig']);
+Route::any('admin/home/config/update', [App\Http\Controllers\Admin\Homepage\HomeBuilderController::class, 'homeUpdate']);
 
 /*
 |--------------------------------------------------------------------------

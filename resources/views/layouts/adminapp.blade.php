@@ -472,6 +472,11 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link"  href="{{ url('admin/home/config') }}">
+              <i class="bi bi-columns-gap"></i><span>HomeBuilder</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link"  href="{{ url('admin/alianzas') }}">
               <i class="bi bi-columns-gap"></i><span>Alianzas</span>
             </a>

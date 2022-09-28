@@ -103,9 +103,10 @@ footer{
 </style>
 <div class="">
 
-    <div class="row">
-      <img class="img-responsive col-md-12" src="https://drive.google.com/uc?export=view&amp;id=1vhC8gZT13unnRK3IYmigTtEmlFjsZIUW">
+    <div class="row catalogue1">
+      <img class="img-responsive col-md-12" src="{{ asset('storage/banner')}}/{!! Helper::homeBanner(1) !!}">
     </div>
+
 
     
 

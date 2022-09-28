@@ -15,6 +15,8 @@ class CreateHomeConfigTable extends Migration
     {
         Schema::create('home_config', function (Blueprint $table) {
             $table->id();
+            $table->string('banner');
+            $table->string('location');
             $table->timestamps();
         });
     }

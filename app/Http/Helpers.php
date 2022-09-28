@@ -1,6 +1,7 @@
 <?php
 namespace App\Http;
 
+use App\Models\Home;
 use App\Models\Standard;
 use App\Models\Date;
 use App\Models\Quote;
@@ -11,6 +12,18 @@ use App\Models\Certification;
 
 class Helpers
 {
+    /**
+    *********************************************************************
+    ** Helpers Home Model
+    *********************************************************************
+    */
+    public static function homeBanner(string $data)
+    {
+        $home = Home::find($data);
+
+        return $home->banner;
+    }
+
 
     /**
     *********************************************************************
