@@ -64,7 +64,7 @@ class DatabaseSeeder extends Seeder
         */
 
         DB::table('home_config')->insert([
-            'baner' => '1',
+            'banner' => '1',
             'location' => 'catalogue1',
         ]);
 
