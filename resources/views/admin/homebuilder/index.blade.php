@@ -22,7 +22,7 @@
         </div>
         <hr>
         <a href="{{url('admin/estandar/lista')}}" type="button" class="btn btn-default">Cancelar</a>
-        <button type="submit" class="btn btn-primary" onclick="this.disabled=true; this.value='Enviando, espere ...'; this.form.submit();">Aceptar</button>
+        <button type="submit" class="btn btn-primary" onclick="this.disabled=true; this.value='Enviando, espere ...'; this.form.submit();">Actualizar</button>
     </form>
 </div>
 @endsection
