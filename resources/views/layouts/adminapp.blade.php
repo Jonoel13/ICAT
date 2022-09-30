@@ -559,6 +559,11 @@
       @endif
       @if(Auth::user()->id_rol == 2)
           <li class="nav-item">
+            <a class="nav-link"  href="{{ url('home') }}">
+              <i class="bi bi-columns-gap"></i><span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link"  href="{{ url('admin/estandar/lista') }}">
               <i class="bi bi-bookmarks"></i><span>Estándares/Cursos</span>
             </a>
