@@ -203,6 +203,10 @@ Route::any('api/certificaciones', [App\Http\Controllers\Api\ApiCertificationCont
 Route::any('api/perfiles/{sector}', [App\Http\Controllers\Api\ApiCertificationController::class, 'getAll']);
 
 
+Route::any('api/enrol/certifications/{field}/{value}', [App\Http\Controllers\Api\ApiEnrollController::class, 'getCertificationData']);
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Routes Profile Controller

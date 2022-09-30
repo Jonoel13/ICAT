@@ -38,6 +38,7 @@ class HomeController extends Controller
 
         $files = Image::orderBy('updated_at', 'desc')->get();
 
+
         if(Auth::user()->id_rol == 10):
             //return redirect('catalogo/certificaciones');
             return view('home'); 
