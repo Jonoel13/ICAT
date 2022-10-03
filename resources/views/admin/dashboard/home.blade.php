@@ -3,7 +3,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
 
 
-
+<input id="url-dash" type="text" value="{{url('/api/enrol/certifications/')}}" >
 <div class="row">
     <div class="col-lg-12">
        <nav class="navbar navbar-light bg-light mb-3">
@@ -13,16 +13,14 @@
             <select class="form-control mr-sm-2" id="form1_field">
                 <option value="">Seleccionar</option>
                 <option value="user_alcaldia">Alcaldía</option>
-                
                 <option value="user_cp">Código postal</option>
                 <option value="estandar">Estándar</option>
                 <option value="user_academico">Nivel académico</option>
                 <option value="user_academico">Sector productivo del usuario</option>
                 <option value="user_sexo">Sexo</option>                
-                <option value="user_indigena">Sexo</option>
             </select>
             <input id="form1_value" name="value" class="form-control mr-sm-2" type="search" placeholder="valor" aria-label="Buscar">
-            <button id="" class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            <button id="form1_search" class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar</button>
           </form>
         </nav> 
     </div>
@@ -127,43 +125,47 @@
 </div>
 
 
-
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 
 
 <script type="text/javascript">
-    var field = $('#form1_').val();
+$( "#form1_search" ).click(function() {
+ 
+
+    var field = $('#form1_field').val();
     var value = $('#form1_value').val();
+    var urldash = $('#url-dash').val();
+
+    var url = urldash+'/'+field+'/'+value
 
     $.ajax({
-    url : 'http://localhost:8000/api/enrol/certifications/user_sexo/Mujer',
-    dataType : 'json',
-    success : function(data) {
-        rowTable = "";
+        url : url,
+        dataType : 'json',
+        success : function(data) {
+            rowTable = "";
 
-            $.each(data['list'], function(i, obj) {
-              rowTable = "<tr>"
-                        +"<td>"+data['list'][i]['estandar']+"</td>"
-                        +"<td>"+data['list'][i]['user_app']+" "+data['list'][i]['user_apm']+" "+data['list'][i]['user_nombre']+"</td>"
-                        +"<td>"+data['list'][i]['curp']+"</td>"
-                        +"<td>"+data['list'][i]['user_email']+"</td>"
-                        +"</tr>";
+                $.each(data['list'], function(i, obj) {
+                  rowTable = "<tr>"
+                            +"<td>"+data['list'][i]['estandar']+"</td>"
+                            +"<td>"+data['list'][i]['user_app']+" "+data['list'][i]['user_apm']+" "+data['list'][i]['user_nombre']+"</td>"
+                            +"<td>"+data['list'][i]['curp']+"</td>"
+                            +"<td>"+data['list'][i]['user_email']+"</td>"
+                            +"</tr>";
 
-                $( ".row-table1" ).append( rowTable );
-            });
+                    $( ".row-table1" ).append( rowTable );
+                });
 
-            $( ".competentes-table1" ).append( data['competentes'] );
-            $( ".nocompetentes-table1" ).append( data['nocompetentes'] );
-            $( ".total-table1" ).append( data['total'] );
-            
-            console.log(data);
-
-    },
-    error : function(xhr, status) {
-        alert('Disculpe, existió un problema');
-    },
+                $( ".competentes-table1" ).append( data['competentes'] );
+                $( ".nocompetentes-table1" ).append( data['nocompetentes'] );
+                $( ".total-table1" ).append( data['total'] );
+                
+        },
+        error : function(xhr, status) {
+            console.log('Disculpe, existió un problema');
+        },
+    });
 });
 </script>
 <script type="text/javascript">
