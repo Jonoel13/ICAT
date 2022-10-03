@@ -124,10 +124,7 @@
     
 </div>
 
-
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 
 
 <script type="text/javascript">
@@ -154,12 +151,12 @@ $( "#form1_search" ).click(function() {
                             +"<td>"+data['list'][i]['user_email']+"</td>"
                             +"</tr>";
 
-                    $( ".row-table1" ).append( rowTable );
+                    $( ".row-table1" ).html( rowTable );
                 });
 
-                $( ".competentes-table1" ).append( data['competentes'] );
-                $( ".nocompetentes-table1" ).append( data['nocompetentes'] );
-                $( ".total-table1" ).append( data['total'] );
+                $( ".competentes-table1" ).html( data['competentes'] );
+                $( ".nocompetentes-table1" ).html( data['nocompetentes'] );
+                $( ".total-table1" ).html( data['total'] );
                 
         },
         error : function(xhr, status) {
@@ -168,13 +165,7 @@ $( "#form1_search" ).click(function() {
     });
 });
 </script>
-<script type="text/javascript">
-  $(document).ready( function () {
-    $('#table1').DataTable();
-} );
 
-
-</script>
 
 <!--script>
 const ctx = document.getElementById('myChart').getContext('2d');
