@@ -3,7 +3,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
 
 
-<input id="url-dash" type="text" value="{{url('/api/enrol/certifications/')}}" >
+<input id="url-dash" type="hidden" value="{{url('/api/enrol/certifications/')}}" >
 <div class="row">
     <div class="col-lg-12">
        <nav class="navbar navbar-light bg-light mb-3">
