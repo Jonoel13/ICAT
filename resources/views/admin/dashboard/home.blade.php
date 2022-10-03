@@ -142,6 +142,7 @@ $( "#form1_search" ).click(function() {
         dataType : 'json',
         success : function(data) {
             rowTable = "";
+                $( ".row-table1" ).html( '' );
 
                 $.each(data['list'], function(i, obj) {
                   rowTable = "<tr>"
@@ -150,8 +151,7 @@ $( "#form1_search" ).click(function() {
                             +"<td>"+data['list'][i]['curp']+"</td>"
                             +"<td>"+data['list'][i]['user_email']+"</td>"
                             +"</tr>";
-
-                    $( ".row-table1" ).html( rowTable );
+                    $( ".row-table1" ).append( rowTable );
                 });
 
                 $( ".competentes-table1" ).html( data['competentes'] );
