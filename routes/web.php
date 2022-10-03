@@ -204,7 +204,7 @@ Route::any('api/perfiles/{sector}', [App\Http\Controllers\Api\ApiCertificationCo
 
 
 Route::any('api/enrol/certifications/{field}/{value}', [App\Http\Controllers\Api\ApiEnrollController::class, 'getCertificationData']);
-
+//Route::any('api/enrol/certifications/age/{value}/{value2}', [App\Http\Controllers\Api\ApiEnrollController::class, 'getCertificationAge']);
 
 
 /*

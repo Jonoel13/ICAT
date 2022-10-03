@@ -58,7 +58,8 @@ class ApiEnrollController extends Controller
 
         $data = DB::table('certification')
                 ->join('profiles', 'certification.curp', '=', 'profiles.user_curp')
-                ->where($field, '=', $value)
+                ->where('estatus', '!=', 'Candidato')
+                ->where($field, 'like', '%' . $value . '%')
                 ->select(
                     'certification.id',
                     'certification.curp',
@@ -66,6 +67,7 @@ class ApiEnrollController extends Controller
                     'certification.sector',
                     'certification.estatus',
                     'certification.constancia',
+                    'certification.fecha',
                     'profiles.user_nombre',
                     'profiles.user_app',
                     'profiles.user_apm',
@@ -80,55 +82,62 @@ class ApiEnrollController extends Controller
 
         $data2 = DB::table('certification')
                 ->join('profiles', 'certification.curp', '=', 'profiles.user_curp')
-                ->where($field, '=', $value)
-                ->select(
-                    'certification.id',
-                    'certification.curp',
-                    'certification.estandar',
-                    'certification.sector',
-                    'certification.estatus',
-                    'certification.constancia',
-                    'profiles.user_nombre',
-                    'profiles.user_app',
-                    'profiles.user_apm',
-                    'profiles.user_edad',
-                    'profiles.user_sexo',
-                    'profiles.user_telefono',
-                    'profiles.user_email',
-                    'profiles.user_academico',
-                    'profiles.user_productivo',
-                    'profiles.user_cp'
-                )->count();
+                ->where('estatus', '!=', 'Candidato')
+                ->where($field, 'like', '%' . $value . '%')
+                ->count();
 
-        $data2 = DB::table('certification')
+        $data3 = DB::table('certification')
                 ->join('profiles', 'certification.curp', '=', 'profiles.user_curp')
-                ->where($field, '=', $value)
-                ->select(
-                    'certification.id',
-                    'certification.curp',
-                    'certification.estandar',
-                    'certification.sector',
-                    'certification.estatus',
-                    'certification.constancia',
-                    'profiles.user_nombre',
-                    'profiles.user_app',
-                    'profiles.user_apm',
-                    'profiles.user_edad',
-                    'profiles.user_sexo',
-                    'profiles.user_telefono',
-                    'profiles.user_email',
-                    'profiles.user_academico',
-                    'profiles.user_productivo',
-                    'profiles.user_cp'
-                )->count();
+                ->where('estatus', 'Competente' )
+                ->where($field, 'like', '%' . $value . '%')
+                ->count();
 
-        $response = ['list' => $data, 'total'=> $data2];
+        $data4 = DB::table('certification')
+                ->join('profiles', 'certification.curp', '=', 'profiles.user_curp')
+                ->where('estatus', 'No competente' )
+                ->where($field, 'like', '%' . $value . '%')
+                ->count();
+
+
+
+        $response = ['list' => $data, 'total'=> $data2, 'competentes'=> $data3, 'nocompetentes'=> $data4];
 
         return response()->json($response);
 
     }
 
 
+     public function getCertificationAge(Request $request, $value, $value2)
+    {
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+        header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token, X-CSRF-TOKEN');
+
+
+        $data = DB::table('certification')
+                ->join('profiles', 'certification.curp', '=', 'profiles.user_curp')
+                ->whereBetween('user_edad', [$value, $value2])
+                ->select(
+                    'certification.id',
+                    'certification.curp',
+                    'certification.estandar',
+                    'certification.sector',
+                    'certification.estatus',
+                    'certification.constancia',
+                    'certification.fecha',
+                    'profiles.user_nombre',
+                    'profiles.user_app',
+                    'profiles.user_apm',
+                    'profiles.user_edad',
+                    'profiles.user_sexo',
+                    'profiles.user_telefono',
+                    'profiles.user_email',
+                    'profiles.user_academico',
+                    'profiles.user_productivo',
+                    'profiles.user_cp'
+                )->get();
+
+    }
     
 
 }
