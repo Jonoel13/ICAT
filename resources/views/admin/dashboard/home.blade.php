@@ -42,6 +42,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td></td>
                 </tr>
                 
             </tbody>
@@ -124,6 +125,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td></td>
                 </tr>
                 
             </tbody>
@@ -169,7 +171,9 @@
     
 </div>
 <hr>
+
 <div class="row">
+    <h2>Resumen general</h2>
     <!--div class="col-lg-6">
       <div class="card">
         <div class="card-body">
