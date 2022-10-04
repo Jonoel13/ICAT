@@ -7,7 +7,7 @@
 <div class="row">
     <div class="col-lg-12">
        <nav class="navbar navbar-light bg-light mb-3">
-          <a class="navbar-brand">Certificaciones busqueda libre</a>
+          <a class="navbar-brand">Certificaciones búsqueda libre</a>
           <form class="form-inline col-lg-10" autocomplete="off" enctype="multipart/form-data">
             {{csrf_field() }}
             <select class="form-control mr-sm-2" id="form1_field">
@@ -30,7 +30,7 @@
         <h2>RESULTADO</h2>
         <table class="table table-striped table-bordered" id="table1">
             <thead>
-                <th>Estandar</th>
+                <th>Estándar</th>
                 <th>Nombre</th>
                 <th>Curp</th>
                 <th>Correo</th>
@@ -89,7 +89,7 @@
 <div class="row">
     <div class="col-lg-12">
        <nav class="navbar navbar-light bg-light mb-3">
-          <a class="navbar-brand">Busqueda por rango de edad</a>
+          <a class="navbar-brand">Búsqueda por rango de edad</a>
           <form class="form-inline col-lg-10" autocomplete="off" enctype="multipart/form-data">
             {{csrf_field() }}
             <select class="form-control mr-sm-2" id="form2_standard">
@@ -111,7 +111,7 @@
         <h2>RESULTADO</h2>
         <table class="table table-striped table-bordered" id="table2">
             <thead>
-                <th>Estandar</th>
+                <th>Estándar</th>
                 <th>Nombre</th>
                 <th>Curp</th>
                 <th>Correo</th>
@@ -180,7 +180,7 @@
     <div class="col-lg-6">
         <table class="table table-striped table-bordered">
             <thead>
-                <th>Estandar</th>
+                <th>Estándar</th>
                 <th>Competentes</th>
                 <th>No competentes</th>
             </thead>
