@@ -117,8 +117,8 @@ class ApiEnrollController extends Controller
 
         $data = DB::table('certification')
                 ->join('profiles', 'certification.curp', '=', 'profiles.user_curp')
-                ->where('estandar', $standard)
                 ->where('estatus', '!=', 'Candidato')
+                ->where('estandar', $standard)
                 ->whereBetween('user_edad', [$value, $value2])
                 ->select(
                     'certification.id',

@@ -30,6 +30,7 @@
         <h2>RESULTADO</h2>
         <table class="table table-striped table-bordered" id="table1">
             <thead>
+                <th>Fecha de evaluación</th>
                 <th>Estándar</th>
                 <th>Nombre</th>
                 <th>Curp</th>
@@ -111,6 +112,7 @@
         <h2>RESULTADO</h2>
         <table class="table table-striped table-bordered" id="table2">
             <thead>
+                <th>Fecha de evaluación</th>
                 <th>Estándar</th>
                 <th>Nombre</th>
                 <th>Curp</th>
@@ -228,6 +230,7 @@ $( "#form1_search" ).click(function() {
 
                 $.each(data['list'], function(i, obj) {
                   rowTable = "<tr>"
+                            +"<td>"+data['list'][i]['fecha']+"</td>"
                             +"<td>"+data['list'][i]['estandar']+"</td>"
                             +"<td>"+data['list'][i]['user_app']+" "+data['list'][i]['user_apm']+" "+data['list'][i]['user_nombre']+"</td>"
                             +"<td>"+data['list'][i]['curp']+"</td>"
@@ -265,6 +268,7 @@ $( "#form2_search" ).click(function() {
 
                 $.each(data['list'], function(i, obj) {
                   rowTable = "<tr>"
+                            +"<td>"+data['list'][i]['fecha']+"</td>"
                             +"<td>"+data['list'][i]['estandar']+"</td>"
                             +"<td>"+data['list'][i]['user_app']+" "+data['list'][i]['user_apm']+" "+data['list'][i]['user_nombre']+"</td>"
                             +"<td>"+data['list'][i]['curp']+"</td>"
