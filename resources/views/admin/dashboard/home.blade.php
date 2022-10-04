@@ -25,19 +25,21 @@
         </nav> 
     </div>
     
-    <div class="col-lg-6">
+    <div class="col-lg-7">
         
         <h2>RESULTADO</h2>
         <table class="table table-striped table-bordered" id="table1">
             <thead>
                 <th>Fecha de evaluación</th>
                 <th>Estándar</th>
+                <th>Estatus</th>
                 <th>Nombre</th>
                 <th>Curp</th>
                 <th>Correo</th>
             </thead>
             <tbody class="row-table1">
                 <tr>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -50,7 +52,7 @@
     </div>
 
 
-    <div class="col-lg-6">
+    <div class="col-lg-5">
         <h2>RESUMEN</h2>
         <table class="table table-striped table-bordered">
             <thead>
@@ -108,19 +110,21 @@
         </nav> 
     </div>
     
-    <div class="col-lg-6">
+    <div class="col-lg-7">
         
         <h2>RESULTADO</h2>
         <table class="table table-striped table-bordered" id="table2">
             <thead>
                 <th>Fecha de evaluación</th>
                 <th>Estándar</th>
+                <th>Estatus</th>
                 <th>Nombre</th>
                 <th>Curp</th>
                 <th>Correo</th>
             </thead>
             <tbody class="row-table2">
                 <tr>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -133,7 +137,7 @@
     </div>
 
 
-    <div class="col-lg-6">
+    <div class="col-lg-5">
         <h2>RESUMEN</h2>
         <table class="table table-striped table-bordered">
             <thead>
@@ -238,6 +242,7 @@ $( "#form1_search" ).click(function() {
                   rowTable = "<tr>"
                             +"<td>"+data['list'][i]['fecha']+"</td>"
                             +"<td>"+data['list'][i]['estandar']+"</td>"
+                            +"<td>"+data['list'][i]['estatus']+"</td>"
                             +"<td>"+data['list'][i]['user_app']+" "+data['list'][i]['user_apm']+" "+data['list'][i]['user_nombre']+"</td>"
                             +"<td>"+data['list'][i]['curp']+"</td>"
                             +"<td>"+data['list'][i]['user_email']+"</td>"
@@ -276,6 +281,7 @@ $( "#form2_search" ).click(function() {
                   rowTable = "<tr>"
                             +"<td>"+data['list'][i]['fecha']+"</td>"
                             +"<td>"+data['list'][i]['estandar']+"</td>"
+                            +"<td>"+data['list'][i]['estatus']+"</td>"
                             +"<td>"+data['list'][i]['user_app']+" "+data['list'][i]['user_apm']+" "+data['list'][i]['user_nombre']+"</td>"
                             +"<td>"+data['list'][i]['curp']+"</td>"
                             +"<td>"+data['list'][i]['user_email']+"</td>"
