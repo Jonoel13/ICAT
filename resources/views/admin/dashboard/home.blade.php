@@ -16,8 +16,8 @@
                 <option value="user_cp">Código postal</option>
                 <option value="estandar">Estándar</option>
                 <option value="user_academico">Nivel académico</option>
-                <option value="user_academico">Sector productivo del usuario</option>
-                <option value="user_sexo">Sexo</option>                
+                <option value="sector">Sector productivo del usuario</option>
+                <option value="user_sexo">Sexo</option>             
             </select>
             <input id="form1_value" name="value" class="form-control mr-sm-2" type="search" placeholder="valor" aria-label="Buscar">
             <button id="form1_search" class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar</button>
