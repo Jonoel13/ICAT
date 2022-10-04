@@ -138,7 +138,7 @@ class ApiEnrollController extends Controller
                     'profiles.user_academico',
                     'profiles.user_productivo',
                     'profiles.user_cp'
-                )->orderBy('user_app', 'asc')
+                )->orderBy('fecha', 'asc')
                 ->get();
 
         $data2 = DB::table('certification')
