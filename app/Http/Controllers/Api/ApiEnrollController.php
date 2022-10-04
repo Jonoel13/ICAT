@@ -107,7 +107,7 @@ class ApiEnrollController extends Controller
     }
 
 
-     public function getCertificationAge(Request $request, $value, $value2)
+     public function getCertificationAge(Request $request, $standard, $value, $value2)
     {
         header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
@@ -116,6 +116,7 @@ class ApiEnrollController extends Controller
 
         $data = DB::table('certification')
                 ->join('profiles', 'certification.curp', '=', 'profiles.user_curp')
+                ->where('estandar', $standard)
                 ->whereBetween('user_edad', [$value, $value2])
                 ->select(
                     'certification.id',
@@ -136,6 +137,31 @@ class ApiEnrollController extends Controller
                     'profiles.user_productivo',
                     'profiles.user_cp'
                 )->get();
+
+        $data2 = DB::table('certification')
+                ->join('profiles', 'certification.curp', '=', 'profiles.user_curp')
+                ->where('estatus', '!=', 'Candidato')
+                ->where('estandar', $standard)
+                ->whereBetween('user_edad', [$value, $value2])
+                ->count();
+
+        $data3 = DB::table('certification')
+                ->join('profiles', 'certification.curp', '=', 'profiles.user_curp')
+                ->where('estatus', 'Competente' )
+                ->where('estandar', $standard)
+                ->whereBetween('user_edad', [$value, $value2])
+                ->count();
+
+        $data4 = DB::table('certification')
+                ->join('profiles', 'certification.curp', '=', 'profiles.user_curp')
+                ->where('estatus', 'No competente' )
+                ->where('estandar', $standard)
+                ->whereBetween('user_edad', [$value, $value2])
+                ->count();
+
+        $response = ['list' => $data, 'total'=> $data2, 'competentes'=> $data3, 'nocompetentes'=> $data4];
+
+        return response()->json($response);
 
     }
     
