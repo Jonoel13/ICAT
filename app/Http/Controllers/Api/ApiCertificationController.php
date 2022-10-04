@@ -47,7 +47,7 @@ class ApiCertificationController extends Controller
         header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token, X-CSRF-TOKEN');
 
         #$response['certificacion'] = Certification::where('curp', $curp)->get(['curp', 'estatus', 'fecha']);
-        $response = Certification::where('curp', $curp)->get(['curp', 'estatus', 'fecha']);
+        $response = Certification::where('estatus', 'Competente')->where('estandar', 'EC1331')->where('curp', $curp)->get(['curp', 'estatus', 'fecha']);
 
         return response()->json($response);
     }
