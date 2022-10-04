@@ -78,7 +78,8 @@ class ApiEnrollController extends Controller
                     'profiles.user_academico',
                     'profiles.user_productivo',
                     'profiles.user_cp'
-                )->get();
+                )->orderBy('user_app', 'asc')
+                ->get();
 
         $data2 = DB::table('certification')
                 ->join('profiles', 'certification.curp', '=', 'profiles.user_curp')
@@ -136,7 +137,8 @@ class ApiEnrollController extends Controller
                     'profiles.user_academico',
                     'profiles.user_productivo',
                     'profiles.user_cp'
-                )->get();
+                )->orderBy('user_app', 'asc')
+                ->get();
 
         $data2 = DB::table('certification')
                 ->join('profiles', 'certification.curp', '=', 'profiles.user_curp')

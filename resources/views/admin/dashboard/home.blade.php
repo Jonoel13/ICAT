@@ -261,7 +261,7 @@ $( "#form2_search" ).click(function() {
         dataType : 'json',
         success : function(data) {
             rowTable = "";
-                $( ".row-table1" ).html( '' );
+                $( ".row-table2" ).html( '' );
 
                 $.each(data['list'], function(i, obj) {
                   rowTable = "<tr>"
