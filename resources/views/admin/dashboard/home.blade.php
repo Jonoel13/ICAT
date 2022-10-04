@@ -173,7 +173,9 @@
 <hr>
 
 <div class="row">
-    <h2>Resumen general</h2>
+    <div class="col-lg-12">
+        <h2>Resumen general</h2>
+    </div>
     <!--div class="col-lg-6">
       <div class="card">
         <div class="card-body">
