@@ -635,7 +635,7 @@ class EnrollController extends Controller
                 $group = Group::where('group_name', $request->enrol_group_id)->first();
 
                 if($standard->name == 'EC1331'):
-                    $request->enrol_group_id = 'EC1331-0001';
+                    $request->enrol_group_id = '000001';
                 endif;
 
 
