@@ -59,38 +59,30 @@ class ApiCertificationController extends Controller
         header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
         header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token, X-CSRF-TOKEN');
 
-        /*
-        $data = Certification::where('sector', $sector)
-            ->get([
-                'id',
-                'curp',
-                'estandar',
-                'sector',
-                'estatus',
-                'calificacion',
-                'constancia',
-            ]);
-        */
-            $data = DB::table('certification')->where('sector', $sector)
-                ->join('profiles', 'certification.curp', '=', 'profiles.user_curp')
-                ->select(
-                    'certification.id',
-                    'certification.curp', 
-                    'certification.estandar', 
-                    'certification.sector',
-                    'certification.estatus',
-                    'certification.constancia',
-                    'profiles.user_nombre',
-                    'profiles.user_app',
-                    'profiles.user_apm',
-                    'profiles.user_edad',
-                    'profiles.user_sexo',
-                    'profiles.user_telefono',
-                    'profiles.user_email',
-                    'profiles.user_academico',
-                    'profiles.user_productivo',
-                    'profiles.user_cp'
-                )->get();
+
+        $data = DB::table('certification')->where('sector', $sector)
+            ->join('profiles', 'certification.curp', '=', 'profiles.user_curp')
+            ->where('estatus', 'Competente' )
+            ->select(
+                'certification.id',
+                'certification.curp',
+                'certification.estandar', 
+                'certification.sector',
+                'certification.estatus',
+                'certification.constancia',
+                'profiles.user_nombre',
+                'profiles.user_app',
+                'profiles.user_apm',
+                'profiles.user_edad',
+                'profiles.user_sexo',
+                'profiles.user_telefono',
+                'profiles.user_email',
+                'profiles.user_academico',
+                'profiles.user_productivo',
+                'profiles.user_cp'
+            )->get();
+
+
 
         return response()->json(array('data'=> $data), 200);
 

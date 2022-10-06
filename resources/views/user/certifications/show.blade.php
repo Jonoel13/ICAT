@@ -106,9 +106,9 @@
                           {{$certification->estandar}}
                       </td>
                       <td>
-                        <a href="{{ url('usuario/citas/standard') }}/{{$certification->estandar}}" class="btn btn-success btn-sm"
-                        title="Agendar cita para realizar el proceso de evaluación de forma presencial"
-                        >Agendar cita</a>
+                    <a href="{{ url('usuario/citas/service') }}/{{$certification->id}}/standard/{{$certification->estandar}}" class="btn btn-success btn-sm"
+                                title="Agendar cita para realizar el proceso de evaluación de forma presencial" 
+                                >Agendar cita</a>
                       </td>
                     </tr>
                 </table>
