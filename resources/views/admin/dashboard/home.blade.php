@@ -1,9 +1,14 @@
 @extends('base')
 @section('content')
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
-
-
 <input id="url-dash" type="hidden" value="{{url('/api/enrol/certifications/')}}" >
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2>Dashboard</h2>
+        <hr>
+    </div>
+</div>
 <div class="row">
     <div class="col-lg-12">
        <nav class="navbar navbar-light bg-light mb-3">
