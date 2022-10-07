@@ -38,12 +38,13 @@ class BankController extends Controller
         header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
         header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token, X-CSRF-TOKEN');
 
-        $userCer = $json = json_decode(file_get_contents('https://icatcdmx.mx/sii/api/perfiles/Transporte'), true);
-        $userLinea = $json = json_decode(file_get_contents('https://icatcdmx.mx/apiMoodle/profile/all'), true);
+        $userCer = $json = json_decode(file_get_contents('https://sii.icatadistancia.cdmx.gob.mx/api/perfiles/Transporte'), true);
+        //$userLinea = $json = json_decode(file_get_contents('https://icatcdmx.mx/apiMoodle/profile/all'), true);
 
         #Certification::where('estatus', 'Competente')->paginate(15);
 
-        return view('admin.bank.index', ['userLinea' => $userLinea, 'userCer'=> $userCer]);
+
+        return view('admin.bank.index', ['userCer'=> $userCer]);
     }
 
 

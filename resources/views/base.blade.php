@@ -6,6 +6,7 @@
                 
                 @if(Auth::user()->id_rol == 1)
                     <a href="{{ url('home') }}" class="list-group-item list-group-item-action">Dashboard</a>
+                    <a href="{{ url('admin/home/config') }}" class="list-group-item list-group-item-action">HomeBuilder</a>
                     <a href="{{ url('admin/usuarios/perfiles') }}" class="list-group-item list-group-item-action">Perfiles</a>
                     <a href="{{ url('admin/estandar/lista') }}" class="list-group-item list-group-item-action">Estándares/Cursos</a>
                     <a href="{{ url('admin/groups/lista') }}" class="list-group-item list-group-item-action">Grupos</a>

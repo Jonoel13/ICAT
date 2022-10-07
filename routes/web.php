@@ -200,11 +200,13 @@ Route::any('usuario/citas/agendar/cita', [App\Http\Controllers\Certification\Quo
 Route::any('api/documentacion', [App\Http\Controllers\Api\ApiCertificationController::class, 'documentation']);
 Route::any('api/curp/{curp}', [App\Http\Controllers\Api\ApiCertificationController::class, 'getByCurp']);
 Route::any('api/certificaciones', [App\Http\Controllers\Api\ApiCertificationController::class, 'getAll']);
-Route::any('api/perfiles/{sector}', [App\Http\Controllers\Api\ApiCertificationController::class, 'getAll']);
+Route::any('api/profiles/{sector}', [App\Http\Controllers\Api\ApiCertificationController::class, 'getAll']);
 
 
 Route::any('api/enrol/certifications/{field}/{value}', [App\Http\Controllers\Api\ApiEnrollController::class, 'getCertificationData']);
 Route::any('api/enrol/certifications/age/{standard}/{value}/{value2}', [App\Http\Controllers\Api\ApiEnrollController::class, 'getCertificationAge']);
+Route::any('api/profile/{curp}', [App\Http\Controllers\Api\ApiEnrollController::class, 'getProfileCertify']);
+
 
 
 /*
