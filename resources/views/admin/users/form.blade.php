@@ -31,7 +31,9 @@
                 <label for="email"><strong>Rol del usuario:</strong></label>
                 <select class="form-control" id="user_id_rol" name="user_id_rol">
                     <option value="">Selecionar</option>
+                    @if(Auth::user()->id_rol == 1)
                     <option value="1">Admin SII</option>
+                    @endif
                     <option value="2">Admin DDC</option>
                     <option value="3">Admin DAF</option>
                     <option value="4">Admin DAE</option>
