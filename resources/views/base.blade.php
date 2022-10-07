@@ -25,7 +25,6 @@
                 @endif
                 @if(Auth::user()->id_rol == 2)
                     <a href="{{ url('home') }}" class="list-group-item list-group-item-action">Dashboard</a>
-                    <a href="{{ url('admin/home/config') }}" class="list-group-item list-group-item-action">HomeBuilder</a>
                     <a href="{{ url('usuarios') }}" class="list-group-item list-group-item-action">Usuarios</a>
                     <a href="{{ url('admin/estandar/lista') }}" class="list-group-item list-group-item-action">Estándares/Cursos</a>
                     <a href="{{ url('admin/groups/lista') }}" class="list-group-item list-group-item-action">Grupos</a>
