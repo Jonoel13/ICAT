@@ -22,12 +22,28 @@
   </thead>
   <tbody>
       @foreach($users as $user)
-      <tr>
-        <td>{{$user->name}}</td>
-        <td>{{$user->email}}</td>
-        <td><a class="btn btn-success" href="{{url('usuarios')}}/{{$user->id}}">Cambiar contraseña</a></td>
-        <td><a class="btn btn-success" href="{{url('admin/usuarios/eliminar')}}/{{$user->id}}">Eliminar</a></td>
-      </tr>
+        @if(Auth::user()->id_rol == 1)
+        <tr>
+          <td>{{$user->name}}</td>
+          <td>{{$user->email}}</td>
+          <td><a class="btn btn-success" href="{{url('usuarios')}}/{{$user->id}}">Cambiar contraseña</a></td>
+          <td>
+            <a class="btn btn-success" href="{{url('admin/usuarios/eliminar')}}/{{$user->id}}">Eliminar</a>
+          </td>
+        </tr>
+        @endif
+        @if(Auth::user()->id_rol == 2)
+          @if($user->id_rol!= 1)
+            <tr>
+              <td>{{$user->name}}</td>
+              <td>{{$user->email}}</td>
+              <td><a class="btn btn-success" href="{{url('usuarios')}}/{{$user->id}}">Cambiar contraseña</a></td>
+              <td>
+           
+              </td>
+            </tr>
+          @endif
+        @endif
       @endforeach
   </tbody>
 </table>

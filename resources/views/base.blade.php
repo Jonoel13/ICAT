@@ -24,6 +24,7 @@
                     <a href="{{ url('catalogo/certificaciones') }}" class="list-group-item list-group-item-action">Oferta de certificaciones</a>
                 @endif
                 @if(Auth::user()->id_rol == 2)
+                    <a href="{{ url('usuarios') }}" class="list-group-item list-group-item-action">Usuarios</a>
                     <a href="{{ url('admin/estandar/lista') }}" class="list-group-item list-group-item-action">Estándares/Cursos</a>
                     <a href="{{ url('admin/groups/lista') }}" class="list-group-item list-group-item-action">Grupos</a>
                     <a href="{{ url('candidatos') }}" class="list-group-item list-group-item-action">Candidatos</a>

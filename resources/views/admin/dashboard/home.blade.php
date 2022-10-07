@@ -244,7 +244,7 @@ $( "#form1_search" ).click(function() {
                 $( ".row-table1" ).html( '' );
 
                 $.each(data['list'], function(i, obj) {
-                  rowTable = "<tr>"
+                    rowTable = "<tr>"
                             +"<td>"+data['list'][i]['fecha']+"</td>"
                             +"<td>"+data['list'][i]['estandar']+"</td>"
                             +"<td>"+data['list'][i]['estatus']+"</td>"

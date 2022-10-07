@@ -564,6 +564,11 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link"  href="{{ url('usuarios') }}">
+              <i class="bi bi-people"></i><span>Usuarios</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link"  href="{{ url('admin/estandar/lista') }}">
               <i class="bi bi-bookmarks"></i><span>Estándares/Cursos</span>
             </a>
