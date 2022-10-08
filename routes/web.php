@@ -197,6 +197,7 @@ Route::any('usuario/citas/standard/{standard}/{day}/service/{id}', [App\Http\Con
 Route::any('usuario/citas/agendar/cita', [App\Http\Controllers\Certification\QuoteController::class, 'storeLog']);
 
 
+Route::any('api/icat/documentacion', [App\Http\Controllers\Api\ApiCertificationController::class, 'index']);
 Route::any('api/documentacion', [App\Http\Controllers\Api\ApiCertificationController::class, 'documentation']);
 Route::any('api/curp/{curp}', [App\Http\Controllers\Api\ApiCertificationController::class, 'getByCurp']);
 Route::any('api/certificaciones', [App\Http\Controllers\Api\ApiCertificationController::class, 'getAll']);

@@ -34,6 +34,11 @@ class ApiCertificationController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
+    public function index(Request $request)
+    {
+        return view('api.index');
+    }
+
     public function documentation(Request $request)
     {
         return view('api.documentation');
@@ -88,7 +93,7 @@ class ApiCertificationController extends Controller
 
     }
 
-    
+
 
 
 }

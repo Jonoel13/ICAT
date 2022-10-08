@@ -19,9 +19,10 @@
                     <a href="{{ url('documentos') }}" class="list-group-item list-group-item-action">Documentos recibidos</a>
                     <a href="{{ url('pagos') }}" class="list-group-item list-group-item-action">Pagos recibidos</a>
                     <a href="{{ url('citas/lista') }}" class="list-group-item list-group-item-action">Citas</a>
-                    <a href="{{ url('usuario/perfil') }}/{{Auth::user()->name}}" class="list-group-item list-group-item-action">Perfil </a>
+                    <!--a href="{{ url('usuario/perfil') }}/{{Auth::user()->name}}" class="list-group-item list-group-item-action">Perfil </a-->
                     <a href="{{ url('usuario/preguntas') }}" class="list-group-item list-group-item-action">Preguntas frecuentes</a>
                     <a href="{{ url('catalogo/certificaciones') }}" class="list-group-item list-group-item-action">Oferta de certificaciones</a>
+                    <a href="{{ url('api/icat/documentacion') }}" class="list-group-item list-group-item-action">API Icat CDMX</a>
                 @endif
                 @if(Auth::user()->id_rol == 2)
                     <a href="{{ url('home') }}" class="list-group-item list-group-item-action">Dashboard</a>

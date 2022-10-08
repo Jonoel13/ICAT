@@ -556,6 +556,11 @@
               <i class="bi bi-columns-gap"></i><span>Oferta de certificación</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link"  href="{{ url('api/icat/documentacion') }}">
+              <i class="bi bi-columns-gap"></i><span>API Icat CDMX</span>
+            </a>
+          </li>
       @endif
       @if(Auth::user()->id_rol == 2)
           <li class="nav-item">
