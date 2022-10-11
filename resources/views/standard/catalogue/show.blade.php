@@ -173,7 +173,7 @@ footer{
                       <span class="text-b">Costo de evaluación:</span> ${{$group->group_price}}.00
                   </li>
                   <li class="list-group-item">
-                      <span class="text-b">Costo de emisión de ceretificado:</span> $200.00
+                      <span class="text-b">Costo de emisión de ceretificado:</span> $251.00
                   </li>
                   <li class="list-group-item">
                       <span class="text-b">Calificación minima:</span> {{$group->group_min_grade}}%
