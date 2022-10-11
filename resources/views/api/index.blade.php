@@ -1,7 +1,7 @@
 @extends('base')
 @section('content')
 <div class="container">
-    <div class="info">
+    <div class="col-md-11 offset-md-1 info">
         <h2>Introducción</h2>
         <p class="text-justify">
            
