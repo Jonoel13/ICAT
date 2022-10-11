@@ -30,7 +30,6 @@
                         estandar:    "EC1331"
                         sector:  "Transporte"
                         estatus: "Competente"
-                        constancia:  "https://icatcdmx.mx/sii/…ia/XXXXXXXXXXXXXXXXXX/27"
                         user_nombre: "Joe"
                         user_app:    "Doe"
                         user_apm:    "Doe"
@@ -84,11 +83,6 @@
                             <td>estatus</td>
                             <td>string</td>
                             <td>Estatus del proceso de certificación</td>
-                        </tr>
-                        <tr>
-                            <td>constancia</td>
-                            <td>string</td>
-                            <td>Documento que valida la como competente al usuario</td>
                         </tr>
                         <tr>
                             <td>user_nombre</td>
