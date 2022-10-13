@@ -108,7 +108,7 @@
   <div>
       <h4>14 ¿CÓMO PUEDO REAGENDAR MI CITA?</h4>
       <p>
-        Al menos 24 horas antes de tu cita deberás de enviar un correo electrónico a <a href="mailto:ece.icatcdmx@gmail.com">ece.icatcdmx@gmail.com</a> solicitando sea reagendada tu cita, proporcionando fecha y horario requerido para que la Entidad de Evaluación y Certificación pueda verificar si existe disponibilidad.
+        Al menos 24 horas antes de tu cita deberás de enviar un correo electrónico a <a href="mailto:certificacion.icat@cdmx.gob.mx">certificacion.icat@cdmx.gob.mx</a> solicitando sea reagendada tu cita, proporcionando fecha y horario requerido para que la Entidad de Evaluación y Certificación pueda verificar si existe disponibilidad.
         <br>
         Podrás reagendar tu cita hasta en dos ocasiones, después de agotar este beneficio, se deberá de iniciar como tramite nuevo y pagar nuevamente.
 
@@ -153,7 +153,7 @@
 
       <h4>19 ¿CÓMO PUEDO CONTACTARLOS PARA MAYOR ORIENTACIÓN A CERCA DEL PROCESO DE EVALUACIÓN?</h4>
       <p>
-        Puedes escribirnos a <a href="mailto:ece.icatcdmx@gmail.com">ece.icatcdmx@gmail.com</a>
+        Puedes escribirnos a <a href="mailto:certificacion.icat@cdmx.gob.mx">certificacion.icat@cdmx.gob.mx</a>
       </p>
   </div>
 
