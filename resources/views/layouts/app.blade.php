@@ -325,7 +325,7 @@
                             <h5 class="text-notify">{{ Session::get('message') }}</h5>
                             <h5 class="text-danger">{{ Session::get('messageNo') }}</h5>
                         </div>
-                        <div class="">
+                        <div class="col-md-12">
                             @yield('content')
                         </div>
                         
