@@ -108,7 +108,7 @@ footer{
     </div>
 
     <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand">Certificaciones</a>
+      <a class="navbar-brand" href="{{url('catalogo/certificaciones')}}">Certificaciones</a>
       <form class="form-inline" method="POST" action="{{url('catalogo/certificacion/buscar/curso')}}" autocomplete="off" enctype="multipart/form-data">
         {{csrf_field() }}
         <input name="filter" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
