@@ -144,10 +144,10 @@
                     </form>
                 </div>
                 <div class="col-md-12 text-center">
-                    <a href="{{ url('registro') }}" class="link-rg">Registrarse</a>
+                    <a href="{{ url('catalogo/certificaciones') }}" class="link-rg">Oferta de certificación</a>
                 </div>
                 <div class="text-center text-gray">
-                    <span>Si aún no tienes una cuenta presiona <span class="text-b">"Registrarse"</span></span> 
+                    <span>Conoce nuestra oferta de certificación</span> 
                 </div>
             </div>
         </div>
