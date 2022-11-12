@@ -44,7 +44,8 @@ class EnrollController extends Controller
 
     public function formCertification()
     {
-        return view('enroll.certification.form');
+        //return view('enroll.certification.form');
+        return redirect('login')->with('message', 'Recuerda que el día 11 de Noviembre es el último día de registro.');
     }
 
 

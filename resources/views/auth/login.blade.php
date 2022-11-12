@@ -144,11 +144,16 @@
                     </form>
                 </div>
                 <div class="col-md-12 text-center">
-                    <a href="{{ url('catalogo/certificaciones') }}" class="link-rg">Oferta de certificación</a>
+                    <!--a href="{{ url('catalogo/certificaciones') }}" class="link-rg">Oferta de certificación</a>
+                    <div class="text-center text-gray">
+                        <span>Conoce nuestra oferta de certificación</span> 
+                    </div-->
+                    <a href="{{ url('registro') }}" class="link-rg">Registrarse</a>
                 </div>
                 <div class="text-center text-gray">
-                    <span>Conoce nuestra oferta de certificación</span> 
+                    <span>Si aún no tienes una cuenta presiona <span class="text-b">"Registrarse"</span></span> 
                 </div>
+        
             </div>
         </div>
     </div>
