@@ -148,7 +148,7 @@
                     <div class="text-center text-gray">
                         <span>Conoce nuestra oferta de certificación</span> 
                     </div-->
-                    <a href="{{ url('registro') }}" class="link-rg">Registrarse</a>
+                    <a href="https://sii.icatadistancia.cdmx.gob.mx/registro/estandar/EC1331/grupo/000001" class="link-rg">Registrarse</a>
                 </div>
                 <div class="text-center text-gray">
                     <span>Si aún no tienes una cuenta presiona <span class="text-b">"Registrarse"</span></span> 
